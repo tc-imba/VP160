@@ -1,0 +1,201 @@
+\documentclass{article}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{geometry}
+\def\degree{${}^{\circ}$}
+\geometry{left=3.0cm,right=3.0cm,top=3.0cm,bottom=4.0cm}
+\begin{document}
+
+\section*{Problem 1.}
+	\begin{enumerate}[(a)]
+	\item
+	$$v(t)=s'(t)=cs_0e^{ct}$$
+	\item
+	$$|\vec{a_t}|=|a|\cos\varphi_0=v'(t)=c^2s_0e^{ct}$$
+	\item
+	$$|\vec{a_n}|=|a|\sin\varphi_0=c^2s_0e^{ct}\tan\varphi_0$$
+	\item
+	$$R=\frac{v^2}{|\vec{a_n}|}=\frac{c^2s_0^2e^{2ct}}{c^2s_0e^{ct}\tan\varphi_0}=s_0e^{ct}\cot\varphi_0$$
+	\end{enumerate}
+	
+\section*{Problem 2.}
+	$\quad\quad$ Let $\theta$ be the angle between one of the wires below and the horizontal plane, then $\theta=\arccos\frac{4\sqrt{21}}{19}$
+	\begin{enumerate}[(a)]
+	\item
+	The tension in the two wires below:
+	$$T_1=T_2=\frac{mg}{\cos\theta}=\frac{15\times9.8}{\frac{4\sqrt{21}}{19}}=152.4N$$
+	The tension in the wire above:
+	$$T_3=2mg=2\times15\times9.8=294N$$
+	\item
+	$$N=mg\tan\theta=15\times9.8\times\frac{5}{4\sqrt{21}}\approx40.1N$$
+	\end{enumerate}
+	
+\section*{Problem 3.}
+	$\quad\quad$ Let the direction to the sky be the positive direction
+	\begin{enumerate}[(a)]
+	\item
+	$$\sum F=G_{man}+G_{bar}+2T=-320-160+500=20N$$
+	$$a=\frac{\sum F}{m}=\frac{20}{(320+160)/9.8}=\frac{49}{120}m/s^2$$
+	\item
+	$$\sum F_{man}=am_{man}=\frac{49}{120}\times\frac{320}{9.8}=\frac{40}{3}N$$
+	$$\sum F_{man}=G_{man}+T+N\Longrightarrow N=F_n-G_{man}-T=\frac{40}{3}+320-250=\frac{250}{3}N$$
+	\end{enumerate}
+
+\section*{Problem 4.}
+	$$$$
+	$$$$
+	$$$$
+	$$$$
+	$$$$
+	$$$$
+	$$$$
+	$\quad\quad$Suppose an inertial frame of reference whose x-axis is the perpendicular to the slide and y-axis is opposite to the motion direction.
+	$$g'=a=g\sin\alpha-\mu g\cos\theta$$
+	Obviously, in this frame of reference, the surface of the liquid in the container should be perpendicular to the direction of the acceleration.\\
+	On the direction of x-axis, $$a_x=g'-g\sin\theta=-\mu g\cos\theta$$
+	On the direction of y-axis, $$a_y=g\cos\theta$$
+	So the angle between $a$ and y-axis equals $\arctan\mu$, which is the angle that the surface of the liquid in the container forms with the inclined plane.
+	 
+\section*{Problem 5.}
+	
+	\begin{eqnarray*}
+		\left\{
+		\begin{array}{lcr}		
+			m_3a_3=T_3-m_3g			& (1)\\
+			0=T_3-T_1-T_2			& (2)\\
+			m_2a_2'=T_2-m_2g+m_2a_3	& (3)\\
+			m_1a_1'=T_1-m_1g+m_1a_3	& (4)\\
+		\end{array}
+		\right.\quad\&\quad
+		\left\{
+		\begin{array}{lcr}
+			T_1=T_2\\
+			a_1'=-a_2'\\
+			a_b=-a_3\\
+		\end{array}
+		\right.
+	\end{eqnarray*}
+	\begin{enumerate}[(a)]
+	\item
+		$$(m_1+m_2)a_2'=(m_1-m_2)(g-a_3)\quad|\quad(3)-(4)$$
+		$$a_2'=\frac{(m_1-m_2)(g-a_3)}{m_1+m_2}$$
+		$$a_2'-a_3=\frac{(m_1-m_2)(g-a_3)-(m_1+m_2)a_3}{m_1+m_2}
+		=\frac{(m_1-m_2)g-2m_1a_3}{m_1+m_2}$$
+		$$m_3a_3=2T_2-m_3g\quad|\quad(1)-(2)$$
+		$$m_3(a_3+g)=2m_2(g+a_2'-a_3)$$
+		$$m_3(a_3+g)=\frac{2m_2[(m_1+m_2)g+(m_1-m_2)g-2m_1a_3]}{m_1+m_2}
+		=\frac{4m_1m_2(g-a_3)}{m_1+m_2}$$
+		$$\left(\frac{4m_1m_2}{m_1+m_2}+m_3\right)a_3=\left(\frac{4m_1m_2}{m_1+m_2}-m_3\right)g$$
+		$$a_3=\frac{4m_1m_2-(m_1+m_2)m_3}{4m_1m_2+(m_1+m_2)m_3}g$$
+	\item
+		$$a_b=-a_3=-\frac{4m_1m_2-(m_1+m_2)m_3}{4m_1m_2+(m_1+m_2)m_3}g$$
+	\item
+		$$a_2'=\frac{(m_1-m_2)(g-a_3)}{m_1+m_2}
+		=\frac{2(m_1-m_2)m_3g}{4m_1m_2+(m_1+m_2)m_3}$$
+		$$a_1=a_1'-a_3=-a_2'-a_3=-\frac{2(m_1-m_2)m_3g}{4m_1m_2+(m_1+m_2)m_3}-a_3
+		=\frac{-4m_1m_2+(3m_2-m_1)m_3}{4m_1m_2+(m_1+m_2)m_3}g$$
+	\item
+		$$a_2=a_2'-a_3=\frac{2(m_1-m_2)m_3g}{4m_1m_2+(m_1+m_2)m_3}-a_3
+		=\frac{-4m_1m_2+(3m_1-m_2)m_3}{4m_1m_2+(m_1+m_2)m_3}g$$
+	\item
+		$$T_a=\frac{1}{2}T_c=\frac{1}{2}m_3(a_3+g)
+		=\frac{4m_1m_2m_3}{4m_1m_2+(m_1+m_2)m_3}g$$	
+	\item
+		$$T_c=\frac{8m_1m_2m_3}{4m_1m_2+(m_1+m_2)m_3}g$$
+	\item
+		$$a_1'=a_2'=a_3=0,\ T_a=m_1g,\ T_c=2m_1g$$
+		\center
+		Obviously, this is sensible.
+	\end{enumerate}
+	
+\section*{Problem 6.}
+	\begin{enumerate}[(a)]
+	\item
+		\begin{eqnarray*}
+			\left\{
+			\begin{array}{llll}		
+				m_1a_1&=T_1-G_x-f_1
+				&=T_1-m_1g\sin\alpha-\mu_1m_1g\cos\alpha &(1)\\
+				m_2a_2&=T_2-G_x-f_2-T_1
+				&=T_2-T_1-m_2g\sin\alpha-\mu_2m_2g\cos\alpha &(2)\\
+				m_3a_3&=G_x-T_3
+				&=m_3g\sin2\alpha-T_2 &(3)\\
+			\end{array}
+			\right.\\(a_1=a_2=a_3)
+		\end{eqnarray*}
+		$$(m_1+m_2)a_3=T_2-(m_1+m_2)g\sin\alpha-(\mu_1m_1+\mu_2m_2)g\cos\alpha\quad|\quad(1)+(2)=(4)$$
+		$$(m_1+m_2+m_3)a_3=m_3g\sin2\alpha-(m_1+m_2)g\sin\alpha-(\mu_1m_1+\mu_2m_2)g\cos\alpha\quad|\quad(3)+(4)$$
+		\begin{align*}
+			a_3&=\frac{m_3\sin2\alpha-(m_1+m_2)\sin\alpha-(\mu_1m_1+\mu_2m_2)\cos\alpha}{m_1+m_2+m_3}g\\
+			T_3=T_2&=(m_1+m_2)a_3+(m_1+m_2)g\sin\alpha+(\mu_1m_1+\mu_2m_2)g\cos\alpha\\
+			&=\frac{(m_1+m_2)(\sin2\alpha+\sin\alpha)+(\mu_1m_1+\mu_2m_2)\cos\alpha}{m_1+m_2+m_3}m_3g\\
+			T_1&=m_1a_3+m_1g\sin\alpha+\mu_1m_1g\cos\alpha\\
+			&=\frac{m_3(\sin2\alpha+\sin\alpha)+(\mu_1m_2+\mu_1m_3-\mu_2m_2)\cos\alpha}{m_1+m_2+m_3}m_1g
+		\end{align*}
+		$$$$
+	\item
+		$$a_3>0$$
+		$$m_3\sin2\alpha-(m_1+m_2)\sin\alpha-(\mu_1m_1+\mu_2m_2)\cos\alpha>0$$
+	\end{enumerate}
+
+\section*{Problem 7.}
+	Suppose the direction to the sky to be the positive direction
+	\begin{enumerate}[(a)]
+	\item
+	$$$$
+	$$$$
+	$$$$
+	$$$$
+	$$$$
+	$$$$
+	$$$$
+	$$$$
+	$$$$
+	\item
+	$$a=\frac{F-(m_1+m_2+m)g}{m_1+m_2+m}=\frac{F}{m_1+m_2+m}-g$$
+	\item
+	$$m_1a_1=F-m_1g-T$$
+	$$T=\frac{m_2+m}{m_1+m_2+m}F$$
+	\item
+	$$\frac{1}{2}ma=T-T_m-\frac{1}{2}mg$$
+	$$T_m=\frac{2m_2+m}{2(m_1+m_2+m)}F$$
+	\end{enumerate}
+
+\section*{Problem 8.}
+	In a sector whose angle equals $\theta$, Suppose the tangent line to be the x-axis and the radial line to be the y-axis.
+	\begin{eqnarray*}
+		\left\{
+		\begin{array}{l}		
+			T\sin\frac{d\theta}{2}+(T+dT)\sin\frac{d\theta}{2}=dN\\
+			T\cos\frac{d\theta}{2}+\mu dN=(T+dT)\cos\frac{d\theta}{2}\\
+		\end{array}
+		\right.\Longrightarrow
+		\left\{
+		\begin{array}{l}
+			dN=2T\sin\frac{d\theta}{2}+dT\sin\frac{d\theta}{2}\\
+			\mu dN=dT\cos\frac{d\theta}{2}=dT\\
+		\end{array}
+		\right.
+	\end{eqnarray*}
+	As $\sin\frac{d\theta}{2}=\frac{d\theta}{2}$,
+	$$dN=Td\theta$$
+	$$\mu Td\theta=dT$$
+	$$\frac{dT}{T}=\mu d\theta$$
+	Do integral on both sides,
+	$$\int_{T_A}^{T_B}\frac{1}{T}dT=\mu\int_0^\theta d\theta$$
+	$$ln\left(\frac{T_B}{T_A}\right)=\mu\theta$$
+	$$\frac{T_B}{T_A}=e^{\mu\theta}$$
+	$$T_A=T_Be^{-\mu\theta}$$
+
+\section*{Problem 9.}
+	\begin{enumerate}[(a)]
+	\item
+		$$a=\frac{\delta mg}{m}=\frac{x+\frac{L}{4}}{L}g=\frac{4x+L}{4L}g$$
+	\item
+		$$a=\frac{\delta mg-\mu_k(m-\delta m)g}{m}=\frac{x+\frac{L}{4}-\mu_k(\frac{3}{4}L-x)}{L}g=\frac{4x(1+\mu_k)-L(1+3\mu_k)}{4L}g$$
+	
+	\end{enumerate}
+
+\end{document}

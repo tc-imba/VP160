@@ -1,0 +1,12 @@
+t=0:0.01:6*pi;
+a=0.6*pi;
+R=1;
+x=R*cos(a+t)+R*t;
+y=R*sin(a+t);
+plot(x,y);
+axis([0 18 -1 1]);
+axis equal;
+xlabel('x=Rcos(\theta_0+\omega t)+\omega Rt');
+ylabel('y=Rsin(\theta_0+\omega t)');
+set(gca,'xticklabel','');
+set(gca,'yticklabel','');

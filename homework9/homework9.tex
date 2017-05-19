@@ -1,0 +1,347 @@
+\documentclass{article}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{geometry}
+\geometry{left=3.0cm,right=3.0cm,top=3.0cm,bottom=4.0cm}
+\renewcommand{\thesection}{Problem \arabic{section}.}
+\begin{document}
+
+\section{}
+Since central forces conserve angular momentum,
+$$L=\bar{r}\times\bar{p}=mr^2\dot{\varphi}=Const$$
+
+$$\frac{d}{d\varphi}\frac{1}{r}=\frac{d}{dt}\frac{1}{r}\frac{dt}{d\varphi}=-\frac{\dot{r}}{r^2\dot{\varphi}}=-\frac{m\dot{r}}{L}$$
+
+$$\frac{d^2}{d\varphi^2}\frac{1}{r}=-\frac{d}{d\varphi}\frac{m\dot{r}}{L}=-\frac{m}{L}\frac{d}{dt}\dot{r}\frac{dt}{d\varphi}=-\frac{m\ddot{r}}{L\dot{\varphi}}=-\frac{m^2\ddot{r}r^2}{L^2}$$
+
+$$\ddot{r}=-\frac{L^2}{m^2r^2}\frac{d^2}{d\varphi^2}\frac{1}{r}$$
+
+$$r\dot{\varphi}^2=r\frac{L^2}{m^2r^4}=\frac{L^2}{m^2r^3}$$
+
+$$F_r=m(\ddot{r}-r\dot{\varphi}^2)
+=-\frac{L^2}{mr^2}\left[\frac{d^2}{d\varphi^2}\left(\frac{1}{r}\right)+\frac{1}{r}\right]$$
+
+\section{}
+$$r=2R\cos\varphi$$
+\begin{align*}
+F_r&=-\frac{L^2}{mr^2}\left[\frac{d^2}{d\varphi^2}\left(\frac{1}{2R\cos\varphi}\right)+\frac{1}{r}\right]\\
+&=-\frac{L^2}{mr^2}\left(\frac{1}{2R}\frac{2-\cos^2\varphi}{\cos^3\varphi}+\frac{1}{r}\right)\\
+&=-\frac{L^2}{mr^2}\left(\frac{8R^2-r^2}{r^3}+
+\frac{1}{r}\right)\\
+&=-\frac{8L^2R^2}{mr^5}
+\end{align*}
+
+
+\section{}
+$$\omega=\frac{d\varphi}{dt}=\frac{L}{mr^2}=\frac{L}{2mR^2\cos2\varphi}$$
+$$\frac{2mR^2\cos2\varphi}{L}d\varphi=dt$$
+Do integral on both sides,
+$$\int_0^\varphi\frac{2mR^2\cos2\varphi}{L}d\varphi=\int_0^tdt$$
+$$\frac{mR^2\sin2\varphi}{L}=t$$
+$$\sin2\varphi=\frac{Lt}{mR^2}$$
+$$\varphi=\frac{1}{2}\arcsin\frac{Lt}{mR^2}$$
+\section{}
+
+\begin{gather*}
+I=
+\begin{bmatrix}
+	 I_{xx} & -I_{xy} & -I_{xz}\\
+	-I_{yx} &  I_{yy} & -I_{yz}\\
+	-I_{zx} & -I_{zy} &  I_{zz}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+	 I_{xx} & 	  0	  &     0	\\
+		0	&  I_{yy} &     0   \\
+	    0   & 	  0	  &  I_{zz}	\\
+\end{bmatrix}
+\end{gather*}
+
+\begin{align*}
+I_{xx}&=\iiint\rho(y^2+z^2)dydxdz=\iint_0^r\int_0^{2\pi}\rho(r^2sin^2\theta+z^2)rd\theta drdz=\int_H\rho\left(\frac{\pi r^4}{4}+\pi r^2z^2\right)dz\\
+I_{yy}&=\iiint\rho(x^2+z^2)dydxdz=\iint_0^r\int_0^{2\pi}\rho(r^2cos^2\theta+z^2)rd\theta drdz=\int_H\rho\left(\frac{\pi r^4}{4}+\pi r^2z^2\right)dz\\
+I_{xx}&=\iiint\rho(x^2+y^2)dydxdz=\iint_0^r\int_0^{2\pi}\rho r^3d\theta drdz=\int_H\frac{\rho\pi r^4}{2}dz
+\end{align*}
+
+\section{}
+\begin{enumerate}[(a)]
+\item
+\begin{gather*}
+I=
+\begin{bmatrix}
+	 I_{xx} & -I_{xy} & -I_{xz}\\
+	-I_{yx} &  I_{yy} & -I_{yz}\\
+	-I_{zx} & -I_{zy} &  I_{zz}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+	 2ma^2  &  2ma^2  &     0	\\
+	 2ma^2	&  2ma^2  &     0   \\
+	    0   & 	  0	  &  4ma^2	\\
+\end{bmatrix}
+\end{gather*}
+
+\item
+\begin{gather*}
+\bar{L}=
+\begin{bmatrix}
+	I_{xx}\omega_x + I_{xy}\omega_y + I_{xz}\omega_z\\
+	I_{yx}\omega_x + I_{yy}\omega_y + I_{yz}\omega_z\\
+	I_{zx}\omega_x + I_{zy}\omega_y + I_{zz}\omega_z\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+	 2ma^2\omega\\
+	 2ma^2\omega\\
+	 0\\
+\end{bmatrix}
+\end{gather*}
+
+$$\bar{L}=\bar{r_1}\times(m\bar{\omega_1}\times\bar{r_1})+\bar{r_2}\times(m\bar{\omega_2}\times\bar{r_2})=2ma^2\omega\hat{n_x}+2ma^2\omega\hat{n_y}$$
+
+\begin{center}
+$\bar{L}$ is not parallel to $\bar{\omega}$
+\end{center}
+
+\item
+According to symmetry arguments, $\tilde{x}$ is along the direction of the rod, $\tilde{y}$ and $\tilde{z}$ is orthogonal to each other.
+
+\begin{align*}
+\tilde{x}&=\hat{n_x}-\hat{n_y}\\
+\tilde{y}&=\hat{n_x}+a\hat{n_y}+b\hat{n_z}\\
+\tilde{z}&=b\hat{n_x}+b\hat{n_y}-(a+1)\hat{n_z}
+\end{align*}
+
+where $a,b\in R$\\
+So these axis are not unique because $a,b\in R$.
+
+\item
+\begin{gather*}
+I=
+\begin{bmatrix}
+	 I_{\tilde{x}\tilde{x}} & -I_{\tilde{x}\tilde{y}} & -I_{\tilde{x}\tilde{z}}\\
+	-I_{\tilde{y}\tilde{x}} &  I_{\tilde{y}\tilde{y}} & -I_{\tilde{y}\tilde{z}}\\
+	-I_{\tilde{z}\tilde{x}} & -I_{\tilde{z}\tilde{y}} &  I_{\tilde{z}\tilde{x}}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+	    0   & 	  0	  &     0	\\
+		0	&  4ma^2  &     0   \\
+	    0   & 	  0	  &  4ma^2	\\
+\end{bmatrix}
+\end{gather*}
+
+It's diagonal.
+
+\item
+
+\begin{gather*}
+L_{\tilde{x}}=
+\begin{bmatrix}
+	    0   & 	  0	  &     0	\\
+		0	&  4ma^2  &     0   \\
+	    0   & 	  0	  &  4ma^2	\\
+\end{bmatrix}
+\begin{bmatrix}
+	\omega\\
+	0\\
+	0\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+	0\\
+	0\\
+	0\\
+\end{bmatrix}
+\end{gather*}
+\begin{gather*}
+L_{\tilde{y}}=
+\begin{bmatrix}
+	    0   & 	  0	  &     0	\\
+		0	&  4ma^2  &     0   \\
+	    0   & 	  0	  &  4ma^2	\\
+\end{bmatrix}
+\begin{bmatrix}
+	0\\
+	\omega\\
+	0\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+	0\\
+	4ma^2\omega\\
+	0\\
+\end{bmatrix}
+\end{gather*}
+\begin{gather*}
+L_{\tilde{z}}=
+\begin{bmatrix}
+	    0   & 	  0	  &     0	\\
+		0	&  4ma^2  &     0   \\
+	    0   & 	  0	  &  4ma^2	\\
+\end{bmatrix}
+\begin{bmatrix}
+	0\\
+	0\\
+	\omega\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+	0\\
+	0\\
+	4ma^2\omega\\
+\end{bmatrix}
+\end{gather*}
+
+They are parallel to the angular velocity.
+
+\item
+\begin{gather*}
+det(I-\lambda E)=
+\begin{vmatrix}
+	 2ma^2-\lambda  &  2ma^2  &     0	\\
+	 2ma^2	&  2ma^2-\lambda  &     0   \\
+	    0   & 	  0	  &  4ma^2-\lambda	\\
+\end{vmatrix}
+=0
+\end{gather*}
+
+$$(4ma^2-\lambda)[(2ma^2-\lambda)^2-(2ma^2)^2]=0$$
+$$\lambda(4ma^2-\lambda)^2=0$$
+$$\lambda_1=0\quad\lambda_2=\lambda_3=4ma^2$$
+
+Since two of the eigenvalues are the same, two axis can be selected arbitrarily.
+\end{enumerate}
+
+\section{}
+
+\begin{enumerate}[(a)]
+
+\item
+\begin{align*}
+\bar{x}&=\frac{-am+2am+am}{4m}=\frac{1}{2}a\\
+\bar{y}&=\frac{am+2am-am}{4m}=\frac{1}{2}a\\
+\bar{z}&=0
+\end{align*}
+
+\begin{align*}
+I&=
+\begin{bmatrix}
+	 I_{xx} & -I_{xy} & -I_{xz}\\
+	-I_{yx} &  I_{yy} & -I_{yz}\\
+	-I_{zx} & -I_{zy} &  I_{zz}\\
+\end{bmatrix}\\
+&=
+\begin{bmatrix}
+	\frac{9}{4}ma^2+\frac{3}{4}ma^2&-(-\frac{3}{4}ma^2+\frac{1}{2}ma^2-\frac{3}{4}ma^2)&0\\
+	-(-\frac{3}{4}ma^2+\frac{1}{2}ma^2--\frac{3}{4}ma^2)&\frac{9}{4}ma^2+\frac{3}{4}ma^2&0\\
+	0&0&2\left(\frac{9}{4}ma^2+\frac{3}{4}ma^2\right)
+\end{bmatrix}\\
+&=
+\begin{bmatrix}
+	3ma^2&ma^2&0\\
+	ma^2&3ma^2&0\\
+	0&0&6ma^2\\
+\end{bmatrix}
+\end{align*}
+
+\item
+\begin{gather*}
+det(I-\lambda E)=
+\begin{vmatrix}
+	3ma^2-\lambda&ma^2&0\\
+	ma^2&3ma^2-\lambda&0\\
+	0&0&6ma^2-\lambda\\
+\end{vmatrix}
+=0
+\end{gather*}
+
+$$(6ma^2-\lambda)[(3ma^2-\lambda)^2-(ma^2)^2]=0$$
+$$(6ma^2-\lambda)(4ma^2-\lambda)(2ma^2-\lambda)=0$$
+$$\lambda_1=6ma^2\quad\lambda_2=4ma^2\quad\lambda_3=2ma^2$$
+
+
+\begin{enumerate}[(1)]
+\item $\lambda=6ma^2$
+\begin{gather*}
+\begin{bmatrix}
+	-3ma^2&ma^2&0\\
+	ma^2&-3ma^2&0\\
+	0&0&0\\
+\end{bmatrix}
+\begin{bmatrix}
+	u\\v\\w\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+	0\\0\\0
+\end{bmatrix}
+\Longrightarrow
+\tilde{x}=\hat{n_z}
+\end{gather*}
+
+\item $\lambda=4ma^2$
+\begin{gather*}
+\begin{bmatrix}
+	-ma^2&ma^2&0\\
+	ma^2&-ma^2&0\\
+	0&0&2ma^2\\
+\end{bmatrix}
+\begin{bmatrix}
+	u\\v\\w\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+	0\\0\\0
+\end{bmatrix}
+\Longrightarrow
+\tilde{y}=\frac{\sqrt{2}}{2}\hat{n_x}+\frac{\sqrt{2}}{2}\hat{n_y}
+\end{gather*}
+
+\item $\lambda=2ma^2$
+\begin{gather*}
+\begin{bmatrix}
+	a^2&ma^2&0\\
+	ma^2&ma^2&0\\
+	0&0&4ma^2\\
+\end{bmatrix}
+\begin{bmatrix}
+	u\\v\\w\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+	0\\0\\0
+\end{bmatrix}
+\Longrightarrow
+\tilde{z}=\frac{\sqrt{2}}{2}\hat{n_x}-\frac{\sqrt{2}}{2}\hat{n_y}
+\end{gather*}
+\end{enumerate}
+
+\end{enumerate}
+
+\section{}
+
+\begin{align*}
+K&=\frac{1}{2}\sum m_i|\bar{\omega}\times\bar{r_i}|^2=\frac{1}{2}\sum m_i[(\omega_yz-\omega_zy)^2+(\omega_zx-\omega_xz)^2+(\omega_xy-\omega_yx)^2]\\
+&=\frac{1}{2}\sum m_i[(y^2+z^2)\omega_x^2+(x^2+z^2)\omega_y^2+(x^2+y^2)\omega_z^2-2yz\omega_y\omega_z-2xz\omega_x\omega_z-2xy\omega_x\omega_y]\\
+&=\frac{1}{2}(I_{xx}\omega_x^2+I_{yy}\omega_y^2+I_{zz}\omega_z^2-2I_{xy}\omega_x\omega_y-2I_{xz}\omega_x\omega_z-2I_{yz}\omega_y\omega_z)\\
+&=\frac{1}{2}
+\begin{bmatrix}
+	\omega_x&\omega_y&\omega_z
+\end{bmatrix}
+\begin{bmatrix}
+	 I_{xx} & -I_{xy} & -I_{xz}\\
+	-I_{yx} &  I_{yy} & -I_{yz}\\
+	-I_{zx} & -I_{zy} &  I_{zz}\\
+\end{bmatrix}
+\begin{bmatrix}
+	\omega_x\\ \omega_y\\ \omega_z
+\end{bmatrix}
+\\
+&=\frac{1}{2}\sum_{\alpha\beta}I_{\alpha\beta}\omega_\alpha\omega_\beta
+\end{align*}
+
+\end{document}

@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{geometry}
+\geometry{left=3.0cm,right=3.0cm,top=3.0cm,bottom=4.0cm}
+\renewcommand{\thesection}{Problem \arabic{section}.}
+\begin{document}
+
+\section{}
+$$F=ma=f$$
+$$fR=I\varepsilon$$
+$$I=\frac{2}{5}mR^2$$
+$$\frac{\omega_0}{R\varepsilon}>\frac{v_0}{a}$$
+$$\frac{\omega_0I}{fR^2}>\frac{v_0m}{f}$$
+$$\omega_0>\frac{5v_0}{2\omega_0}$$
+
+\section{}
+$$F(x-d)=I\frac{d\omega}{dt}$$
+Do integral on both sides,
+$$\int_{t_1}^{t_2}Fdt(x-d)=I\omega$$
+and
+$$J=\int_{t_1}^{t_2}Fdt=mv$$
+$$mv(x-d)=I\omega$$
+$$x=\frac{I\omega}{mv}+d=\frac{I}{md}+d\approx0.71m$$
+
+\section{}
+$$\omega=\frac{19200}{60}\cdot2\pi=640\pi\,\rm{rad/s}$$
+$$\Omega=\frac{\theta}{t}=\frac{1.1\times10^{-6}}{5\times 3600}\cdot\frac{\pi}{180}\approx1.07\times10^{-2}\,\rm{rad/s}$$
+$$\tau=L\Omega=I\omega\Omega=\frac{1}{4}md^2\omega\Omega=2.44\times10^{-12}\,\rm{kg\cdot m^2/s^2}$$
+
+\section{}
+\begin{enumerate}[(a)]
+\item
+$$G_CL_C\cos55^\circ+G_BL_B\cos55^\circ=TL_T\sin25^\circ$$
+$$T=\frac{G_CL_C\cos55^\circ+G_BL_B\cos55^\circ}{L_T\sin25^\circ}\approx29336N$$
+\item
+$$F_x=T\sin60^\circ=25406N\quad\rm{Pointing\ to\ the\ right}$$
+$$F_y=G_C+G_B+T\cos60^\circ=40668N\quad\rm{Pointing\ to\ the\ sky}$$
+\end{enumerate}
+
+\section{}
+\begin{enumerate}[(a)]
+\item
+$$N_B=2mg\quad\rm{Pointing\ to\ the\ sky}$$
+$$N_C=mg\tan\theta=\frac{\sqrt{3}}{3}mg\quad\rm{Pointing\ to\ the\ left}$$
+$$N_A=N_C=\frac{\sqrt{3}}{3}mg\quad\rm{Pointing\ to\ the\ right}$$
+\item
+$$N=\frac{mg}{\cos\theta}=\frac{2\sqrt{3}}{3}mg$$
+\end{enumerate}
+
+\section{}
+
+$$F=f+T\sin\theta$$
+$$N=G+T\cos\theta=G+(F-f)\cot\theta$$
+$$f=\mu_sN=\mu_s[G+(F-f)\cot\theta]$$
+$$f=\frac{\mu_s(G+F\cot\theta)}{1+\mu_s\cot\theta}$$
+$$FHx=fH$$
+where $x=\frac{h}{X}$
+$$Fx=\frac{\mu_s(G+F\cot\theta)}{1+\mu_s\cot\theta}$$
+$$F=\frac{\mu_sG}{(1+\mu_s\cot\theta)x-\mu_s\cot\theta}$$
+
+\begin{enumerate}[(a)]
+\item
+When $x=0.5$,
+$$F\approx399.71N$$
+\item
+When $x=0.4$,
+$$F\approx748.77N$$
+\item
+When $(1+\mu_s\cot\theta)x-\mu_s\cot\theta<0$,\\
+F is negative so that the post can not slip.
+$$x<\frac{\mu_s\cot\theta}{1+\mu_s\cot\theta}\approx0.285$$
+So when the force is exerted less than 0.285h to the top, it won't slip.
+\end{enumerate}
+
+\section{}
+\begin{enumerate}[(a)]
+\item
+$$P=\frac{RT}{V}$$
+$$\frac{dP}{dV}=-\frac{RT}{V^2}$$
+$$B=-\frac{dP}{dV/V}=\frac{RT}{V}=P$$
+\item
+$$\frac{RT}{V}=\frac{C}{V^\gamma}$$
+$$T=\frac{C}{V^{\gamma-1}R}$$
+$$P=\frac{C}{V^\gamma}$$
+$$\frac{dP}{dV}=-\frac{\gamma C}{V^{\gamma+1}}$$
+$$B=-\frac{dP}{dV/V}=\frac{\gamma C}{V^\gamma}=\gamma P$$
+\end{enumerate}
+
+\section{}
+$$P_C=P_0-\rho gh_2$$
+$$2Sv_D=Sv_C$$
+$$P_0+\rho gh_1=P_C+\frac{1}{2}\rho v_C^2=P_0+\frac{1}{2}\rho v_D^2$$
+$$\rho gh_1=\frac{1}{2}\rho v_D^2=\frac{1}{8}\rho v_C^2$$
+$$\rho gh_1=\frac{1}{2}\rho v_C^2-\rho gh_2$$
+$$h_2=3h_1$$
+
+\section{}
+\begin{enumerate}[(a)]
+\item
+$$P_0+\frac{1}{2}\rho v^2=P_0+\rho gy$$
+$$v=\sqrt{2gy}$$
+$$s=h-y=\frac{1}{2}gt^2$$
+$$t=\sqrt{\frac{2(h-y)}{g}}$$
+$$D=vt=\sqrt{4(h-y)y}$$
+\item
+$$D=vt=2\sqrt{-\left(y-\frac{h}{2}\right)^2+\frac{h^2}{4}}$$
+When $y=\frac{h}{2}$, D gets its maximum value $h$
+\end{enumerate}
+
+\section{}
+\begin{enumerate}[(a)]
+\item
+$$P=P_0+\rho gh\approx1.025\times10^5\,\rm{Pa}$$
+\item
+$$V=\frac{1}{12}\pi\left(\frac{h}{H}D\right)^2h$$
+$$h=\sqrt[3]{\frac{12VH^2}{\pi D^2}}$$
+$$P_0+\frac{1}{2}\rho v^2=P_0+\rho gh$$
+$$v=\sqrt{2gh}=\sqrt{2g}\sqrt[6]{\frac{12H^2}{\pi D^2}}V^{\frac{1}{6}}$$
+$$dV=Svdt=\frac{1}{4}\pi d^2\sqrt{2g}\sqrt[6]{\frac{12H^2}{\pi D^2}}V^{\frac{1}{6}}dt$$
+$$V^{-\frac{1}{6}}dV=\frac{1}{4}\pi d^2\sqrt{2g}\sqrt[6]{\frac{12H^2}{\pi D^2}}dt$$
+Do integral on both sides,
+$$\int_{V_1}^{V_2}V^{-\frac{1}{6}}dV=\int_0^t\frac{1}{4}\pi d^2\sqrt{2g}\sqrt[6]{\frac{12H^2}{\pi D^2}}dt$$
+$$t=\frac{\frac{6}{5}V^{\frac{5}{6}}|_{V_1}^{V_2}}{\frac{1}{4}\pi d^2\sqrt{2g}\sqrt[6]{\frac{12H^2}{\pi D^2}}}=102.86\,\rm{s}$$
+\end{enumerate}
+\end{document}

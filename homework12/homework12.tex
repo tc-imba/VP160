@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{geometry}
+\geometry{left=3.0cm,right=3.0cm,top=3.0cm,bottom=4.0cm}
+\renewcommand{\thesection}{Problem \arabic{section}.}
+\begin{document}
+
+\section{}
+$$dM=\frac{Mdl}{L}$$
+$$F=\int_x^{L+x}\frac{GMm}{Ll^2}dl=-\frac{GMm}{Ll}\Big|_x^{L+x}=\frac{GMm}{L}\left(\frac{1}{x}-\frac{1}{L+x}\right)=\frac{GMm}{x(L+x)}$$
+When $x\gg L$,
+$$\frac{x(L+x)}{x(L+x)+\frac{1}{4}L^2}\approx1$$
+$$F\approx\frac{GMm}{x^2+Lx+\frac{1}{4}L^2}=\frac{GMm}{(x+\frac{1}{2}L)^2}$$
+
+\section{}
+\begin{enumerate}[(a)]
+\item
+$$dm=\frac{Md\theta}{2\pi}$$
+$$U=\int_0^{2\pi}-\frac{GMm}{2\pi\sqrt{x^2+a^2}}d\theta=-\frac{GMm}{\sqrt{x^2+a^2}}$$
+\item
+When $x\gg a$,
+$$\frac{\sqrt{x^2+a^2}}{x}\approx1$$
+$$U\approx-\frac{GMm}{x}$$
+\item
+Since each small force is symmetric at every angle, the net force is pointing the the right.
+$$F=\int_0^{2\pi}\frac{GMm}{2\pi(x^2+a^2)}\frac{x}{\sqrt{x^2+a^2}}d\theta=\frac{GMmx}{(x^2+a^2)^{\frac{3}{2}}}$$
+When $x\gg a$,
+$$\frac{(x^2+a^2)\frac{3}{2}}{x^3}\approx1$$
+$$F\approx\frac{GMm}{x^2}$$
+\item
+When $x=0$, 
+$$F=\frac{GMmx}{(x^2+a^2)^{\frac{3}{2}}}=0$$
+\end{enumerate}
+
+\section{}
+\begin{enumerate}[(a)]
+\item
+$$\iint_SE_G\hat{n}dS=\iiint_EdivE_GdV=\iiint_E-4\pi G\rho dV=-4\pi GM_{\sum}$$
+\item
+$$-4\pi GM=-E_G\cdot4\pi r^2$$
+$$E_G=\frac{GM}{r^2}$$
+\item
+When $r>R$
+$$-4\pi GM=-E_G\cdot4\pi r^2$$
+$$E_G=\frac{GM}{r^2}$$
+When $r<R$
+$$-4\pi GM\frac{r^3}{R^3}=-E_G\cdot4\pi r^2$$
+$$E_G=\frac{GMr}{R^3}$$
+\item
+When $r>R$
+$$-4\pi GM=-E_G\cdot4\pi r^2$$
+$$E_G=\frac{GM}{r^2}$$
+When $r<R$
+$$-4\pi GM\cdot0=-E_G\cdot4\pi r^2$$
+$$E_G=0$$
+\end{enumerate}
+
+\section{}
+$$F=-\frac{GMm}{R^3}x$$
+It is a harmonic oscillator.
+$$k=\frac{GMm}{R^3}$$
+$$T=2\pi\sqrt{\frac{m}{k}}=2\pi\sqrt{\frac{R^3}{GM}}$$
+$$\omega=\frac{2\pi}{T}=\sqrt{\frac{GM}{R^3}}$$
+$$x=R\cos\left(\sqrt{\frac{GM}{R^3}}t\right)$$
+A satellite orbiting around the planet close to its surface:
+$$\frac{GMm}{R^2}=\frac{mv^2}{R}$$
+$$v=\sqrt{\frac{GM}{R}}$$
+$$T=\frac{2\pi R}{v}=2\pi\sqrt{\frac{R^3}{GM}}$$
+So the time is the same.\\
+If the tunnel is drilled at an angle $\varphi$ to the diameter,
+$$F=-\frac{GMm}{R^3}(\sqrt{R^2\sin^2\varphi+x^2})\frac{x}{\sqrt{R^2\sin^2\varphi+x^2}}=-\frac{GMm}{R^3}x$$
+$$T=2\pi\sqrt{\frac{m}{k}}=2\pi\sqrt{\frac{R^3}{GM}}$$
+So the answer won't change.
+\end{document}

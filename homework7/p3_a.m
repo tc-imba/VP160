@@ -1,0 +1,13 @@
+[x,y]=meshgrid(-1:0.2:1,-1:0.2:1);
+u=-y.^2-2.*x.*y;
+v=-x.^2-2.*x.*y;
+quiver(x,y,u,v,'black');
+title('$$F(r)=-(y^2+2xy)\hat{n_x}-(x^2-2xy)\hat{n_y}$$','Interpreter','latex');
+axis([-1.2 1.2 -1.2 1.2]);
+hold on;
+[x,y]=meshgrid(-1:0.01:1,-1:0.01:1);
+z=x.*y.*(x+y);
+w=-1:0.1:1;
+contour(x,y,z,w);
+hold off;
+axis equal;
