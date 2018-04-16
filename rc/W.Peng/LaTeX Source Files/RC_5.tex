@@ -1,0 +1,106 @@
+\subsection{Potential Force Fields}
+\begin{frame}
+\frametitle{Potential Force Fields}
+\begin{definition}
+If there exists a scalar function $u$ of $x,y,z$ such that $\overline F=-\nabla u$, then the force field is called \alert{\textbf{potential}} (\alert{conservative}). $-\nabla u=(\left.-\frac{\partial u}{\partial x}\right|_{x,y,z},\left.-\frac{\partial u}{\partial y}\right|_{x,y,z},\left.-\frac{\partial u}{\partial z}\right|_{x,y,z})$
+\end{definition}
+\begin{block}{Properties}
+Work done by $\overline{F}$ depends only on the \alert{final} position and \alert{initial} position. \[w=u(\mathbf{r}_{\text{final}})-u(\mathbf{r}_{\text{initial}})\]
+\end{block}
+\begin{block}{Criteria}
+In a \alert{simply connected} region, $\overline{F}$ is \alert{conservative} if and only if rot$\overline{F}=0$.
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Rotation (Curl) of $\mathbf{F}$}
+\[\mathrm{rot}\overline{F}=\nabla\times \overline{F}=\left(\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z}\right)\times\left(F_x,F_y,F_z\right)\]\[=\left(\frac{\partial}{\partial y}F_z-\frac{\partial}{\partial z}F_y,\frac{\partial}{\partial z}F_x-\frac{\partial}{\partial x}F_z,\frac{\partial}{\partial x}F_y-\frac{\partial}{\partial y}F_x\right)\]
+\begin{block}{Simply Connected}
+The concept \alert{simply connected} can be interpreted as being possible to retract a rubber band within the region to any point in the region.
+\end{block}
+\end{frame}
+\subsection{Potential Energy}
+\begin{frame}
+\frametitle{Potential Energy}
+To find the \alert{potential energy} once we have proved that a force field is conservative, we need to find a compatible $u$ for all three integrations $\int F_x\derivative x+C_x(y,z)$, $\int F_y\derivative y+C_y(x,z)$, and $\int F_z\derivative z+C_z(x,y)$.
+\begin{example}
+Consider $\overline{F}=x\hat{n}_x+y\hat{n}_y+z\hat{n}_z$, so
+$\int F_x\derivative x=\frac{1}{2}x^2+C_x(y,z)$, $\int F_y\derivative y=\frac{1}{2}y^2+C_y(x,z)$, $\int F_z\derivative z=\frac{1}{2}z^2+C_z(x,y)$, we decide $-u(x,y,z)=\frac{1}{2}x^2+\frac{1}{2}y^2+\frac{1}{2}z^2+C$
+\end{example}
+\end{frame}
+\begin{frame}
+\frametitle{Conservation of Mechanical Energy in Potential Fields}
+Suppose $\overline{F}$ is the \alert{net} force on a particle and $\overline{F}$ is \alert{conservative}, then $\delta w=\overline{F}\circ\derivative\overline{r}=-\derivative U$. Now by the work-kinetic energy theorem, $\delta w=\derivative K$, so $\derivative (K+U)=0$, $K+U=const$. The constant is the \alert{mechanical energy} of the particle in this Potential Field.
+\end{frame}
+\subsection{Non-conservative Forces}
+\begin{frame}
+\frametitle{Non-conservative Forces}
+If \alert{non-conservative forces} present, then the work done by non-conservative forces is equal to the change in the total mechanical energy. In fact, $w_{n-cons}=-\Delta u_{int}$, i.e., internal energy (other form of energy). The sum of all these energies is constant. In other words,
+\[\Delta K+\Delta U+\Delta U_{int}=0\]This is the \alert{law of conservation of total energy}.
+\end{frame}
+\begin{frame}
+\frametitle{Energy Diagrams}
+\includegraphics[height=2.5in]{RC5EnergyDiagram.png}
+\end{frame}
+\begin{frame}
+\frametitle{1D Energy Diagram; Harmonic Approximation}
+\includegraphics[height=1.8in]{RC5_1DEnergyDiagram.png}\\
+\alert{Harmonic} approximation of oscillation in the \alert{vicinity} of a \alert{stable equilibrium} $x_0$:\[U(x)\approx U(x_0)+\frac{1}{2}U''(x_0)(x-x_0)^2\]
+$\omega_0=\sqrt{\frac{U''(x_0)}{m}}$, $x(t)=x(0)+A\cos(\omega_0 t+\varphi)$.
+\end{frame}
+\subsection{Discussion}
+\subsection{Exercises}
+\begin{frame}
+\frametitle{$\mathbf{F}_3=\frac{1}{r^2}\hat{n}_r$, $\mathbf{F}_4=\sin(r)\hat{n}_r$}
+\begin{figure}
+\centering
+\includegraphics[width=5cm]{RC5F3.eps}
+\includegraphics[width=5cm]{RC5F4.eps}
+\caption{3D Vector Plot of $\mathbf{F}_3$ on the left, and 2D Vector Plot of $\mathbf{F}_4$ on the right.}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Find Work}
+\begin{block}{Question}
+Find the work the force $\mathbf{F}(\mathbf{r})=(x^2-y,z,1)$ does on a particle that is being moved from $(0,0,0)$ to $(1,1,1)$ along
+\begin{enumerate}
+\item{straight line connecting these points}
+\item{the curve given in the parametric form: $x(t)=t, y(t)=t^2, z(t)=\frac{1}{2}t(t+1)$, where $0\leq t\leq 1$.}
+\end{enumerate}
+\end{block}
+\begin{block}{Solution}
+\begin{enumerate}
+\item{A parametrization is given by $\gamma: [0,1]\to \mathbb{R}^3$, $\gamma(t)=(t,t,t)$, $w=\int_0^1(t^2-t,t,1)\circ (1,1,1)\derivative t=\frac{4}{3}$}
+\item{$w=\int_0^1(t^2-t^2,\frac{1}{2}t(t+1),1)\circ(1,2t,t+\frac{1}{2})\derivative t$$=\left.\frac{1}{4}t^4+\frac{1}{3}t^3+\frac{1}{2}t^2+\frac{1}{2}t\right|_0^1=\frac{19}{12}$}
+\end{enumerate}
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Check whether Conservative}
+\begin{block}{Question}
+Check whether the following force fields are conservative. Find the corresponding potential energy for those that are.
+\begin{enumerate}
+\item{$\mathbf{F}(\mathbf{r})=(-y^2z-3y,-xz^2+4yz-3x,-2xyz+2y^2+1)$}
+\item{$\mathbf{F}(\mathbf{r})=(x^2+y^2,y^2+z^2,z)$}
+\end{enumerate}
+\end{block}
+\begin{block}{Solution}
+\begin{enumerate}
+\item{$\nabla\times\overline{F}=((-2xz+4y)-(-2xz+4y),(-y^2)-(-2yz),(-z^2-3)-(-2yz-3))$ not conservative.}
+\item{$\nabla\times\overline{F}=((0)-(2z),(0)-(0),(0)-(2y))$ not conservative.}
+\end{enumerate}
+\end{block}
+\end{frame}
+\begin{frame}\label{centralforcesareconservative}
+\frametitle{Central Forces are Conservative}
+$\mathbf{F(\mathbf{r})}=f(r)\hat{n}_r$ is an expression given in the \alert{spherical} coordinate. \url{http://hyperphysics.phy-astr.gsu.edu/hbase/curl.html}, so
+\[\nabla\times\overline{F}=\left|\begin{matrix}\frac{\hat{n}_r}{r^2\sin\theta}&\frac{\hat{n}_{\theta}}{r\sin\theta}&\frac{\hat{n}_{\phi}}{r}\\\frac{\partial}{\partial r}&\frac{\partial}{\partial \theta}&\frac{\partial}{\partial\phi}\\f(r)&0&0\end{matrix}\right|=0\]
+Otherwise, we need to convert to the \alert{Cartesian Coordinates} and use \alert{chain rule} on $f(r)$.
+\[\nabla\times\overline{F}=\left|\begin{matrix}\hat{n}_x&\hat{n}_y&\hat{n}_z\\\frac{\partial}{\partial x}&\frac{\partial}{\partial y}&\frac{\partial}{\partial z}\\\frac{xf(\sqrt{x^2+y^2+z^2})}{\sqrt{x^2+y^2+z^2}}&\frac{yf(\sqrt{x^2+y^2+z^2})}{\sqrt{x^2+y^2+z^2}}&\frac{zf(\sqrt{x^2+y^2+z^2})}{\sqrt{x^2+y^2+z^2}}\end{matrix}\right|\]
+\end{frame}
+\begin{frame}
+\frametitle{Central Forces are Conservative (Continued)}
+\begin{align*}\left<\nabla\times\overline{F},\hat n_x\right>&=\left[\frac{zf_r(r)\frac{2y}{2\sqrt{x^2+y^2+z^2}}\sqrt{x^2+y^2+z^2}}{(x^2+y^2+z^2)}-\frac{zf(r)\frac{2y}{2\sqrt{x^2+y^2+z^2}}}{(x^2+y^2+z^2)}\right]\\&-\left[\frac{yf_r(r)\frac{2z}{2\sqrt{x^2+y^2+z^2}}\sqrt{x^2+y^2+z^2}}{(x^2+y^2+z^2)}-\frac{yf(r)\frac{2z}{2\sqrt{x^2+y^2+z^2}}}{(x^2+y^2+z^2)}\right]\\
+&=0
+\end{align*}
+where $f_r(r)=\left.\frac{\derivative f(\cdot)}{\derivative r}\right|_{r}$, and the other three components can also be shown as $0$ in an identical manner.
+\end{frame}

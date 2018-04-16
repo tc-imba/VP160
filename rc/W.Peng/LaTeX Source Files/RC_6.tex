@@ -1,0 +1,200 @@
+\subsection{Elements of Lagrangian Mechanics}
+\begin{frame}
+\frametitle{Generalized Coordinates and Velocities; Degrees of Freedom}
+\begin{definition}
+\alert{\textbf{Generalized Coordinates}} are any coordinates describing \alert{position} of a particle (or a system of particles). Usually denoted by $q_1$, $q_2$, $\dots$. Then $\dot{q}_i$ denote \alert{\textbf{generalized velocities}}.
+\end{definition}
+\begin{definition}
+Number of \alert{\textbf{degrees of freedom}} of a particle (or a system of particles):\\the minimum number of \alert{independent} generalized coordinates needed to \alert{uniquely} describe position of a particle (or a system of particles). Usually denoted by $f$.
+\end{definition}
+\end{frame}
+\begin{frame}
+\frametitle{Example for Generalized Coordinates and DoF}
+
+A uniform disk with \alert{radius} $R$ is rolling without sliding along the $x$ axis. A uniform thin stick with \alert{length} $2l$ stays in contact with the disk without sliding. One end of the stick is sliding along the $x$ axis. When the system is in motion, the disk and the stick stay in the same vertical plane. Choose appropriate coordinates, write down the constraint relations, and state the number of degree of freedom of this system.
+\begin{figure}[H]
+\centering
+\includegraphics[width=6cm]{RC6ExGeneralizedCoordinates.png}
+\end{figure}
+
+\end{frame}
+\begin{frame}
+Use $(x_1,y_1)$ to express the position of the \alert{center of mass} of the stick, the angle $\theta_1$ the stick forms with the $x$ axis to express the inclination of the stick, $x_2$ to express the position of the \alert{center of mass} of the disk,and $s$ to express the distance from the tangential point of the stick and the disk and the center of mass on the stick.
+\[y_1=l\sin\theta_1\]
+\[\dot x_2-R\dot\theta_2=0\text{ due to pure rolling}\implies x_2-R\theta_2=C\]
+Since there is no sliding between the stick and the disk,
+\[\dot x_1 \hat n_x+\dot y_1\hat n_y+\dot\theta_1\hat n_z\times s(\cos\theta_1\hat n_x+\sin\theta_1\hat n_y)\]\[=\dot x_2\hat n_x-\dot\theta_2\hat n_z\times R(-\sin\theta_1\hat n_x+\cos\theta_1\hat n_y)\]
+so $\dot x_1-s\dot\theta_1\sin\theta_1=\dot x_2+R\dot\theta_2\cos\theta_1$ and $\dot y_1+s\dot\theta_1\cos\theta_1=R\dot\theta_2\sin\theta_1$\\
+Geometrically, $x_2-x_1+l\cos\theta_1=l+s$, so there are only three independent generalized coordinates.
+\end{frame}
+\begin{frame}
+\frametitle{Expressing $K$ Using Generalized Coordinates}
+A particle with mass $m$ is moving on a plane. Use $r$ and $\sin\varphi$ instead of the polar coordinates $r$ and $\varphi$ to express the \alert{kinetic energy} of this particle.\\
+$x=r\cos\varphi$, $y=r\sin\varphi$. Use $r$ and $q=\sin\varphi$ as generalized coordinates.
+$x=r\cos\varphi=r\sqrt{1-q^2}$, $y=r\sin\varphi=rq$, so $\dot x=\dot r\sqrt{1-q^2}-\frac{rq\dot q}{\sqrt{1-q^2}}$, and $\dot y=\dot r q+r\dot q$.
+\[K=\frac{1}{2}m(\dot{x}^{2}+\dot{y}^2)=\frac{1}{2}m(\dot{r}^2+\frac{r^2\dot{q}^2}{1-q^2})\]
+\end{frame}
+\begin{frame}
+\frametitle{Lagrangian, Hamilton's Action, Hamilton's Principle}
+\begin{definition}
+\textbf{\alert{Lagrangian}} $L:=K-U$\\
+For any \alert{trajectory} $\overline{q}=\overline{q}(t)=(q_1(t),q_2(t),\dots,q_f(t))$ we can define \alert{\textbf{Hamilton's Action}}
+\[S:=S[\overline{q}]=\int_{t_{A}}^{t_{B}}L(\overline{q},\dot{\overline{q}},t)\derivative t\]
+\end{definition}
+\textbf{\alert{Hamilton's Principle}}
+The real trajectory \alert{extremizes} Hamilton's action. $\delta S=0$. Similar to \alert{chain rule} in \alert{ordinary differentiation}, (Noticing that variation of trajectory is \alert{independent} of time)
+\[\delta\int_{t_A}^{t_B}L(\overline{q},\dot{\overline{q}},t)\derivative t=\int_{t_A}^{t_B}\delta L(\overline{q},\dot{\overline{q}},t)\derivative t=\int_{t_A}^{t_B}\left(\sum_{i=1}^{f}\frac{\partial L}{\partial q_i}\delta q_i+\sum_{i=1}^{f}\frac{\partial L}{\partial \dot q_i}\delta \dot q_i\right)\derivative t\]
+\end{frame}
+\begin{frame}
+\frametitle{Euler-Lagrange Equations}
+The $f$ equations
+\[\frac{\derivative}{\derivative t}\left(\frac{\partial L}{\partial\dot q_i}\right)-\frac{\partial L}{\partial q_i}=0\]
+are called the \alert{\textbf{Euler-Lagrange Equations}}
+\end{frame}
+\begin{frame}\label{rc6solutionnoninertialfor}
+\frametitle{Mass, Rope and Cylinder}
+A particle with mass $m$ is tied to the \alert{edge} of a \alert{fixed} cylinder with radius $R$ via a \alert{weightless, non-elastic} rope. Initially, the rope is winded on the cylinder tightly where the particle is in contact with the cylinder.  Now we give the particle an initial \alert{radial} velocity $v_0$, and the particle is constrained on a \alert{smooth horizontal} surface. Find the relation of length $l$ of the rope that is \alert{not} winded on the cylinder with time $t$.\\
+As was promised on Slide~\ref{rc4psdeudoforces}, a comparison is made in this exercise.
+\end{frame}
+\begin{frame}
+\frametitle{Solution using a Non Inertial FoR}
+Recall that the acceleration in Cylindrical coordinates is given by
+\[\overline{a}=(\ddot\rho-\rho\dot\varphi^2)\hat n_\rho+(\rho\ddot\varphi+2\dot\rho\dot\varphi)\hat n_\varphi+\ddot z\hat n_z\]
+and that the acceleration in Non-inertial FoR is given by
+\[m\overline{a'}=\overline{F}-m\overline{a}_{O'}-m\frac{\derivative\overline{\omega}}{\derivative t}\times\overline{r'}-2m(\overline{\omega}\times\overline{v'})-m\overline{\omega}\times(\overline{\omega}\times\overline{r'})\]
+Consider the non inertial FoR: origin $O'$ is the intersection of  straight rope and winded rope, and $O'Y'$ is along the straight rope. $\hat{n}_{x'}=\hat{n}_r$, $\hat{n}_{y'}=\hat{n}_{\varphi}$, and $\hat{n}_{z'}=\hat{n}_{z}$ The position of the particle in this non-inertial FoR is $y'=-l$. Geometrically, $l=R\varphi$, so $\dot l=R\dot\varphi$, and $\ddot l=R\ddot \varphi$. Furthermore, $m\overline{a'}=m\ddot l(-\hat n_{y'})$, $\overline F=T\hat{n}_{y'}$, \[-m\overline{a}_{O'}=-m[\alert{(-R\dot\varphi ^2)}\hat n_r+(R\ddot \varphi)\hat n_\varphi]\]
+\end{frame}
+\begin{frame}
+$-m\frac{\derivative\overline{\omega}}{\derivative t}\times\overline{r'}=-m\ddot\varphi\hat n_z\times (-l\hat n_{y'})=m\ddot\varphi l\hat n_z\times\hat n_{y'}=\alert{-m\ddot\varphi l}\hat n_{x'}$
+\includegraphics[width=6cm]{RC6LIC.JPG}\\
+$-2m(\overline{\omega}\times\overline{v'})=-2m(\dot\varphi\hat n_z\times (-\dot l\hat n_y'))=\alert{-2m\dot\varphi\dot l}\hat n_{x'}$\\
+$-m\overline{\omega}\times(\overline\omega\times\overline{r'})=-m(\dot\varphi\hat n_z)\times(\dot\varphi\hat n_z\times (-l)\hat n_{y'})=-m(\dot\varphi\hat n_z)\times(\dot\varphi l\hat n_x')=-m\dot\varphi ^2l\hat n_{y'}$
+Now look at the \alert{$x'$} direction ($\hat n_r$ and $\hat n_{x'}$):
+\[\alert{mR\dot\varphi^2-m\ddot\varphi l-2m\dot\varphi\dot l}=0\implies \dot {l}^2+l\ddot {l}=0\]
+Using $\ddot l=\frac{\derivative \dot l}{\derivative l}\dot l$ (by chain rule), we get $\dot l+l\frac{\derivative\dot l}{\derivative l}=0$, $\dot l\derivative l+l\derivative\dot l=0$, so $l\dot l=C$.
+\end{frame}
+\begin{frame}
+To find $l\dot l=C$ \alert{at $t=0$}, we need to use $\dot l=R\dot\varphi$. $l\dot l=lR\dot\varphi=R\alert{l\dot\varphi}$. Now $\overline{v}=\overline{v}_{O'}+\overline{v'}+(\overline{\omega}\times\overline{r'})$. At $t=0$, $\overline{v}=v_0\hat n_{r}$ is perpendicular to $\hat n_{y'}$, and $\overline{\omega}\times\overline{r'}=\dot\varphi\hat n_z\times y'\hat n_{y'}=\dot\varphi (-l)(-\hat n_{x'})$ is also perpendicular to $\hat n_{y'}$. Besides, $\overline{v'}$ is along $\hat n_y'$ because our choice of the non-inertial FoR ensures that the particle is always on the $O'Y'$ axis. Furthermore, $O'$ slides on the edge of the cylinder, so $\overline{v}_{O'}$ is also along $\hat n_{y'}$, so $\overline{v'}+\overline{v}_{O'}=0$, and $\overline{v}=\overline{\omega}\times\overline{r'}$. \alert{$v_0=l\dot\varphi$}. Furthermore, $\overline{v}_{O'}=R\dot\varphi\hat{n}_{\varphi}$ by the velocity in the polar coordinates, so $\overline{v'}=-R\dot\varphi\hat n_{\varphi}$. Therefore, $C=\left.l\dot l\right|_{t=0}=Rv_0$. $l\dot l=Rv_0$, so $l\derivative l=Rv_0\derivative t$, $\frac{1}{2}l^2=Rv_0 t$, $l=\sqrt{2Rv_0 t}$.
+\end{frame}
+\begin{frame}
+\frametitle{Solution Using Lagrangian Mechanics}Use the length $l$ of the straight component of the rope as the generalized coordinate. $L=K-U=\frac{1}{2}mv^2$. $v$ consists of two components: $v_\varphi$ (along the straight rope) and $v_r$ (perpendicular to the rope). $v_\varphi=R\dot\varphi-\dot l=0$, and $v_r=l\dot\varphi=\frac{l\dot l}{R}$. $L=\frac{1}{2}ml^2\dot{l}^2/R^2$.
+\[\frac{\partial L}{\partial \dot{l}}=\frac{ml^2\dot l}{R^2}\quad \frac{\derivative}{\derivative t}\frac{\partial L}{\partial \dot{l}}=\frac{2ml\dot{l}^2}{R^2}+\frac{ml^2\ddot l}{R^2}\]
+\[\frac{\partial L}{\partial l}=\frac{m\dot{l}^2l}{R^2}\]
+so by the \alert{Euler Lagrange Equations}, $\frac{ml\dot{l}^2}{R^2}+\frac{ml^2\ddot l}{R^2}=0$, $\dot{l}^2+l\ddot{l}=0$.
+\end{frame}
+\subsection{Momentum}
+\begin{frame}
+\frametitle{Momentum}
+\begin{definition}
+\textbf{\alert{Momentum}} $\overline{P}=m\overline{v}$\\
+Newton's second law in terms of linear momentum: $\overline F=\frac{\derivative\overline{P}}{\derivative t}$
+\end{definition}
+\begin{block}{Conservation of Momentum}
+If the sum of all \alert{external} forces on the \alert{system} is equal to zero, then the total momentum of the system is constant.\\
+The \alert{total} momentum of a system can only be changed by \alert{external} forces.
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Collisions}
+Two objects interact (directly or non-directly) over a finite time interval.
+\begin{block}{Elastic}
+\alert{Internal} forces involved are \alert{potential}, hence mechanical energy is conserved. Approach speed is equal to departure speed.
+\end{block}
+\begin{block}{Inelastic}
+\alert{Internal} forces are \alert{non-conservative}, so mechanical energy is not conserved. Departure speed is zero.
+\end{block}
+In \alert{both} cases, the total \alert{momentum} is conserved.
+\end{frame}
+\begin{frame}
+\frametitle{Center of Mass}
+Discrete distributions of mass $\overline{r}_{cm}=\frac{\sum_{i=1}^{N}m_i\overline{r}_i}{\sum_{i=1}^{N}m_i}$\\
+Continuous distributions of mass \\$x_{cm}=\frac{\int_{\Omega}x\derivative m}{\int_{\Omega}\derivative m}$ $y_{cm}=\frac{\int_{\Omega}y\derivative m}{\int_{\Omega}\derivative m}$ $z_{cm}=\frac{\int_{\Omega}z\derivative m}{\int_{\Omega}\derivative m}$\\
+The total momentum of the system is equal to the momentum of a hypothetical particle of mass $M$ moving with velocity $\overline{v}_{cm}$
+\[M\overline{v}_{cm}=\sum_{i=1}^{N}\overline{P_i}=\overline P\]
+This property of the center of mass motivates a new Frame of Reference: the center-of-mass Frame of Reference.
+\end{frame}
+\begin{frame}
+\frametitle{Rocket Propulsion}
+\includegraphics[width=8cm]{RC6RocketPropulsion.png} ($u$, $\frac{\derivative m}{\derivative t}$ const.)\\
+By the conservation of momentum in the immobile frame of reference,
+\[mv=(m+\derivative m)(v+\derivative v)-\derivative m (v-u)\]
+\[mv=mv+v\derivative m+m\derivative v-v\derivative m+u\derivative m\]
+\[0=m\derivative v+u\derivative m\implies\derivative v=-\frac{u\derivative m}{m}\implies v(t)-v(0)=-u\ln\left(\frac{m(t)}{m(0)}\right)\]
+\end{frame}
+\subsection{Center-of-Mass FoR}
+\begin{frame}\label{CoMFoRKineticEnergy}
+\frametitle{Center-of-Mass FoR}
+It is often convenient to consider impacts in a \alert{translational} FoR whose origin is attached to the \alert{center of mass} of the system. The kinetic energy of the system can be decomposed into the \alert{translational kinetic energy} of the \alert{center of mass} and the kinetic energy of the mass in the system with respect to the center of mass.
+\begin{proof}
+$K=\sum_{i=1}^{N}\frac{1}{2}m_i v_i^2=\sum_{i=1}^{N}\frac{1}{2}m_i(\overline{v}_c+\overline{v}_{i,c})^2=\sum_{i=1}^{N}\frac{1}{2}m_i v_c^2+\sum_{i=1}^{N}\frac{1}{2}m_iv_{i,c}^2+\sum_{i=1}^N m_i\overline v_c\circ \overline v_{i,c}=\underbrace{\frac{1}{2}Mv_c^2}_{\text{K CoM}}+\underbrace{\sum_{i=1}^{N}\frac{1}{2}m_i v_{i,c}^2}_{\text{K w.r.t. CoM}}+\underbrace{\overline{v_c}\circ\sum_{i=1}^{N}m_{i}\overline{v}_{i,c}}_{\text{Zero}}$
+\end{proof}
+\end{frame}
+\subsection{Discussion}
+\subsection{Exercises}
+\begin{frame}
+\frametitle{Particle down a Wedge}
+\begin{block}{Question}
+A point particle of mass $m$ moves without friction down a wedge of mass $M$ that is free to slide on a \alert{frictionless} table. The wedge is inclinded at the angle $\alpha$ to the horizontal. How many degrees of freedom does the particle have here? Identify the generalized coordinates here.
+\end{block}
+\begin{block}{Solution}
+We need two independent generalized coordinates:\begin{enumerate}
+\item Position of the tip of the edge
+\item Height of the particle
+\end{enumerate}
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Simple Pendulum on a Rim}
+A simple pendulum of length $b$ and mass $m$ moves on a massless rim of radius $a$ rotating with constant angular velocity $\omega$. How many degrees of freedom do we have here? Find the Lagrangian.
+\includegraphics[width=4cm]{RC6_PendulumOnRim.png}
+\includegraphics[width=8cm]{RC6PendulumOnAWheel_Kinematic.JPG}
+\end{frame}
+\begin{frame}
+\frametitle{Simple Pendulum on a Rim}
+There is only one degree of freedom $\theta$ for this particle on the end of the simple pendulum. \[U=mg(a\sin(\omega t)-b\cos\theta)\] \[K=\frac{1}{2}m[(\dot\theta b)^2-2\dot\theta b\omega a\sin(\omega t-\theta)+(\omega a)^2]\]
+Now $L=K-U$, so $\frac{\partial L}{\partial\theta}=m\dot\theta b\omega a\cos(\omega t-\theta)-mgb\sin\theta$, $\frac{\partial L}{\partial\dot\theta}=m\dot\theta b^2-mb\omega a\sin(\omega t-\theta)$, so $\frac{\derivative}{\derivative t}\left(\frac{\partial L}{\partial\dot\theta}\right)=m\ddot\theta b^2-mb\omega a\cos(\omega t-\theta)(\omega-\dot\theta)$ The implicit relation is given by
+\[\frac{\derivative}{\derivative t}\left(\frac{\partial L}{\partial \dot\theta}\right)-\frac{\partial L}{\partial \theta}=0\]
+\end{frame}
+\begin{frame}
+\frametitle{Particle on the Surface of a Sphere}
+\begin{block}{Question}
+Find the equations of motion of a particle of mass $m$ constrained to move on the surface of a sphere, acted upon a conservative force $\mathbf{F}=F_0\hat n_\theta$, with $F_0$ a constant.
+\end{block}
+\begin{block}{Solution}
+On this particular sphere, we are able to define potential for this force $\mathbf{F}$ (similar to the proof of central force). Now in the spherical coordinates, $\nabla U=\frac{\partial U}{\partial r}\hat n_r+\frac{1}{r}\frac{\partial U}{\partial \theta}\hat n_\theta+\frac{1}{r\sin\theta}\frac{\partial U}{\partial\varphi}\hat n_\varphi$, so $U=-r\int F_0\derivative\theta=-rF_0\theta+C$. Furthermore, $K=\frac{1}{2}m[(r\dot\theta)^2+(r\sin\theta\dot\varphi)^2]$, so the Lagrangian \[L=K-U=\frac{1}{2}m[(r\dot\theta)^2+(r\sin\theta\dot\varphi)^2]+rF_0\theta+C\]
+\end{block}
+\end{frame}
+\begin{frame}
+For the general coordinate $\varphi$,
+\[\frac{\partial L}{\partial\varphi}=0\quad\frac{\partial L}{\partial\dot\varphi}=m(r\sin\theta\dot\varphi)r\sin\theta=mr^2\sin^2\theta\dot\varphi\]\[\frac{\derivative}{\derivative t}\left(\frac{\partial L}{\partial\dot\varphi}\right)=mr^2[2\dot\varphi\sin\theta\cos\theta\dot\theta+\sin^2\theta\ddot\varphi)]\overset{!}{=}0\]
+For the general coordinate $\theta$,
+\[\frac{\partial L}{\partial\theta}=rF_0\quad\frac{\partial L}{\partial\dot\theta}=mr^2\dot\theta\quad \frac{\derivative}{\derivative t}\left(\frac{\partial L}{\partial\dot\varphi}\right)=mr^2\ddot\theta\]so \[mr^2\ddot\theta-rF_0=0\quad\ddot\theta=\frac{F_0}{mr}\]
+The conclusion is that $\varphi=0$ and $\theta$ satisfies $\ddot\theta=\frac{F_0}{mr}$
+\end{frame}
+\begin{frame}
+\frametitle{Double Pendulum}
+The generalized coordinates are $\theta_1$ and $\theta_2$. $U=-m_1gl_1\cos\theta_1-m_2g(l_2\cos\theta_2+l_1\cos\theta_1)$, $K=\frac{1}{2}m_1v_1^2+\frac{1}{2}m_2 v_2^2$
+\begin{multicols}{2} where $v_1=l_1\dot\theta_1$, $v_2^2=v_{2,\tau}^2+v_{2,n}^2$ $v_{2,n}=l_1\dot\theta_1\cos(\theta_1+\frac{\pi}{2}-\theta_2)$, and $v_{2,\tau}=l_1\dot\theta_1\sin(\theta_1+\frac{\pi}{2}-\theta_2)+l_2\dot\theta_2$.
+Hence $L=K-U$, and the calculations can be done.
+\includegraphics[height=6cm]{RC6DoublePendulumn.JPG}
+\end{multicols}
+\end{frame}
+\begin{frame}
+\frametitle{Block Mass Oscillation After Impact with Suspended Scale}
+\begin{block}{Question}
+A block with mass $m_1$ falls down from height $h$ on a horizontal plane with mass $m_2$ suspended on a spring with spring constant $k$, and \alert{remains} on the plane. Find the \alert{amplitude} of resulting oscillations.
+\end{block}
+\begin{block}{Solution}
+Upon the \alert{non elastic} impact, the speed $v_0$ of the two masses become the speed of their center of mass right before impact. $v_0=\frac{\sqrt{2gh}m_1}{m_1+m_2}$. Be aware that when the two masses come together, the \alert{equilibrium} position changes. Initial displacement from equilibrium $x_0=\frac{m_1 g}{k}$, so the \alert{amplitude} of resulting oscillation is
+$A=\sqrt{x_0^2+\left(\frac{v_0}{\omega}\right)^2}=\sqrt{\left(\frac{m_1 g}{k}\right)^2+\left(\frac{\sqrt{2gh}m_1}{m_1+m_2}\sqrt{\frac{m_1+m_2}{k}}\right)^2}$
+\end{block}
+\end{frame}
+\begin{frame}\label{RC6slide:excenterofomass}
+\frametitle{Find the Center of Mass}
+\begin{block}{Question}
+Find the center of mass of a non-uniform cylinder with the $z$ axis as the axis of symmetry and $\rho (\mathbf{r})=\alpha z^2$
+\end{block}
+\begin{block}{Solution}
+Due to symmetry, $x_{CoM}=y_{CoM}=0$. Now $z_{CoM}=\frac{\int_0^H (z) (\alpha z^2) \pi R^2 \derivative z}{\int_0^H(\alpha z^2) \pi R^2 \derivative z}=\frac{3}{4}H$
+\end{block}
+\end{frame}

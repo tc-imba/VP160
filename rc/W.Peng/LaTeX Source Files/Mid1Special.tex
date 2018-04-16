@@ -1,0 +1,129 @@
+\documentclass{beamer}
+\usepackage{bbm,color,xcolor,times,graphicx,graphics,fancyhdr,listings,subfigure,lastpage,setspace,algorithm2e,mathtools,amsmath,amsfonts,float,animate,multicol}
+\title{VP160 Honors Physics I Midterm 1 Review\\Simple Harmonic Oscillation}
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+\author{W.Peng}
+\institute{UM-SJTU JI}
+\date{Summer 2016}
+\subject{Physics}
+\begin{document}
+\newcommand{\unit}[1]{\text{ }\mathrm{#1}}
+\newcommand{\derivative}{\mathrm{d}}
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}
+\frametitle{Solutions to the Mathematical Problem}
+To identify a motion as a \alert{simple harmonic oscillation}, the goal is to conclude that the equation of motion is
+\[\frac{\derivative^2 x}{\derivative t^2}+\frac{k}{m}x=0\]
+The general solution is \[x(t)=A\cos(\omega_0 t+\varphi)\]
+where $A$ is the amplitude, $\omega_0$ is the natural angular frequency, and $\varphi$ is the initial phase. $\omega_0=\sqrt{\frac{k}{m}}$. Period $T=\frac{2\pi}{\omega_0}$
+\[v(t)=-A\omega_0\sin(\omega_0 t+\varphi)\quad a(t)=-A\omega_0^2\cos(\omega_0 t+\varphi)\]
+It is useful to notice that \[v^2+(\omega_0 x)^2=(\omega_0 A)^2\]
+\end{frame}
+\begin{frame}
+\frametitle{Analogy to a Uniform Circular Motion}
+Now consider a tray with mass $M$ and a ball with mass $m$. A spring with spring constant $k$ is attached to the ground on one end. Now the ball is placed in the tray, and the tray is attached to the spring. Suppose the tray is pushed downwards by $A$ from equilibrium ($A>\frac{(M+m)g}{k}$) and is released from rest. Find the \alert{position} at which the ball is about to leave the tray, the \alert{time} it takes for the tray and the ball to reach this position, and the \alert{velocity} of the ball at that position.\\
+\begin{block}{Solution}
+The ball will leave the tray when the spring reaches its \alert{original length} because the tray can only exert a push on the ball. When the spring is extended, the spring will be exerting pull on the tray, causing its acceleration to be greater than \alert{acceleration due to gravity}, greater than the maximal downward acceleration the ball can have. Therefore, the displacement from equilibrium is
+\[s=\frac{(M+m)g}{k}\]
+\end{block}
+\end{frame}
+\begin{frame}
+The time it takes the tray to travel to that position can be found by finding the \alert{phase} the circular motion has traversed. Before the ball leaves the tray, $\omega_0=\sqrt{\frac{M+m}{k}}$
+\[x(t)=A\cos(\omega_0 t-\pi)\]
+Therefore, at that position, the phase is $\theta=-\arccos\frac{s}{A}$, so the time $t$ it takes satisfies \[\omega_0 t=\theta-\varphi=\pi-\arccos\frac{s}{A}=\pi-\arccos\frac{(M+m)g}{kA}\]
+Finally, the velocity $v_t$ at that position satisfies
+\[v_t^2+(\omega_0 s)^2=(\omega_0 A)^2\]
+\[v_t=\sqrt{\frac{M+m}{k}\left[A^2-\left(\frac{(M+m)g}{k}\right)^2\right]}\]
+\end{frame}
+\begin{frame}
+\frametitle{Series Expansion}
+There are cases where the oscillation does not have a linear restoring force, but when the amplitude is small, the oscillation can be \alert{approximated} as a harmonic oscillation. To do so, it is sometimes useful to know the series expansion of $f$ around $x_0$: $f(x)=\sum_{k=0}^{\infty}a_{k}(x-x_0)^k$
+\[f(x)=a_0+a_1(x-x_0)+a_2(x-x_0)^2+a_3(x-x_0)^3+\dots\]
+\[f'(x)=a_1+2a_2(x-x_0)+3a_3(x-x_0)^2+4a_4(x-x_0)^3+\dots\]
+\[f''(x)=2a_2+6a_3(x-x_0)+12a_4(x-x_0)^2+20a_5(x-x_0)^3+\dots\]
+Our goal is to determine $a_n$, and in fact we can calculate $a_n$ by \alert{differentiating} both sides $n$ times and \alert{taking the value} at $x_0$.\\
+$f(x_0)=a_0$; $f'(x_0)=a_1$; $f''(x_0)=2a_2$; $f'''(x_0)=6a_3$. In general, \[f^{(n)}(x_0)=\alert{n!}a_n\implies a_n=\frac{f^{(n)}(x_0)}{\alert{n!}}\]
+We keep $F$ to the \alert{linear} term, or $U$ to the \alert{quadratic} term.
+\end{frame}
+\begin{frame}
+\frametitle{Spring Mass System with a Nonlinear Spring}
+Suppose we have a mass spring system with mass $m$ and a nonlinear spring \[F(x)=x^{\alpha}(1-\frac{x}{l_0})^{\beta}\]We would like to put $F$ into a series expansion around $l_0$, i.e., $F(x)=\sum_{k=0}^{\infty}a_k(x-l_0)^k$. Now $a_0=F(l_0)=0$, \[a_1=\left.\frac{\derivative F}{\derivative x}\right|_{x=l_0}=\left.\alpha x^{\alpha-1}(1-\frac{x}{l_0})^\beta+x^\alpha\beta(1-\frac{x}{l_0})^{\beta-1}(-\frac{1}{l_0})\right|_{x=l_0}\]
+we only consider $\beta=1$, in which case $a_1=l_0^\alpha(-\frac{1}{l_0})$, \[F(x)\approx - l_0^{\alpha-1}(x-l_0)\]\[\omega=\sqrt{\frac{l_0^{\alpha-1}}{m}}\]
+\end{frame}
+\begin{frame}
+\frametitle{Oscillation in a Potential Well}
+A mass $M$ is in a potential \alert{well} $V(x)=-kxe^{-ax}$ ($k,a>0$,constants) along the $x$ axis. Find the equilibrium position and the period of oscillation with small amplitude around the equilibrium.\\
+Now $F(x)=-\frac{\derivative V}{\derivative x}=ke^{-ax}+kx(-a)e^{-ax}$, and the equilibrium position is identified at $F(x)=0$, so $x_0=\frac{1}{a}$. Furthermore, $\left.\frac{\derivative F}{\derivative x}\right|_{x=\frac{1}{a}}=\left.k(-a)e^{-ax}-a(ke^{-ax}+kx(-a)e^{-ax})\right|_{x=\frac{1}{a}}=-kae^{-1}-a(ke^{-1}-ke^{-1})=-\frac{ka}{e}$, so
+\[F\approx-\frac{ka}{e}(x-\frac{1}{a})\]
+\[\omega=\sqrt{\frac{ka}{eM}}\]
+\end{frame}
+\begin{frame}
+\frametitle{Oscillation in Center of Mass FoR}
+Suppose mass $m_1$, $m_2$ are placed on a frictionless horizontal surface. They are connected by a spring with constant $k$. Find the angular frequency of oscillation.\\
+Now the center of mass of these two masses is static, so the center-of-mass FoR is an inertial frame of reference. Furthermore, the spring can be seen as two segments, one on the left, connected to $m_1$, with spring constant $k_1=\frac{m_1+m_2}{m_2}k$, and the other segment on the right, connected to $m_2$, with spring constant $k_2=\frac{m_1+m_2}{m_1}k$, so the angular frequency $\omega=\sqrt{\frac{m_1+m_2}{m_1m_2}k}$
+where $\frac{m_1m_2}{m_1+m_2}$ is the \alert{reduced mass} of two bodies.
+\end{frame}
+\begin{frame}
+\frametitle{Reduced Mass of Two Bodies}
+Suppose there are two bodies 1, 2 under mutual interaction $F$. Then the acceleration of 2 is $\overline a_2=\frac{F}{m_2}\hat n_{12}$, and $\overline a_1=\frac{F}{m_1}\hat n_{21}$, so the relative acceleration of 2 to 1 is
+\[\overline a_2-\overline a_1=\hat n_{12}\left(\frac{F}{m_2}+\frac{F}{m_1}\right)=\hat n_{12}\frac{F}{\frac{m_1m_2}{m_1+m_2}}\]
+so it is as if 1 is fixed and 2 has \alert{reduced mass} of $\frac{m_1m_2}{m_1+m_2}$.
+\end{frame}
+\begin{frame}
+\frametitle{Maximum Angular Frequency of Vertical Oscillator}
+Suppose a block is placed on a vertical plane which is attached to a spring in a simple harmonic oscillation with amplitude $A$. What is the maximum angular frequency so that the block is always in contact with the plane?\\
+The maximum acceleration the block can have is $g$. The maximum acceleration of the oscillator is $\omega^2 A$. Therefore, the maximum allowed angular frequency $\omega_{max}=\sqrt{\frac{g}{A}}$.
+\end{frame}
+\begin{frame}
+\frametitle{Oscillation of Liquid}
+\alert{Caution} The normal forces provided by the wall of the tube is unknown. We study the forces \alert{along} the tube.\\
+Find the natural angular frequency of small oscillations in a V-shaped tube of constant cross-sectional area and length of the liquid column $l$. The arms of the tube are inclined at angles $\alpha$ and $\beta$ to the horizontal. Neglect viscosity.\\
+Assume from equilibrium, the liquid flows along the tube by $x$ to the right. This difference in height will result in a difference in pressure which will generate a force along the tube that serves as the restoring force. Assuming the buck density of the liquid is $\rho$, the constant area of a cross section of the tube is $S$, then the pressure difference is
+\[P=-\rho Sxg(\sin\beta+\sin\alpha)\]
+so the restoring force is $F=PS$, and the mass of the liquid is $\rho Sl$, so the angular frequency is $\omega=\sqrt{\frac{g(\sin\beta+\sin\alpha)}{l}}$
+\end{frame}
+\begin{frame}
+\frametitle{Free Fall from a High Altitude}
+\begin{block}{Question}
+A particle falls on the Earth from a \alert{high altitude} $h$. Neglecting air drag, find the time $T$ when it hits the ground and the speed it has at this instant.
+\end{block}
+\begin{block}{Solution}
+$a=\alert{-}GM/x^2$ where $x_{\text{initial}}=h+R$ and $x_{\text{final}}=R$. $(\derivative v/\derivative t)\derivative x=-GM/x^2 \derivative x$ Now using $\derivative x=v\derivative t$, $GM=gR^2$,
+\[v\derivative v=-\frac{gR^2}{x^2}\derivative x\overset{\text{Integrating both sides}}{\implies} \frac{1}{2}v_{\text{final}}^2=\frac{gR^2}{R}-\frac{gR^2}{h+R}\implies \]$v_{\text{final}}=\sqrt{2gR^2\left(\frac{1}{R}-\frac{1}{R+h}\right)}$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Free Fall from a High Altitude (Continued)}
+Now at other altitudes, the speed can be determined in an identical fashion.
+$v=\sqrt{2gR^2\left(\frac{1}{x}-\frac{1}{R+h}\right)}$ Therefore,
+$\derivative t=\frac{-\derivative x}{v}$
+\[
+T=-\int_{R+h}^{R}\frac{\derivative x}{\sqrt{2gR^2\left(\frac{1}{x}-\frac{1}{R+h}\right)}}=\frac{1}{\sqrt{2gR^2}}\int_R^{R+h}\frac{\sqrt{x}\derivative x}{\sqrt{1-\frac{x}{R+h}}}
+\]
+Now setting $s=\sqrt{\frac{x}{R+h}}$, so $x=(s^2)(R+h)$, $\derivative x=2s(R+h)\derivative s$
+\[
+T=\frac{1}{\sqrt{2gR^2}}\int_{\sqrt{\frac{R}{R+h}}}^{1}\frac{s\sqrt{R+h}2s(R+h)\derivative s}{\sqrt{1-s^2}}\]\[=\frac{2(R+h)^{3/2}}{\sqrt{2gR^2}}\int_{\sqrt{\frac{R}{R+h}}}^{1}\frac{s^2\derivative s}{\sqrt{1-s^2}}
+\]
+Now setting $u=\arccos s$, so the interval becomes $(\arccos(\sqrt{R/(R+h)}),0)$
+\end{frame}
+\begin{frame}
+$s=\cos u$, $\derivative s=-\sin u\derivative u$, $\int_{\sqrt{\frac{R}{R+h}}}^{1}\frac{s^2\derivative s}{\sqrt{1-s^2}}=\int_{0}^{\arccos(\sqrt{\frac{R}{(R+h)}})}\frac{\cos^2 u\sin u\derivative u}{\sin u}$
+\begin{align*}
+T&=\frac{2(R+h)^{3/2}}{\sqrt{2gR^2}}\int_{0}^{\arccos(\sqrt{\frac{R}{(R+h)}})}\cos^2 u\derivative u\\
+&=\frac{(R+h)^{3/2}}{\sqrt{2gR^2}}\int_{0}^{\arccos(\sqrt{\frac{R}{(R+h)}})}(\cos (2u)+1)\derivative u\\
+&=\frac{(R+h)^{3/2}}{2\sqrt{2gR^2}}\int_{0}^{2\arccos(\sqrt{\frac{R}{(R+h)}})}(\cos (w)+1)\derivative w\\
+&=\frac{(R+h)^{3/2}}{2\sqrt{2gR^2}}\left[\sin\left(2\arccos(\sqrt{\frac{R}{(R+h)}})\right)+2\arccos(\sqrt{\frac{R}{(R+h)}})\right]\\
+&=\frac{(R+h)^{3/2}}{\sqrt{2gR^2}}\left[\sqrt{\frac{h}{R+h}}\sqrt{\frac{R}{R+h}}+\arccos(\sqrt{\frac{R}{(R+h)}})\right]
+\end{align*}
+where we have exploited the identity $\sin 2\theta=2\sin\theta\cos\theta$.
+\end{frame}
+\begin{frame}
+\frametitle{Critical Damp}
+For a critically damped harmonic oscillator show that the oscillating mass can pass through the equilibrium position at most once, regardless of initial conditions.\\
+The general solution to the critically damped harmonic oscillator is
+\[x(t)=C_1e^{-\frac{b}{2m}t}+C_2te^{-\frac{b}{2m}t}=e^{-\frac{b}{2m}t}(C_1+C_2t)\]
+$e^{-\frac{b}{2m}t}>0$, so there can only be one \emph{zero} at $C_1+C_2t=0$, so the critically damped harmonic oscillator can pass the equilibrium at most once.
+\end{frame}
+\end{document}

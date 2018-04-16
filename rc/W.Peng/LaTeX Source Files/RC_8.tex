@@ -1,0 +1,315 @@
+\subsection{Conditions for Equilibrium}
+\begin{frame}
+\frametitle{Conditions for Equilibrium}
+The two conditions required for the rigid body to be in equilibrium:
+\begin{enumerate}
+\item{Net external force is equal to zero (\alert{translational} motion of the center of mass):\[\mathbf{F}^{ext}=0\]}
+\item{Net external torque is equal to zero (\alert{rotational} motion around the center of mass):\[\mathbf{\tau}^{ext}=0\]}
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{$\overline R=\overline N+\overline f$}
+\begin{multicols}{2}
+\includegraphics[width=0.5\textwidth]{./RC_WK11/11_70.png}\\
+When $f=\mu N$, the direction of the total reactive force $\overline R$ is governed by the coefficient of friction $\mu$. The balance of gravity, tension, and reactive force requires torque $\tau=0$ about any point, so the \alert{lines} of the three forces have to \alert{intersect at the same point}.
+\end{multicols}
+\end{frame}
+\begin{frame}
+\frametitle{Pull Wheel upstairs}
+\begin{multicols}{2}
+\includegraphics[width=0.5\framewidth]{./RC_WK11/11_76.png}\\
+Be aware that as the wheel creeps up the stair, the moment arm of gravity is reducing, and the moment arm of $F$ is increasing. Therefore, the \alert{minimal} constant force of is given by a \alert{balance of torque} initially with respect to the contact point on the stair.
+\end{multicols}
+\end{frame}
+\begin{frame}
+\frametitle{Torque Balance and Force Balance}
+\begin{multicols}{2}
+\includegraphics[width=0.5\framewidth]{./RC_WK11/11_82.png}\\
+(a) \alert{Torque} balance with respect to the hinge.
+(b)	\alert{Force} balance of the pole.
+\end{multicols}
+\end{frame}
+\subsection{Elasticity}
+\begin{frame}
+\frametitle{Strain, Stress, and Elastic Modulus}
+\alert{Stress} is the force per unit area.\\
+\alert{Strain} is the fractional deformation due to the stress.\\
+\alert{Elastic modulus} is stress divided by strain.\\
+\alert{Hooke's Law:} Stress and strain are proportional (small deformation).
+\[\frac{\text{stress}}{\text{strain}}=\text{elastic modulus}\]
+\end{frame}
+\begin{frame}
+\frametitle{Tensile and Compressive Stress and Strain}
+\begin{figure}
+\includegraphics[width=0.5\framewidth]{rc8_tensile.png}
+\includegraphics[width=0.5\framewidth]{rc8_compressive.png}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Young's Modulus}
+Young's modulus $Y$ is tensile \alert{stress} divided by tensile \alert{strain}:
+\[Y=\frac{\frac{F_{\perp}}{A}}{\frac{\Delta l}{l_0}}\]
+\end{frame}
+\begin{frame}
+\frametitle{Bulk Stress and Strain}
+\begin{multicols}{2}
+\includegraphics[width=0.4\framewidth]{rc8_bulk.png}\\
+\alert{Pressure} in a fluid is force per unit area $p=\frac{F_{\perp}}{A}$.\\
+\alert{Bulk stress} is pressure change $\Delta p$ upon volume change from $V_0$ to $V=V_0+\Delta V$\\
+\alert{Bulk strain} is fractional volume change $\frac{\Delta V}{V_0}$\\
+\alert{Bulk modulus} is bulk stress divided by bulk strain: $B=-\frac{\Delta p}{\Delta V/V_0}$
+\end{multicols}
+\end{frame}
+\begin{frame}
+\frametitle{Shear stress and strain}
+\begin{multicols}{2}
+\includegraphics[width=0.4\framewidth]{rc8_shear.png}\\
+\alert{Shear stress} is $\frac{F_{\parallel}}{A}$\\
+\alert{Shear strain} is $\frac{x}{h}$\\
+\alert{Shear modulus} is shear stress divided by shear strain: $S=\frac{\frac{F_{\parallel}}{A}}{\frac{x}{h}}$
+\end{multicols}
+\end{frame}
+\begin{frame}
+\frametitle{Elasticity and Plasticity}
+\includegraphics[width=\framewidth]{rc8_plasticity.png}\\
+Hooke's law applies to point $a$. Beyond elastic limit, the material demonstrates plastic behavior. You may try this with the spring in your used pens.
+\end{frame}
+\subsection{Fluid Statics}
+\begin{frame}
+\frametitle{Pressure in a Fluid}
+For a fluid at rest,
+\[p=\frac{\Delta F_\perp}{\Delta A}\]
+Pressure at \alert{depth} $h$:
+\[p=p_0+\rho g h\]
+\begin{block}{Pascal's law}
+Pressure applied to an \alert{enclosed incompressible fluid} is \alert{transmitted} undiminished to every portion of the liquid and the walls of the container.\\
+Cause: work done on the fluid is zero.
+\end{block}
+Absolute pressure: total pressure $p=p_{atm}+p_{gauge}$. (e.g., gauge pressure at depth $p_{gauge}=p-p_0=\rho g h$)
+\end{frame}
+\begin{frame}
+\frametitle{Buoyancy and Archimedes's law}
+When a body is \alert{immersed} in a fluid, the fluid exerts an upward force on the body equal to the weight of the fluid \alert{displaced} by the body.\\
+Justification: the liquid was originally there in static, so the buayancy force has to \alert{balance} the weight of that portion of liquid (replaced by the body).
+\end{frame}
+\begin{frame}
+\frametitle{Block in Fluids}
+\begin{multicols}{2}
+\includegraphics[width=0.5\framewidth]{./RC_WK12/12_31.png}\\
+(a) $p_{gauge,upper}=\rho_{oil}gh_{upper}$\\
+(b) $p_{gauge,lower}=\rho_{oil}gh_{oil}+\rho_{water}gh_{lower}$\\
+(c) $mg=(p_{gauge,lower}-p_{gauge,upper})S$; $m=\rho_{wood}V_{block}$
+\end{multicols}
+\end{frame}
+\subsection{Fluid in Motion}
+\begin{frame}
+\frametitle{Ideal Fluid, Flow lines, Stream lines}
+\begin{block}{Ideal Fluid}
+Fluid \alert{density} does not change, experiences no internal \alert{friction} (incompressible and no viscosity).
+\end{block}
+\begin{block}{Flow Lines}
+Trajectories of \alert{individual particles} in a fluid.
+\end{block}
+\begin{block}{Stream Lines}
+Family of curves that are instantaneously \alert{tangential} to the \alert{velocity vector field}.
+\end{block}
+\begin{block}{Steady Flow}
+The Flow lines coincide the stream lines.
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Continuity Equation}
+\begin{block}{Flow Tube}
+A tube formed by flow lines passing through the edge of an imaginary element of area. In steady flow
+\begin{enumerate}
+\item No fluid can \alert{cross} the side walls of a flow tube
+\item fluids in different flow tubes cannot mix
+\end{enumerate}
+\end{block}
+\begin{block}{Continuity Equation}
+For homogeneous incompressible fluid:
+\[A_1v_1=A_2v_2\]
+\end{block}
+\begin{block}{Bernoulli's Equation}
+\[p+\frac{1}{2}\rho v^2+\rho gy=const\]
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Bernoulli's Equation}
+\begin{multicols}{2}
+\includegraphics[width=0.2\framewidth]{RC_8_BernoullisEquation.png}\\
+Work done by pressure difference: $(p_1-p_2)\derivative V$\\
+Work done by gravity: $\rho \derivative V g (y_1-y_2)$\\
+Change in Kinetic energy: $\frac{1}{2}\rho\derivative V (v_2^2-v_1^2)$
+\end{multicols}
+Work-Kinetic energy theorem:
+\[\frac{1}{2}\rho\derivative V (v_2^2-v_1^2)=(p_1-p_2)\derivative V+\rho \derivative V g (y_1-y_2)\]
+Bernoulli's Equation:
+\[\frac{1}{2}\rho v^2+p+\rho g y=const\]
+\end{frame}
+\begin{frame}
+\frametitle{Continuity Equation and Bernoulli's Equation}
+\begin{block}{Question}
+At one point in a pipeline the water's speed is $3.00$ m/s and the gauge pressure is $5.00\times 10^4$ Pa. Find the gauge pressure at a second point in the line, $11.0$ m lower than the first, if the pipe diameter at the second point is twice that at the first.
+\end{block}
+\begin{block}{Solution}
+$v_1A_1=v_2A_2$ due to the continuity equation.
+The speed $v_1=3.00\unit{m/s}$, and down there, speed is $v_2=0.75\unit{m/s}$.
+\[\frac{1}{2}\rho v_1^2+p_1+\rho g h_1=\frac{1}{2}\rho v_2^2+p_2+\rho g h_2\]
+$h_1-h_2=11\unit{m}$, $p_1=5.00\times 10^4\unit{Pa}$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Water out of an Open Tank}
+\begin{multicols}{2}
+\includegraphics[width=0.5\framewidth]{./RC_WK12/12_89.png}\\
+(a) $v=\sqrt{2gh}$ $R=\sqrt{2gh}\sqrt{2(H-h)/g}$\\
+(b) $h^*=H-h$ will give the same range.
+\end{multicols}
+\end{frame}
+\begin{frame}
+\frametitle{Bucket with Hole}
+\begin{block}{Question}
+A cylindrical bucket, open at the top, is $25.0\unit{cm}$ high and $10.0\unit{cm}$ in diameter. A circular hole with a cross-sectional area $1.50\unit{cm^2}$ is cut in the center of the bottom of the bucket. Water flows into the bucket from a tube above it at the rate of $2.40\times 10^{-4}\unit{m^3/s}$. How high will the water in the bucket rise?
+\end{block}
+\begin{block}{Solution}
+At stabilized height, flow out rate is $2.40\times 10^{-4}\unit{m^3/s}$, and flow speed at the top is equal to zero. Hence $h=\frac{v^2}{2g}$, with $v=\frac{2.40\times 10^{-4}}{1.50\times 10^{-4}}\unit{m/s}$.
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Tube with Open Experimental Segment}
+\begin{block}{Question}
+\begin{multicols}{2}
+\includegraphics[width=0.5\framewidth]{./RC_WK12/Fig8_21.png}\\
+The open segment has cross-sectional diameter $d$, and the thick segment (cross-sectional diameter $D$) is connected to an alcohol (density $\rho'$) pressure meter. When ideal incompressible fluid (density $\rho$) flows through, the pressure meter has a reading of height $h$. The atmospheric pressure is $p_0$. Find the speed of the liquid in the open segment.
+\end{multicols}
+\end{block}
+\begin{block}{Solution}
+$p_2=0$, $p_1=\rho'gh$, $v_1D^2=v_2d^2$, $\frac{1}{2}\rho v_1^2+p_1=\frac{1}{2}\rho v_2^2+p_2$.
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Water from Container to Conduit}
+\begin{block}{Question}
+\begin{multicols}{2}
+\includegraphics[width=0.4\framewidth]{./RC_WK12/Fig8_22.png}\\
+Water ($\rho$) flows from a large container to a trumpet-shaped conduit. The cross-sectional area of entrance and exit are $S_1$ and $S_2$, and the conduit has a length of $H$. The atmospheric pressure is $p_0$, and the flow is steady. For what length of $H$ will the pressure of the liquid at the entrance of the conduit be zero?
+\end{multicols}
+\end{block}
+\begin{block}{Solution}
+By equation of continuity, $S_1v_1=S_2v_2$; by Bernoulli's equation,
+\[p_0+\rho g(h+H)=p_0+\frac{1}{2}\rho v_2^2\quad
+p_2+\frac{1}{2}\rho v_2^2=\frac{1}{2}\rho v_1^2+\rho gH\]
+\end{block}
+\end{frame}
+\subsection{Gravitation}
+\begin{frame}
+\frametitle{Newton's Law of Gravitation}
+The particle $m_1$ at $\overline r_1$ exerts gravitation force $\overline F_{12}$ on particle $m_2$ at $\overline r_2$ is 
+\[\overline F_{12}=-G\frac{m_1m_2}{r_{12}^2}\frac{\overline r_{12}}{|\overline r_{12}|}\]
+where $\overline r_{12}=\overline r_1-\overline r_2$. Gravitation force is a  \alert{central} force, so it is \alert{conservative} and conserves \alert{angular momentum}. Conservation of the angular momentum means \alert{planar} motion (e.g. planets). Define gravitation interaction due to $M$ on unit mass as a vector field in space:
+\[\overline E_G=-G\frac{M}{r^2}\frac{\overline r}{|\overline r|}\]
+\end{frame}
+\begin{frame}
+\frametitle{$\nabla\circ \overline E_G$ Due to Point Mass at the Origin}
+For a point mass at the origin, the divergence of $\overline E_G$ everywhere else is zero:
+$\nabla\circ\overline E_G=-GM\nabla\circ\frac{\overline r}{r^3}=-GM\sum_{\alpha=x,y,z}\left(\frac{\partial}{\partial \alpha}\frac{\overline r\circ\hat n_{\alpha}}{r^3}\right)$
+Now $\overline r\circ\hat n_\alpha=\alpha$, so $\frac{\partial}{\partial\alpha}\frac{\alpha}{r^3}=\frac{1}{r^3}+\alpha\left(-\frac{3}{r^4}\right)\frac{2\alpha}{2\sqrt{\sum_{\beta=x,y,z}\beta^2}}=\frac{1}{r^3}-\frac{3\alpha^2}{r^5}$, it follows that $\sum_{\alpha=x,y,z}\frac{\partial}{\partial\alpha}\frac{\alpha}{r^3}=\frac{3}{r^3}-\frac{3\sum_{\alpha=x,y,z}\alpha^2}{r^5}=0$\\
+Now choose a sphere $\Sigma_1$, radius $R$, centered at the origin, so $\int_{\Sigma_{1}}\overline E_G\circ \derivative \overline S=-\frac{GM}{R^2}(4\pi R^2)=-4\pi GM$, and by the theorem of Gauss that $\int_{\Sigma_1}\overline E_G\circ\derivative\overline S=\int_{\Omega_1}(\nabla\circ\overline{E}_G)\derivative^3 r$, ($\Omega_1$ is the region enclosed by surface $\Sigma_1$), so the divergence of $\overline E_G$ at the origin satisfies
+\[\int_{\Omega_1}\left.(\nabla\circ\overline{E}_G)\right|_{r=0}\delta^3(0)\derivative^3 r=-4\pi GM\]
+Now rewrite $M=\int_{\Omega_1}\rho(0)\delta^3(0)\derivative^3 r$ (point mass at the origin), we get $\left(\nabla\circ\overline{E}_G\right)=-4\pi G\rho(0)$.
+\end{frame}
+\begin{frame}
+\frametitle{Gauss' Law for Gravitational Field}
+$\left(\nabla\circ\overline{E}_G\right)=-4\pi\rho(0)$ generalizes to a mass distribution $\rho(\overline r)$ as $\nabla\circ\overline E_G(\overline r)=-4\pi G\rho(\overline r)$ which is the differential form of Gauss' Law for Gravitational Field. Back into the integral form,
+\[\int_{\Sigma_2}\overline E_G\circ\derivative\overline S=\int_{\Omega_2}(\nabla\circ \overline E_G)\derivative^3 r=\int_{\Omega_2}(-4\pi G\rho(\overline r))\derivative^3 r=-4\pi G M_{\Sigma_2}\]where $M_{\Sigma_2}$ is the mass enclosed by surface $\Sigma_2$.
+\end{frame}
+\begin{frame}
+\frametitle{Potential Energy and Potential}
+Potential Energy $U(r)=-G\frac{Mm}{r}+C$ where $C$ depends on the choice of zero potential.
+Gravitational potential (potential energy of unit mass) with $U(\infty)=0$:
+\[V(r)=-G\frac{M}{r}\]
+Note: there is a useful fact about the \alert{gradient} of $\frac{1}{r}$: \[\nabla \frac{1}{r}=\sum_{\alpha=x,y,z}-\frac{1}{r^2}\frac{\partial r}{\partial \alpha}\hat n_\alpha=\sum_{\alpha=x,y,z}-\frac{1}{r^2}\frac{2\alpha}{2\sqrt{\sum_{\beta=x,y,z}\beta^2}}\hat n_\alpha\]
+but $\sum_{\beta=x,y,z}\beta^2=r^2$ and $\sum_{\alpha=x,y,z}\alpha\hat n_\alpha=\overline r$, so
+\[\nabla \frac{1}{r}=-\frac{1}{r^2}\frac{\overline r}{r}\]
+which conforms to $\overline F=-\nabla U$ and $\overline E_G=-\nabla V$
+\end{frame}
+\begin{frame}
+\frametitle{Satellites on Circular Orbits}
+Gravitation force provides centripetal force:
+\[-\frac{GMm}{r^2}\frac{\overline r}{r}=-m\frac{v^2}{r}\hat n_r\]
+\[v=\sqrt{\frac{GM}{r}}\]
+Period on a circular orbit:
+\[T=\frac{2\pi r}{v}=2\pi\frac{r^{3/2}}{\sqrt{GM}}\]
+\end{frame}
+\begin{frame}
+\frametitle{Kepler's Laws}
+\begin{multicols}{2}
+\includegraphics[width=0.4\framewidth]{GeometryOfAnEllipse.png}\\
+\begin{enumerate}
+\item Each planet moves in an elliptical orbit, with the sun at one focus of the \alert{ellipse}.
+\item A line from the sun to a given planet sweeps out equal areas in equal times (constant \alert{aerial velocity} $\overline\sigma=\frac{1}{2}(\overline r\times\overline v)$).
+\item {$\frac{T^2}{a^3}=\frac{4\pi^2}{Gm_s}$}
+\end{enumerate}
+\end{multicols}
+\end{frame}
+\begin{frame}
+\frametitle{Ellipse's $a,b,c$ versus planet's $E$ and $L$}
+Given the \alert{mechanical energy} $E<0$ of the planet and the \alert{angular momentum} $L$ of the planet, we need to find the parameters semi-major axis length $a$, semi-minor axis length $b$, and semi-focal length $c$ of the ellipse ($e=\frac{c}{a}$ is the eccentricity).\\
+When the planet is on one end of the minor axis, $v=\sqrt{\frac{2}{m}\left[E+\frac{GMm}{a}\right]}$. The angular momentum is $L=mvb$, so
+\[\frac{L}{mb}=\sqrt{\frac{2}{m}\left[E+\frac{GMm}{a}\right]}\]
+Then when the planet is at its perihelion or at its aphelion,
+\[\frac{1}{2}mv_p^2=E+\frac{GMm}{a-c}\quad\frac{1}{2}mv_a^2=E+\frac{GMm}{a+c}\implies\]
+$\frac{1}{2}mv_p^2(a-c)^2=E(a-c)^2+GMm(a-c)$\\$\frac{1}{2}mv_a^2(a+c)^2=E(a+c)^2+GMm(a+c)$
+\end{frame}
+\begin{frame}
+$\frac{1}{2}mv_p^2(a-c)^2=E(a-c)^2+GMm(a-c)$\\$\frac{1}{2}mv_a^2(a+c)^2=E(a+c)^2+GMm(a+c)$\\
+Using $(a+c)v_a=(a-c)v_p$ by constant aerial velocity, we subtract one equation from the other and get
+\[E(-4ac)+GMm(-2c)=0\implies E=-\frac{GMm}{2a}\implies a=-\frac{GMm}{2E}\]
+Plugging this back to $\frac{L}{mb}=\sqrt{\frac{2}{m}\left[E+\frac{GMm}{a}\right]}$, we get $b=\sqrt{\frac{L^2}{-2mE}}$. It then follows that $c=\sqrt{a^2-b^2}=\sqrt{\left(\frac{GMm}{2E}\right)^2+\frac{L^2}{2mE}}$
+\end{frame}
+\begin{frame}
+\frametitle{Tunnel through the Earth}
+\begin{block}{Question}
+A shaft is drilled from the surface through a straight tunnel $d$ from the center of the earth. Assume the mass distribution of the earth is uniform, find the time it takes an object that is released from one end of the tunnel to travel to the other end (frictionless).
+\end{block}
+\begin{block}{Solution}
+Suppose the object is $x$ from equilibrium. The net force on the object has a magnitude of $\frac{M\frac{4}{3}\pi (d^2+x^2)^{3/2}}{\frac{4}{3}\pi R^3}\frac{Gmx}{(d^2+x^2)^{3/2}}=\frac{GMmx}{R^3}$, so the motion is simple harmonic.
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{A Little Line Integral}
+\begin{block}{Question}
+A thin, uniform rod has length $L$ and mass $M$. A small uniform sphere of mass $m$ is placed a distance $x$ from one end of the rod, along the axis of the rod.
+\includegraphics[width=0.5\framewidth]{./RC_WK12/13_32.png}\\
+Calculate the gravitational potential energy of the rod-sphere system. Find the force exerted on the sphere by the rod.
+\end{block}
+\begin{block}{Solution}
+$U=\int_{x+L}^{x}-\frac{G\lambda m}{r}\alert{(-\derivative r)}=G\lambda m\ln\left(\frac{x}{x+L}\right)$, $\overline F=-\nabla U=-G\lambda m\left(\frac{1}{x}-\frac{1}{x+L}\right)\hat n_x$
+\end{block}
+\end{frame}
+\subsection{Additional Exercises}
+\begin{frame}
+\frametitle{Halley's Comet}
+Halley's Comet is on an ellipse trajectory around the sun in a counter clockwise motion, whose period is $76.1$ years. In 1986, when it was at its perihelion $P_0$, it was $r_0=0.590\unit{AU}$ from the sun S. Some years later, the comet reached point P on the orbit, and the angle it has traversed is $\theta_p=72.0^\circ$. The following quantities are known: $1\unit{AU}=1.50\times 10^{11}\unit{m}$, gravitational constant $G=6.67\times 10^{-11}\unit{m^3\cdot kg^{-1}\cdot s^{-2}}$, the mass of the sun $m_s=1.99\times 10^{30}\unit{kg}$. Find the distance $r_p$ of P from S and the velocity of the comet at P.\\
+\includegraphics[width=0.4\framewidth]{./RC_WK12/HalleysComet.png}
+\end{frame}
+\begin{frame}
+Kepler's third law:$a=\sqrt[3]{\frac{GT^2m_s}{4\pi^2}}$
+Mechanical energy $E=\frac{1}{2}mv_0^2-\frac{Gm_sm}{r_0}$
+Then using $x=c+r_p\cos\theta_p$ and $y_p=r_p\sin\theta_p$ in $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$, we get
+\[(a^2\sin^2\theta_p+b^2\cos^2\theta_p)r_p^2+2b^2c r_p\cos\theta_p-b^4=0\]
+$r_p=\frac{-b^2c\cos\theta_p+b^2a}{a^2\sin^2\theta_p+b^2\cos^2\theta_p}$
+Plugging in data, $a=2.685\times 10^{12}\unit{m}$, $b=\sqrt{a^2-(a-r_0)^2}=6.837\times 10^{11}\unit{m}$, $c=2.597\times 10^{12}\unit{m}$, so $r_p=1.340\times 10^{11}\unit{m}$\\
+Aerial velocity $\sigma=\frac{1}{2}r_pv_{p,transversal}=\frac{\pi a b}{T}$, so $v_{p,transversal}=\frac{2\pi a b}{r_pT}=3.587\times 10^4\unit{m/s}$
+$v_p=\sqrt{-\frac{Gm_s}{a}+\frac{2Gm_s}{r_p}}=4.395\times 10^4\unit{m/s}$
+Hence $v_{p,radial}=\sqrt{v_{p}^2-v_{p,transversal}^2}=2.540\times 10^4\unit{m/s}$
+$\arctan(v_{p,radial}/v_{p,transversal})=35.3^\circ$, so the velocity has a direction that forms $126.7^\circ$ from $\hat n_x$
+\end{frame}
+\begin{frame}
+\frametitle{Two Rods Static Balance}
+\begin{multicols}{2}
+\includegraphics[width=0.3\framewidth]{./RC_WK12/TwoRods.png}\\
+Two uniform rods AB and CD are placed as are shown in the figure. The vertical wall which B and D are in contact with are smooth, and the horizontal ground which A is in contact with has static coefficient of friction $\mu_A$. The point where AB and CD are in contact has static coefficient of friction $\mu_C$. Both rods have mass $m$ and length $l$. Suppose AB forms $\theta$ with the vertical wall, find the constraint $\alpha$ that CD forms with the wall so that the system is in static balance.
+\end{multicols}
+\end{frame}

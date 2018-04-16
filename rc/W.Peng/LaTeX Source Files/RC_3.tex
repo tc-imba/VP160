@@ -1,0 +1,236 @@
+\subsection{Force}
+\begin{frame}
+\frametitle{Force}
+\begin{definition}
+\textbf{\alert{Force}} is \alert{interaction} between two objects or an object and its environment. The interactions are of \alert{material} origin. Force is a \alert{vector} quantity with SI unit \alert{Newton}. $1\unit{N}=1\unit{kg\cdot m/s^2}$
+\end{definition}
+\begin{block}{Several Forces}
+\textbf{\alert{Normal Force}} When an object \alert{pushes} on a surface, the surface pushes back on the object in the direction \alert{perpendicular} to the surface.\\
+\textbf{\alert{Friction}} When an object \alert{slides} on a surface, the surface resists such sliding \alert{parallel} to the surface.\\
+\textbf{\alert{Tension}} A \alert{pulling} force exerted on an object by rope/cord.\\
+\textbf{\alert{Weight}} Pull of \alert{gravity} on an object.
+\end{block}
+\end{frame}
+\subsection{Newton's Laws}
+\begin{frame}
+\frametitle{Newton's First Law}
+\begin{block}{Essence}
+An \alert{Inertial} frame of reference exists.
+\end{block}
+\begin{block}{Inertial frame of reference}
+A special class of frames of reference is inertial frames of reference, where a particle acted upon by \alert{zero} net force moves with \alert{constant} velocity.
+\[\sum\overline F=0\Leftrightarrow \overline{a}=0\]
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Newton's Second Law}
+In an \alert{inertial frame of reference} (identified by the \alert{first law}), \alert{acceleration} of a particle is \alert{directly proportional} to the \alert{net force}, and is \alert{inversely proportional} to the mass.
+\begin{enumerate}
+\item{$\overline{F}\neq 0\Leftrightarrow \overline{a}\neq 0$}
+\item{$\overline{a}\propto \overline{F}$}
+\item{$\overline{a}\propto 1/m$}
+\end{enumerate}
+\begin{block}{Equivalence of all Inertial FoRs (Galilean Invariation)}
+$r(t)=r_{O'}(t)+r'(t)$\\$v(t)=v_{O'}(t)+v'(t)$\\$a(t)=a'(t)$\\
+\textbf{Conclusion:} Enough to have one \alert{inertial} FoR.
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Free Body Diagram}
+\begin{definition}
+A \alert{free-body diagram} is a sketch showing \alert{all} forces acting upon an object. When kinematics and dynamics are both involved, we sketch two diagrams, with one diagram is sketched for \\alert{kinematics}, and the other for \alert{dynamics}.
+\end{definition}
+\begin{block}{Remarks}
+Newton's \alert{Second} Law bridges \alert{kinematics} and \alert{dynamics}.
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Newton's Third Law}
+\begin{block}{Law}
+The \alert{mutual} forces of action and reaction \alert{between} two bodies are \alert{equal} in magnitude and \alert{opposite} in direction.
+\end{block}
+\begin{block}{Remarks}
+Newton's \alert{third} law allows us to consider several objects as a \alert{system} and ignore the \alert{internal} forces of the \alert{system} when we study the \alert{kinematics} and \alert{dynamics} of the system \alert{as a whole}.
+\end{block}
+\end{frame}
+\subsection{Application of Newton's Laws}
+\begin{frame}
+\frametitle{Particles in Static Balance}
+\begin{multicols}{2}
+\includegraphics[width=5cm]{figex212.png}\\
+Now consider a person with mass $m_1=60\unit{kg}$ standing on a board with mass  $m_2=20\unit{kg}$. Ignoring the friction between the rope and the wheels and the mass of them. How much force does the person need to exert on the rope to keep himself and the board static?
+\end{multicols}
+\end{frame}
+\begin{frame}
+\frametitle{Particles in Motion}
+\begin{multicols}{2}
+\includegraphics[width=5cm]{figex214.png}\\
+Now consider the situation shown in the figure. All the surfaces are frictionless, and the weight of the wheel and the ropes can be ignored. Find the horizontal force $F$ and the stress $N$ block M exerts on the horizontal surface in the following two cases:
+\begin{enumerate}
+\item{There is no relative motion among block $m_1$, $m_2$, and $M$}
+\item{M is static}
+\end{enumerate}
+\end{multicols}
+\end{frame}
+\begin{frame}
+\frametitle{Friction}
+Consider a brick sliding upward an inclined surface $30^\circ$ to the horizontal plane. Its initial speed is $1.5\unit{m/s}$, and the coefficient of kinetic friction $\mu=\sqrt{3}/12$. How far is the brick from its initial position after $0.5$ s?
+\end{frame}
+\subsection{Motion with Air/Fluid Drag}
+\begin{frame}
+\frametitle{Projectile Motion with Linear Drag}
+\begin{block}{Question}
+Consider a particle launched with horizontal speed $v_x(0)$ and vertical speed $v_y(0)$ from the origin. The drag is linear, i.e., $\overline{f}=-\alpha \overline{v}$. Find its position at time $t$.
+\end{block}
+\begin{block}{ODE Solution as IVP}
+\[\begin{cases}m\dot v_x&=-\alpha v_x\\m\dot v_y&=-mg-\alpha v_y\end{cases}\implies\begin{cases}\frac{\derivative v_x}{v_x}&=-(\alpha/m)\derivative t\\\frac{\derivative (v_y+mg/\alpha)}{v_y+mg/\alpha}&=-(\alpha/m)\derivative t\end{cases}\implies\]\[\begin{cases}\ln(v_x(t))-\ln(v_x(0))&=-(\alpha/m )t\\\ln(v_y(t)+mg/\alpha)-\ln(v_y(0)+mg/\alpha)&=-(\alpha/m )t\end{cases}\]$v_x(t)=v_x(0)e^{-(\alpha/m) t}$ $v_y(t)=(v_y(0)+mg/\alpha)e^{-(\alpha/m )t}-mg/\alpha$\\$x(t)=v_x(0)(1-e^{-(\alpha/m )t})m/\alpha$  $y(t)=(v_y(0)+mg/\alpha)(1-e^{-(\alpha/m )t})m/\alpha-mgt/\alpha$
+\end{block}
+\end{frame}
+\begin{frame}\label{sliderc3freefallricatti}
+\frametitle{Free Fall with Quadratic Drag $f=-kv^2$}
+Taking the vertically downward direction as the positive direction,
+\[
+m\dot v=mg-k v^2\implies (k/m)v^2+\dot v=g
+\]
+This is a \alert{Ricatti's equation} with one trivial solution being $v=\sqrt{mg/k}$. $v=\sqrt{mg/k}+1/z$, where $z$ is the solution to $z'-(2\sqrt{mg/k})(k/m)z=(k/m)$. Now $z'-2\sqrt{g(k/m)}z=0$ is the homogeneous equation, $z^{hom}=Ce^{2\sqrt{g(k/m)}t}$, and a particular solution is given by $z^{part}=-\sqrt{k/(mg)}/2$, so the general solution for $v$ is \[v=\sqrt{mg/k}+\frac{1}{Ce^{2\sqrt{g(k/m)}t}-\sqrt{\frac{k}{4mg}}}\]
+Now the initial condition is $v(0)=0$, so $C=-\sqrt{k/(4mg)}$, the solution
+\[v(t)=\sqrt{mg/k}-\frac{1}{\sqrt{\frac{k}{4mg}}e^{2\sqrt{g(k/m)}t}+\sqrt{\frac{k}{4mg}}}\]
+\end{frame}
+\subsection{Simple and linearly damped Oscillator}
+\begin{frame}
+\frametitle{Simple Harmonic Oscillator}
+\begin{definition}
+A \alert{\textbf{simple harmonic oscillator}} is a particle under a \alert{net external force} proportional in magnitude to its displacement from equilibrium, and towards equilibrium in direction. Such an external force is called the \alert{restoring force}.
+\end{definition}
+In the case of 1 dimension,
+\[
+\sum F=-kx\implies\ddot x=-\frac{k}{m}x\implies\ddot x+\frac{k}{m}x=0
+\]
+\alert{Characteristic equation} $s^2+\frac{k}{m}=0$, \alert{Characteristic roots} $s_{1,2}=\pm j\sqrt{\frac{k}{m}}$ \alert{General solution} given by
+\[
+x=C_1 e^{s_1 t}+C_2 e^{s_2 t}=A\cos(\omega_0 t)+B\sin(\omega_0 t)
+\]
+where \alert{natural frequency }$\omega_0=\sqrt{k/m}$, so \alert{period} $T=2\pi/\omega=2\pi\sqrt{m/k}$
+\end{frame}
+\begin{frame}
+\frametitle{Harmonic Oscillator with Linear Damping}
+$x$ is \alert{displacement} from equilibrium, $b>0$ is constant.
+\[m\ddot x=\underbrace{-b\dot x}_{\text{\alert{Linear} Drag}}-kx\]
+A linear, second order, homogeneous ODE with constant coefficients is obtained:
+\[\ddot x+\frac{b}{m}\dot x+\frac{k}{m}x=0\]
+\alert{Characteristic Equation} $s^2+\frac{b}{m}s+\frac{k}{m}=0$, so \alert{Characteristic Roots}\[s_{1,2}=\begin{cases}
+\frac{-b\pm\sqrt{b^2-4km}}{2m}&\text{ if }b^2>4km\\
+-\frac{b}{2m}&\text{ if }b^2=4km\\
+\frac{-b\pm j\sqrt{-b^2+4km}}{2m}&\text{ if } b^2<4km
+\end{cases}\]
+\end{frame}
+\begin{frame}
+\frametitle{Three Regimes: $b^2$ vs. $4km$}
+\begin{block}{General solution}
+$x=C_1 e^{s_1 t}+ C_2 e^{s_2 t}\text{ if }s_1\neq s_2\quad x=C_1 e^{s_1 t}+C_2 te^{s_2 t}\text{ if }s_1= s_2$
+\end{block}
+\begin{block}{Overdamped Regime: $b^2>4km$}
+$x(t)=C_1 e^{-\left(\frac{b}{2m}+\sqrt{\frac{b^2}{4m^2}-\omega_0^2}\right)t}+C_2 e^{-\left(\frac{b}{2m}-\sqrt{\frac{b^2}{4m^2}-\omega_0^2}\right)t}$
+\end{block}
+\begin{block}{Critically Damped Regime: $b^2=4km$}
+$x(t)=C_1e^{-\frac{b}{2m}t}+C_2te^{-\frac{b}{2m}t}$
+\end{block}
+\begin{block}{Under Damped Regime: $b^2<4km$}
+$x(t)=e^{-\frac{b}{2m}t}\left[A\cos\left(\sqrt{\omega_0^2-\frac{b^2}{4m^2}}t\right)+B\sin\left(\sqrt{\omega_0^2-\frac{b^2}{4m^2}}t\right)\right]$
+\end{block}
+\end{frame}
+\subsection{Discussion}
+\subsection{Exercises}
+\begin{frame}
+\frametitle{Mass on a Car}
+\begin{block}{Question}
+Mass $m$ hangs on a massless rope in a car moving with (a) constant velocity $\mathbf{v}$, (b) constant acceleration $\mathbf{a}$ on a horizontal surface. What is the angle the rope forms with the vertical direction?
+\end{block}
+\begin{block}{Solution}
+Recall: \alert{tension} on a massless rope is along the rope. (a) The mass is moving with constant velocity, i.e., \alert{zero net force}. Now gravity and tension are the only \alert{two forces} on this mass, so they are equal in magnitude and opposite in direction. Hence the rope is parallel to the vertical direction. (b) Now the net force on the mass is $m\mathbf{a}$, horizontal, so the \alert{horizontal component} of the \alert{tension} is $ma$, and the \alert{vertical component} of the \alert{tension} is $mg$. The rope forms $\arctan(a/g)$ with the vertical direction.
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Sliding car on an Inclined Plane}
+\begin{block}{Question}
+Mass $m$ hangs on a massless rope in a car sliding down an inclined plane (frictionless) at an angle $\alpha$. What is the angle the rope forms with the vertical direction?
+\end{block}
+\begin{block}{Solution}
+Consider the mass sliding down the same inclined plane. It slides in an identical fashion as the car. Apart from gravity, a normal force is exerted on the mass \alert{perpendicular} to the surface of the plane. The \alert{parallel component} of net force is completely due to gravity. Therefore, when the mass is attached to the rope, to follow a same motion, the \alert{parallel component} of net force is also due to gravity. The \alert{tension} shall only contribute to the \alert{normal component}. Therefore, the rope forms $\alpha$ with the vertical direction.
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Monkey and Pulley}
+A monkey with \alert{mass} $m$ holds a rope hanging over a frictionless pulley attached to mass $M$. Discuss the motion of the system if the monkey
+\begin{enumerate}
+\item does not move with respect to the rope,
+\item climbs up the rope with constant velocity $v_0$ with respect to the rope,
+\item climbs up the rope with constant acceleration $a_0$ with respect to the rope.
+\end{enumerate}
+\includegraphics[height=1.2in]{RC3MonkeyPulley.png}
+\end{frame}
+\begin{frame}
+\frametitle{Free Fall with Quadratic Air Drag (Continued)}
+\begin{block}{Question}
+Consider fall of an object (mass $m$) without initial speed. Assuming \alert{quadratic} air drag. Find the time dependence of the object's velocity and position. Find the \alert{terminal} speed (Sol. to Velocity on Slide~\ref{sliderc3freefallricatti}).
+\end{block}
+\begin{block}{Solution}
+Taking downward as positive. $f=-kv^2\implies a=g-\frac{k}{m}v^2$.
+\[
+v(t)=\sqrt{\frac{mg}{k}}-\sqrt{\frac{4mg}{k}}\frac{1}{e^{2\sqrt{gk/m}t}+1}
+\]
+\[
+x(t)=x(0)+\sqrt{\frac{mg}{k}}t-\sqrt{\frac{4mg}{k}}\frac{2\sqrt{gk/m}t+\ln 2-\ln (1+e^{2\sqrt{gk/m}t})}{2\sqrt{gk/m}}
+\]
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Separation of Variables Approach}
+It turns out that the ODE on Slide~\ref{sliderc3freefallricatti} can be solved using \alert{separation of variables}!
+\[\frac{\derivative v}{\derivative t}=g-\frac{k}{m}v^2\implies \frac{\derivative v}{(v+\sqrt{mg/k})(v-\sqrt{mg/k})}=-\frac{k}{m}\derivative t\]
+\[\frac{\derivative(v-\sqrt{mg/k})}{v-\sqrt{mg/k}}-\frac{\derivative (v+\sqrt{mg/k})}{v+\sqrt{mg/k}}=-2\sqrt{kg/m}\derivative t\]
+\[v(t)=\alert{\sqrt{\frac{mg}{k}}}\frac{1-e^{-2\sqrt{kg/m}t}}{1+e^{-2\sqrt{kg/m}t}}=\alert{v_{\text{terminal}}}\tanh(\sqrt{kg/m}t)\]
+\[x(t)=x(0)+\frac{m}{k}\left[\ln(\cosh(\sqrt{kg/m}t))\right]\]
+where $\cosh(x)=\frac{e^{x}+e^{-x}}{2}$
+\end{frame}
+\begin{frame}
+\frametitle{Oscillation at the bottom of a Pot}
+\begin{block}{Question}
+Discuss motion of a particle that is placed on the inner surface of a spherical pot, close to its bottom, and released from hold (no friction).
+\end{block}
+\begin{block}{Solution}
+The potential energy of the particle $x$ from the axis of symmetry of the pot is $U=-mg\sqrt{R^2-x^2}$. Our goal is to find the coefficient for the quadratic term in the \alert{analytic expansion} of the \alert{potential energy}, and conclude that it is a \alert{simple harmonic oscillation} around the bottom of the potential well. The bottom of the \alert{potential well} is identified at $U'(x_0)=0$ and $U''(x_0)>0$.
+\end{block}
+\begin{block}{Coefficients of Series Expansion}
+Suppose within the \alert{radius of convergence} around $x_0$ $f$ is analytic, $f(x)=\sum_{n=0}^{\infty} a_n (x-x_0)^n$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Coefficients of Series Expansion}
+\[f(x)=a_0+a_1(x-x_0)+a_2(x-x_0)^2+a_3(x-x_0)^3+\dots\]
+\[f'(x)=a_1+2a_2(x-x_0)+3a_3(x-x_0)^2+4a_4(x-x_0)^3+\dots\]
+\[f''(x)=2a_2+6a_3(x-x_0)+12a_4(x-x_0)^2+20a_5(x-x_0)^3+\dots\]
+Our goal is to determine $a_n$, and in fact we can calculate $a_n$ by \alert{differentiating} both sides $n$ times and \alert{taking the value} at $x_0$.\\
+$f(x_0)=a_0$; $f'(x_0)=a_1$; $f''(x_0)=2a_2$; $f'''(x_0)=6a_3$. In general, \[f^{(n)}(x_0)=\alert{n!}a_n\implies a_n=\frac{f^{(n)}(x_0)}{\alert{n!}}\]
+\end{frame}
+\begin{frame}
+\frametitle{Oscillation at the bottom of a Pot (Continued)}
+Now in our case, $U=-mg\sqrt{R^2-x^2}$, $U'=-mg\frac{-2x}{2\sqrt{R^2-x^2}}$, $U''=mg\frac{\sqrt{R^2-x^2}-x\frac{-2x}{2\sqrt{R^2-x^2}}}{(R^2-x^2)}=mg\frac{(R^2-x^2)+x^2}{(R^2-x^2)^{3/2}}=\frac{mgR^2}{(R^2-x^2)^{3/2}}$ so $x_0=0$.
+$U=\sum_{n=0}^{\infty}a_n(x-x_0)^n$, $a_1=0$, $a_2=\frac{mgR^2}{2R^3}=\frac{mg}{2R}$
+Therefore, the \alert{restoring force} $F=-U'=-a_1-2a_2(x-x_0)+\sum_{n=3}^{\infty}na_n(x-x_0)^{n-1}$. When $x$ is close to $x_0$, $F\approx -2a_2(x-x_0)$, so when the \alert{amplitude} is small, the motion is approximated by a simple harmonic oscillation with \alert{natural frequency} $\omega_0=\sqrt{\frac{2a_2}{m}}=\sqrt{\frac{g}{R}}$ and \alert{period} $T=\frac{2\pi}{\omega_0}=2\pi\sqrt{\frac{R}{g}}$
+\end{frame}
+\begin{frame}
+\frametitle{A More Difficult Pot}
+\begin{block}{Question}
+The same pot with cross-section in the shape of a cycloid placed upside-down
+\[x=R(\gamma+\sin\gamma),\quad y=R(1-\cos\gamma)\quad\text{where} -\pi\leq\gamma\leq\pi\]
+\end{block}
+\begin{block}{Solution}
+We still want to find evidence that the oscillation is simple harmonic, but this time we have to go with the parametrized form. Suppose the particle is in such a position that $\gamma=\theta$ \alert{close to $0$}. We need to exploit the \alert{Series expansion} of sine and cosine: $\cos \theta=\sum_{n=0}^{\infty}(-1)^{n}\frac{\theta^{2n}}{(2n)!}$ and $\sin\theta=\sum_{n=0}^{\infty}(-1)^{n}\frac{\theta^{2n+1}}{(2n+1)!}$ The \alert{potential energy} of the particle is $U=mgR(1-\cos\theta)= mgR(1-(1-\frac{1}{2}\theta^2)+o(\theta^2))=\frac{1}{2}mgR\theta^{2}+o(\theta^2)$ $x=R(\theta+\theta+o(\theta^2))=2R\theta+o(\theta^2)$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{A More Difficult Pot (Continued)}
+Now $U=\frac{1}{2}mgR\theta^2+o(\theta^2)$ and $x=2R\theta+o(\theta^2)$. $\frac{\derivative x}{\derivative\theta}=2R+o(\theta)$, so by the \alert{inverse function theorem} (Use series expansion to see $o(\theta)$), \[\frac{\derivative \theta}{\derivative x}=\frac{1}{2R+\underbrace{o(\theta)}_{\text{A polynomial}}}=\frac{1}{2R}+o(\theta)\] \alert{Restoring force}
+\[F=-\frac{\derivative U}{\derivative x}=-\frac{\derivative U}{\derivative \theta}\frac{\derivative \theta}{\derivative x}=-[mgR\theta+o(\theta)][\frac{1}{2R}+o(\theta)]=-\frac{mg\theta}{2}+o(\theta)\]\[\frac{F}{x}=\frac{-mg\theta/2+o(\theta)}{2R\theta+o(\theta^2)}\approx-\frac{mg}{4R}\] so the \alert{natural frequency} of the \alert{simple harmonic oscillation} is $\omega_0=\sqrt{\frac{g}{4R}}$, and the \alert{period} is $T=\frac{2\pi}{\omega_0}=2\pi\sqrt{\frac{4R}{g}}$
+\end{frame}

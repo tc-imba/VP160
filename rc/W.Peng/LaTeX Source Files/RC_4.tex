@@ -1,0 +1,317 @@
+\subsection{Driven Oscillations}
+\begin{frame}
+\frametitle{Driven Oscillations}
+\begin{definition}
+A \alert{driven oscillation} in our context is a \alert{linearly damped} simple harmonic oscillation under a \alert{periodic} driving force.
+\end{definition}
+\begin{block}{Equation of Motion}
+\[\frac{\derivative^2 x}{\derivative t^2}+\frac{b}{m}\frac{\derivative x}{\derivative t}+\frac{k}{m}x=\frac{F_0}{m}\cos\omega_{dr}t\]
+This is an \alert{inhomogeneous}, second order, \alert{linear} ODE with \alert{constant coefficients}.
+\end{block}
+\begin{block}{Applying Laplace Transform on Both Sides}
+\[s^2X(s)-sx(0^-)-x'(0^-)+\frac{b}{m}(sX(s)-x(0^-))+\frac{k}{m}X(s)=\frac{F_0}{m}\frac{s}{s^2+\omega_{dr}^{2}}\]
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Laplace Transformed Equation}
+\[(s^2+\frac{b}{m}s+\frac{k}{m})X(s)=\frac{F_0}{m}\frac{s}{s^2+\omega_{dr}^{2}}+(s+\frac{b}{m})x(0^-)+x'(0^-)\]
+Suppose there are two \alert{distinct} roots $s_1$ and $s_2$ for $s^2+\frac{b}{m}s+\frac{k}{m}=0$, then assuming \alert{zero state} $x(0^-)=0$ and $x'(0^-)=0$, there are four distinct \alert{first-order poles}.
+\[
+X(s)=\frac{F_0}{m}\frac{s}{(s+j\omega_{dr})(s-j\omega_{dr})(s-s_1)(s-s_2)}
+\]
+\[
+X(s)=\frac{F_0}{m}\left[\frac{E}{s+j\omega_{dr}}+\frac{B}{s-j\omega_{dr}}+\frac{C}{s-s_1}+\frac{D}{s-s_2}\right]
+\]
+To perform \alert{Inverse Laplace Transform}, we need to expand $X(s)$ into a sum of first order fractions.
+\end{frame}
+\begin{frame}
+\frametitle{Partial Fraction Expansion, Inverse Laplace Transform}
+$E=\left.\frac{s}{(s-j\omega_{dr})(s-s_1)(s-s_2)}\right|_{s=-j\omega_{dr}}=\frac{1}{2(s_1s_2+(s_1+s_2)j\omega_{dr}-\omega_{dr}^2)}$\\
+$B=\left.\frac{s}{(s+j\omega_{dr})(s-s_1)(s-s_2)}\right|_{s=j\omega_{dr}}=\frac{1}{2(s_1 s_2-(s_1+s_2)j\omega_{dr}-\omega_{dr}^2)}$\\
+$C=\left.\frac{s}{(s^2+\omega_{dr}^{2})(s-s_2)}\right|_{s=s_1}=\frac{s_1}{(s_1^2+\omega_{dr}^{2})(s_1-s_2)}$\\
+$D=\left.\frac{s}{(s^2+\omega_{dr}^{2})(s-s_1)}\right|_{s=s_2}=\frac{s_2}{(s_2^2+\omega_{dr}^{2})(s_2-s_1)}$
+\[X(s)=\frac{F_0}{m}\left[\frac{E}{s+j\omega_{dr}}+\frac{B}{s-j\omega_{dr}}+\frac{C}{s-s_1}+\frac{D}{s-s_2}\right]\]
+Applying the \alert{Inverse Laplace Transform} on both sides, for $t>0$,
+\[
+x(t)=\frac{F_0}{m}\left[Ee^{-j\omega_{dr}t}+Be^{+j\omega_{dr}t}+Ce^{s_1 t}+De^{s_2 t}\right]
+\]
+Be aware that $\mathfrak{Re}\{s_1\}=\mathfrak{Re}\{s_2\}=-\frac{b}{2m}<0$, so $Ce^{s_1 t}+De^{s_2 t}$ \alert{decays}.
+\end{frame}
+\begin{frame}
+\frametitle{Sinusoidal Steady-State Response}
+The other two terms are \alert{complex exponentials} that are \alert{oscillating}. Now $s_1 s_2=\frac{k}{m}$, and $s_1+s_2=-\frac{b}{m}$, so $E=\frac{1}{2(\frac{k}{m}-\frac{b}{m}j\omega_{dr}-\omega_{dr}^{2})}$, and $B=\frac{1}{2(\frac{k}{m}+\frac{b}{m}j\omega_{dr}-\omega_{dr}^{2})}$. $x(t)=2\frac{F_0}{m}|B|\cos(\omega_{dr}t+\angle B)$, so the \alert{amplitude} of the \alert{sinusoidal steady state response} is $A=\frac{F_0}{m\sqrt{(k/m-\omega_{dr}^{2})^2+(b\omega_{dr}/m)^2}}$ and the \alert{phase lag} $\varphi$ satisfies $\tan\varphi=\frac{b\omega_{dr}}{m\omega_{dr}^{2}-k}$. Therefore,
+$x(t)=A\cos(\omega_{dr}t\alert{+\varphi})$, where the amplitude of the sinusoidal steady state response is \[A=\frac{F_0}{m\sqrt{(k/m-\omega_{dr}^{2})^2+(b\omega_{dr}/m)^2}}\] and the phase lag (\alert{$\varphi$ takes value from $0$ to $-\pi$}) $\varphi$ satisfies \[\tan\varphi=\frac{b\omega_{dr}}{m\omega_{dr}^{2}-k}\]
+\end{frame}
+\subsection{Non Inertial FoR}
+\begin{frame}
+\frametitle{Start with Position Vector}
+\alert{Einstein's notation} $r_{\alpha}\hat{n}_{\alpha}=\sum_{\alpha=x,y,z}r_{\alpha}\hat{n}_{\alpha}$.
+\[\overline{r}(t)=\overline{r}_{O'}(t)+\overline{r}'(t)\]
+\alert{Differentiate} both sides w.r.t. time,
+\[\frac{\derivative \overline{r}}{\derivative t}=\overline{v}=\frac{\derivative \overline{r}_{O'}(t)}{\derivative t}+\frac{\derivative\overline{r'}(t)}{\derivative t}=\overline{v}_{O'}+\frac{\derivative \overline{r'}(t)}{\derivative t}\]
+Now $\frac{\derivative \overline{r'}(t)}{\derivative t}=\frac{\derivative}{\derivative t}(r_{\alpha'}\hat n_{\alpha'})=\dot r_{\alpha'}\hat{n}_{\alpha'}+r_{\alpha'}\dot{\hat{n}}_{\alpha'}=\overline{v'}+r_{\alpha'}\alert{\dot{\hat{n}}_{\alpha'}}$
+\end{frame}
+\begin{frame}
+\frametitle{Derivative $\dot{\hat{n}}_{\alpha'}$}
+\includegraphics[height=2in]{RC4DerivativeOfUnitVector.png}
+$|\derivative\hat{n}_{\alpha'}|=\derivative\chi|\hat{n}_{\alpha'}|\sin\alpha$, so define vector $\derivative\overline{\chi}$ as the vector \alert{along} the instantaneous \alert{axis of rotation}, such that $\derivative\overline{\chi}$ is the \alert{angle} that the \alert{tips} of $\hat{n}_{\alpha'}(t)$, $\hat{n}_{\alpha'}(t+\derivative t)$ form over time $\derivative t$. Then $(\overline{\omega}=\frac{\derivative\overline{\chi}}{\derivative t})$
+\[\derivative\hat{n}_{\alpha'}=\derivative\overline{\chi}\times\hat{n}_{\alpha'}\quad \frac{\derivative\hat{n}_{\alpha'}}{\derivative t}=\frac{\derivative\overline{\chi}}{\derivative t}\times\hat{n}_{\alpha'}=\overline{\omega}\times\hat n_{\alpha'}\]
+\end{frame}
+\begin{frame}
+\frametitle{Velocity and Acceleration in Non Inertial FoR}
+The upshot of all these calculations is that the motion of a particle observed in one \alert{Inertial FoR} $OXYZ$ and one \alert{Non Inertial FoR} $O'X'Y'Z'$ described by the relation $\overline{r}(t)=\overline{r}_{O'} (t)+\overline{r'}(t)$ and that the axes of $O'X'Y'Z'$ rotates with \alert{angular velocity} $\overline{\omega}$ in $OXYZ$ around $O'$ has \alert{velocity} relation
+\[\overline{v}=\overline{v}_{O'}+\overline{v'}+(\overline{\omega}\times\overline{r'})\]
+and \alert{acceleration} relation
+\[\overline{a}=\overline{a}_{O'}+\overline{a'}+2\overline{\omega}\times\overline{v'}+\frac{\derivative\overline{\omega}}{\derivative t}\times\overline{r'}+\overline{\omega}\times(\overline{\omega}\times\overline{r'})\]
+or, multiplying by mass $m$ and noting that $m\overline{a}=\overline{F}$,
+\[
+m\overline{a'}=\overline{F}\underbrace{-m\overline{a}_{O'}-m\frac{\derivative\overline{\omega}}{\derivative t}\times\overline{r'}-2m(\overline{\omega}\times\overline{v'})-m\overline{\omega}\times(\overline{\omega}\times\overline{r'})}_{\text{\alert{Pseudo Forces}}}
+\]
+\end{frame}
+\begin{frame}\label{rc4psdeudoforces}
+\frametitle{Pseudo Forces}
+\begin{tabular}{lll}
+\hline
+Term&Name&Cause\\\hline
+$-m\overline{a}_{O'}$&d'Alembert ``force''&acceleration of O'\\
+$-m\frac{\derivative\overline{\omega}}{\derivative t}\times \overline{r'}$&Euler ``force"&angular acceleration of O'\\
+$-2m\overline{\omega}\times\overline{v'}$&Coriolis ``force''&motion in O' and rotation of O'\\
+$-m\overline{\omega}\times(\overline{\omega}\times\overline{r'})$&Centrifugal ``force''&rotation of O'\\\hline
+\end{tabular}
+On Slide~\ref{rc6solutionnoninertialfor}, a comparison is made among solutions using Non Inertial FoR and Lagrangian Mechanics.
+\end{frame}
+\subsection{The Earth as a Frame of Reference}
+\begin{frame}
+\frametitle{The Earth as a Frame of Reference}
+The Earth is a non-inertial frame of reference that performs orbital motion and rotational motion.
+\[m\overline{a'}=\overline{F}-m\overline{a}_0-m\overline{\omega}\times(\overline{\omega}\times\overline{r'})-2m(\overline{\omega}\times\overline{v'})\]
+The gravitational attraction of the sun $\overline{F}_{sun}$ provides the mass $m$ with $m\overline{a_0}$, so for objects on the earth under gravity,
+\[
+m\overline{a'}=\overline{F}_{earth}-m\overline{\omega}\times(\overline{\omega}\times\overline{r'})-2m(\overline{\omega}\times\overline{v'})
+\]
+In general, the earth can be treated as an inertial frame of reference with a good approximation, but when $\overline{v'}$ is large (such as the velocity of a missile), the Coriolis ``force'' becomes more significant.
+\end{frame}
+\subsection{Work and Energy; Power}
+\begin{frame}
+\frametitle{Work}
+\begin{definition}
+\alert{\textbf{Elementary work}} $\delta W$ done by $\overline{F}$ when particle moves from $\overline{r}$ to $\overline{r}+\derivative\overline{r}$
+\[\delta W:=\overline{F}\circ\derivative\overline{r}\]
+\alert{\textbf{Total work}} $w_{AB}$ when particle moves from A to B along curve $\Gamma_{AB}$ is the \alert{line integral} of the \alert{force field}
+\[w_{AB}=\int_{\Gamma_{AB}}\overline{F}\circ\derivative\overline{r}\]
+\end{definition}
+\begin{block}{Line Integral Along Parametrized Curve (Discussed in Calculus III)}
+If we calculate the line integral using a concrete parametrization $\gamma: I\to\mathcal{C}$, we obtain $\int_{\mathcal{C}^{*}}F\derivative\overline{s}=\int_{I}\left<F(\gamma(t)),\gamma'(t)\right>\derivative t$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Line Integral: Example}
+\begin{example}
+Calculate \[\oint_{\mathcal{C}^{+}}\left(\begin{matrix}y^{2}\\3xy\end{matrix}\right)\derivative \overline{s}\] where $\mathcal{C}^{+}$ is the positively oriented curve
+\[\mathcal{C}=\left\{(x,y)\in\mathbb{R}^{2}:x^2+y^2=1,y>0\right\}\cup\]\[\left\{(x,y)\in\mathbb{R}^{2}:y=0,-1\leq x\leq 1\right\}\]
+\end{example}
+\end{frame}
+\begin{frame}
+We choose these two parameterizations:
+\[
+\gamma_{1} : [0,\pi] \to \mathbb{R}^{3}: t\mapsto \left(\begin{matrix}\cos t\\\sin t\\0\end{matrix}\right)
+\quad
+\gamma_{2}: [-1,1]\to \mathbb{R}^{3}: t\mapsto \left(\begin{matrix}t\\0\\0\end{matrix}\right)
+\]
+\begin{align*}
+&\oint_{\mathcal{C}^{+}}y^{2}\mathrm{d}x+3xy\mathrm{d}y\\
+=&\int_{0}^{\pi}\left<\left(\begin{matrix}\sin^{2}t\\3\cos t\sin t\end{matrix}\right),\left(\begin{matrix}-\sin t\\\cos t\end{matrix}\right)\right>\mathrm{d}t+\int_{-1}^{1}\left<\left(\begin{matrix}0\\0\end{matrix}\right),\left(\begin{matrix}1\\0\end{matrix}\right)\right>\mathrm{d}t\\
+=&\int_{0}^{\pi}(-\sin^{3}t+3\cos^{2}t\sin t)\mathrm{d}t+0\\
+=&\int_{0}^{\pi}-(-\sin^{2}t+3\cos^{2}t)\mathrm{d}(\cos t)\\
+=&\int_{0}^{\pi}[(1-\cos^{2}t)-3\cos^{2}t]\mathrm{d}\cos t\\
+=&-1-1+(-4/3)(-1-1)=2/3
+\end{align*}
+\end{frame}
+\begin{frame}
+\frametitle{Kinetic Energy, Work-Kinetic Energy Theorem}
+Recall that $\delta w=\overline{F}\circ\derivative\overline{r}$, and exploiting $v^2=\overline{v}\circ\overline{v}$,
+\[\frac{\delta w}{\derivative t}=\overline{F}\circ\frac{\derivative \overline{r}}{\derivative t}=\overline{F}\circ\overline{v}=m\overline{a}\circ\overline{v}=\derivative \frac{1}{2}mv^2\]
+so \alert{kinetic energy} is defined as $K=\frac{1}{2}mv^2$
+\begin{block}{Work-Kinetic Energy Theorem}
+The work done by the \alert{net} force on a particle is equal to the \alert{change} in the particle's kinetic energy.
+\[\delta w=\derivative K\]
+or, for finite increments,
+\[w=\Delta K\]
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Power}
+\alert{\textbf{Power}} characterizes how \alert{fast} work is being done.
+\begin{definition}
+\alert{\textbf{Instantaneous power}}
+\[\underbrace{\frac{\delta w}{\derivative t}}_{\text{rate of work done}}=\overline{F}\circ\overline{v}=\underbrace{P}_{\text{instantaneous power}}\]
+\end{definition}
+\begin{definition}
+\alert{\textbf{Average power}}
+\[\overbrace{\frac{\alert{w}}{\delta t}}^{\alert{\text{work done in the interval }(t,t+\Delta t)}}=\underbrace{P_{av}}_{\text{average power}}\]
+\end{definition}
+\end{frame}
+\subsection{Discussion}
+\begin{frame}
+\frametitle{Phase Lag of Driven Oscillation}
+\begin{figure}[H]
+\centering
+\includegraphics[height=2.5in]{RC4phase.eps}
+\caption{Relation between Phase Lag $\varphi$ and Driving Frequency $f$ in a resonance RLC Circuit in my Vp 241. $\varphi$ should be between $0$ and $-\pi$.}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Harmonic Oscillator in 2D: Lissajous Figures}
+The position coordinates of a \alert{2D Harmonic Oscillator} are given by\[\begin{cases}x(t)=A\cos(\omega_x t-\varphi_x)\\y(t)=B\cos(\omega_y t-\varphi_y)\end{cases}\]
+A special case is $\omega_x=\omega_y$, and $\varphi_x=0$, in which case we can observe the \alert{phase lag} using \alert{Lissajous Figures}.\\
+ Weisstein, Eric W. ``Lissajous Curve.'' From MathWorld--A Wolfram Web Resource. \url{http://mathworld.wolfram.com/LissajousCurve.html} 
+\end{frame}
+\begin{frame}
+\includegraphics[height=1in]{Lissajous1.png}\\
+$\varphi_y=\pi/2,\hspace{2cm} \pi/3,\hspace{2cm} \pi/4$\\
+\includegraphics[height=1in]{Lissajous2.png}\\
+$\varphi_y=\pi,\hspace{2.2cm} 3\pi/5,\hspace{2cm} 2\pi$.
+\end{frame}
+\begin{frame}
+\frametitle{Consequences of Coriolis Force in Nature}
+\url{http://csep10.phys.utk.edu/astr161/lect/earth/coriolis.html}
+The following diagram on the left illustrates the effect of Coriolis forces in the Northern and Southern hemispheres.
+\begin{figure}
+\centering
+\subfigure{\includegraphics[width=4.5cm]{RC4CoriolisForce.png}}
+\subfigure{\includegraphics[width=4.5cm]{RC4CoriolisForceSolar.png}}
+\end{figure}
+This produces the prevailing surface winds illustrated in the figure on the right. 
+\end{frame}
+\begin{frame}
+\frametitle{Cyclones and anticyclones}
+ The wind flow around high pressure (anticyclonic) systems is clockwise in the Northern hemisphere and counterclockwise in the Southern hemisphere. The corresponding flow around low pressure (cyclonic) systems is counterclockwise in the Northern hemisphere and clockwise in the Southern hemisphere.\\
+\includegraphics[height=5cm]{RC4CyclonesandAntiCyclones.png}
+\end{frame}
+\begin{frame}
+\frametitle{Centrifugal force and Centripetal force}
+We CANNOT say that there is a centrifugal force and a centripetal force acting upon a particle at the same time. When we state a centrifugal force, we are describing the \alert{effect} of a \alert{pseudo} force in a \alert{non-inertial} FoR. When we state a centripetal force, we are describing the \alert{effect} of some \alert{concrete} force in an \alert{inertial} FoR.
+\end{frame}
+\subsection{Exercises}
+\begin{frame}
+\frametitle{Particle Sliding down a fixed Hemisphere: Zero State}
+\begin{block}{Question}
+A particle with mass $m$ slides with 0 initial speed from the top of a \alert{fixed} frictionless hemisphere with radius $R$. Find the
+place where the particle loses \alert{contact} with the surface of the ball. What is its \alert{speed} at this instant?
+\end{block}
+\begin{block}{Solution}
+The moment the mass loses contact with the surface of the ball, the mass is just able to maintain a circular motion using the normal component of gravity. Suppose it traverses $\theta$ from the top, $v=\sqrt{2gR(1-\cos\theta)}$, and $m\frac{v^2}{R}=mg\cos\theta$. Therefore, $\theta=\arccos\frac{2}{3}$, and $v=\sqrt{2gR/3}$.
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Particle Sliding down a fixed Hemisphere}
+\begin{block}{Question}
+A particle with mass $m$ slides with 0 initial speed from the top of a \alert{fixed} frictionless hemisphere with radius $R$. Find the
+place where the particle loses \alert{contact} with the surface of the ball. What is its \alert{speed} at this instant?
+\end{block}
+\begin{block}{Solution}
+The moment the mass loses contact with the surface of the ball, the mass is just able to maintain a circular motion using the normal component of gravity. Suppose it traverses $\theta$ from the top, $v=\sqrt{v_0^2+2gR(1-\cos\theta)}$, and $m\frac{v^2}{R}=mg\cos\theta$. Therefore, $\theta=\arccos\left[\frac{v_0^2+2gR}{3gR}\right]$, and $v=\sqrt{(v_0^2+2gR)/3}$.
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Angle the Surface of Liquid Forms}
+\begin{block}{Question}
+A box is filled with a liquid and is placed on a horizontal surface. Find the angle that the surface of the liquid forms with the horizontal surface if we pull the box with acceleration $a$.
+\end{block}
+\begin{block}{Solution}
+The surface of the liquid can only exert pressure on the liquid particles at the surface of the liquid, so study the force along the surface. Either an \alert{Inertial} FoR or an \alert{Non-Inertial} FoR works. $\alpha=\arctan(a/g)$.
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Stay on a Rotating Plane}
+\begin{block}{Question}
+A plane, inclined at an angle $\alpha$ to the horizontal, rotates with constant angular speed $\omega$ about a
+vertical axis (see the figure). Where on the inclined plane should we place a particle, so that it
+remains at rest? The plane is frictionless. \includegraphics[width=3cm]{RC4EX6.png}
+\end{block}
+\begin{block}{Solution}
+The plane can only support the particle in the normal direction, so study the force along the plane. $\tan\alpha=\frac{\omega^2 R}{g}$, $R=\frac{g}{\omega^2}\tan\alpha$.
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Bead on a Hoop}
+\begin{block}{Question}
+A small bead can slide without friction on a circular hoop that is in a vertical plane and has a
+radius $R$. Find points on the hoop, such that if we place the bead there it will remain at rest.
+Acceleration due to gravity is $g$.\includegraphics[width=1.7cm]{RC4EX7.png}
+\end{block}
+\begin{block}{Solution}
+$\tan(\varphi)=\frac{\omega^2 R\sin\varphi}{g}$, so $\cos\varphi=\frac{g}{\omega^2 R}$, $\varphi=\arccos(g/(\omega^2 R))$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Foucault Pendulum on the Equator}
+\begin{block}{Question}
+Will the oscillation plane of a Foucault pendulum, that is placed on the equator, rotate?
+\end{block}
+\begin{block}{Solution}
+No. The rotation of the oscillation plane is due to $\overline{\omega}\times\overline{v'}$. Now $\overline{\omega}\times\overline{v'}$ lies in the plane of oscillation.
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Mass inside a Rotating Pipe}
+\begin{block}{Question}
+A particle with mass $m$ is inside a pipe that rotates with \alert{constant} angular velocity $\omega$ about an axis perpendicular to the pipe. The kinetic coefficient of friction is equal to $\mu_k$. Write down (do not solve!) the equation of motion for this particle in the non-inertial frame of reference of the rotating pipe.\\\includegraphics[height=2.6cm]{RC4EX9.png}\\
+There is no gravitational force in this problem.
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Mass inside a Rotating Pipe (Solution)}
+$m\overline{a'}=\overline{F}-m\overline{a}_{O'}-m\frac{\derivative\overline{\omega}}{\derivative t}\times \overline{r'}-2m(\overline{\omega}\times\overline{v'})-m\overline{\omega}\times(\overline{\omega}\times\overline{r'})$
+There are two concrete forces (\alert{normal} force and \alert{friction}) and two pseudo forces (\alert{Coriolis} ``force'' and \alert{Centrifugal} ``force'') in this non inertial FoR. Now set $O'X'$ \alert{along} the pipe, $O'Z'$ \alert{along} the axis of rotation. $\overline{F}=\overline{N}+\overline{f}$. Furthermore, there is no acceleration along $O'Y'$ and $O'Z'$. Now \[\overline{\omega}=\omega\hat{n}_{z'}\text{, and }\overline{v'}=v'\hat{n}_{x'}\text{, so }\overline{\omega}\times\overline{v'}=\omega v'\hat{n}_{y'}.\] Furthermore, $\overline{f}=f\hat{n}_{x'}$, so the \alert{balance} in $O'Y'$ direction tells $\overline{N}-2m(\overline{\omega}\times\overline{v'})=0$, i.e., $\overline{N}=2m\omega v'\hat{n}_{y'}$. \alert{Centrifugal} force is $-m\overline{\omega}\times(\omega\hat{n}_{z'}\times r\hat{n}_{x'})=-m\overline{\omega}\times\omega r\hat{n}_{y'}=-m\omega^2 r\hat{n}_{z'}\times\hat{n}_{y'}=m\omega^2 r\hat{n}_{x'}$.\\As long as the mass is \alert{sliding} (in which case it has to be sliding along the positive direction of the $O'X'$ axis), $\overline{f}=-2\mu_k m\omega v'\hat{n}_{x'}$, so the motion of equation in this non inertial FoR is given by
+\[\overline{a'}=(\omega^2 r-2\mu_k \omega v')\hat{n}_{x'}\]
+\end{frame}
+\begin{frame}
+\frametitle{Pull a Cylinder out of Liquid}
+\begin{block}{Question}
+A uniform cylinder of mass $m$, radius $R$, and height $h$ is floating vertically in a liquid, so that it is
+half-immersed in the liquid. Find the density of the liquid and minimum work needed to pull the
+cylinder completely above the liquid’s surface.
+\end{block}
+\begin{block}{Solution}
+$mg=\frac{1}{2}\rho g\pi R^2 h$, so the \alert{density} of the liquid $\rho=\frac{2m}{\pi R^2 h}$. The minimum work is attained when we pull the cylinder slowly so that the kinetic energy is always almost 0.\\
+Consider the cylinder has been pulled up \alert{by} $x$. The pulling force $F$ is $F=mg-\frac{h/2-x}{h/2}mg=\frac{x}{h/2}mg$, so by definition, $w=\int_0^{h/2}F\derivative x=\frac{2mg}{h}\frac{1}{2}(h/2)^2=\frac{mg}{4h}$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Find Work}
+\begin{block}{Question}
+Find work done by the force $\mathbf{F}_1(x,y)=-x\hat{n}_x-y\hat{n}_y$ and by the force $\mathbf{F}_2(x,y)=(2xy+y)\hat{n}_x+(x^2+1)\hat{n}_y$ if the particle is being moved from $(-1,0)$ to $(0,1)$ along
+\begin{enumerate}
+\item{the straight line connecting these points}
+\item{the (shorter) arc of the circle $x^2+y^2=1$}
+\item{the axes of the Cartesian coordinate system: first from $(-1,0)$ to $(0,0)$ along the $x$ axis, then from $(0,0)$ to $(0,1)$ along the $y$ axis.}
+\end{enumerate}
+\end{block}
+\begin{block}{Parametrization}
+\begin{enumerate}
+\item{$\gamma: [0,1]\to \mathbb{R}^2$, $\gamma(t)=(t-1,t)$}
+\item{$\gamma: [\pi,\pi/2]\to\mathbb{R}^2$, $\gamma(t)=(\cos t,\sin t)$}
+\item{$t\in [0,1]$, $\gamma_1(t)=(t-1,0)$, $\gamma_2(t)=(0,t)$}
+\end{enumerate}
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Find Work (Solution)}
+\begin{enumerate}
+\item{$w_1=\int_0^1\left<\binom{-t+1}{-t},\binom{1}{1}\right>\derivative t=\int_0^1 -2t+1\derivative t=\left.-t^2+t\right|_0^1=\alert{0}$
+$w_2=\int_0^1\left<\binom{2(t-1)t+t}{(t-1)^2+1},\binom{1}{1}\right>\derivative t=\int_0^13t^2-3t+2\derivative t=3/2$}
+\item{$w_1=\int_\pi^{\pi/2}\left<\binom{-\cos t}{-\sin t},\binom{-\sin t}{\cos t}\right>\derivative t=\alert{0}$ $w_2=\int_\pi^{\pi/2}\left<\binom{2\sin t\cos t+\sin t}{\cos^2 t+1},\binom{-\sin t}{\cos t}\right>\derivative t=\left.-\frac{t}{2}+\frac{5 \sin (t)}{4}+\frac{1}{4} \sin (2 t)+\frac{1}{4} \sin (3 t)\right|_\pi^{\pi/2}=\frac{4+\pi}{4}$}
+\item{$w_1=\int_{-1}^{0}(-x)\derivative x+\int_0^1(-y)\derivative y=1/2-1/2=\alert{0}$ $w_2=\left.\int_{-1}^0(2xy+y)\derivative x\right|_{y=0}+\left.\int_{0}^{1}(x^2+1)\derivative y\right|_{x=0}=1$}
+\end{enumerate}
+Notice that $\mathbf{F}_1(\overline{r})=-\overline{r}$, $\mathbf{F}_1$ is central force, so the work done is \alert{path independent} (proved in a later section).
+\end{frame}
+\begin{frame}
+\frametitle{Visualized Force Field $\mathbf{F}_1$ (Left) and $\mathbf{F}_2$ (Right)}
+\begin{figure}
+\centering
+\includegraphics[height=2.3in]{RC4VectorPlot1.eps}
+\includegraphics[height=2.3in]{RC4VectorPlot2.eps}
+\caption{Force Field $\mathbf{F}_1$ (Left) and $\mathbf{F}_2$ (Right)}
+\end{figure}
+\end{frame}

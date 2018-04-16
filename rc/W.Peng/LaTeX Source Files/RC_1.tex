@@ -1,0 +1,446 @@
+
+\subsection{Notations of Units}
+\begin{frame}
+\frametitle{Scientific Notations}
+\begin{definition}
+{\alert{\textbf{Scientific notation}}} expresses numerical values in \textbf{powers of 10}. It is used to represent very large numbers or very small numbers, giving the correct number of \emph{significant figures}.
+\end{definition}
+\begin{example}
+The distance from the earth to the moon is denoted as
+\[
+3.84\times 10^{8}\unit{m}
+\]
+\end{example}
+\end{frame}
+\begin{frame}
+\frametitle{Unit Prefixes}
+\begin{definition}
+\textbf{SI} (\emph{Syst$\grave{e}$me International}) units are used to keep measurements consistent around the world. By adding a {\alert{\textbf{prefix}}} to the fundamental units, additional units are derived.
+\end{definition}
+\begin{example}
+\[1\unit{nm}=10^{-9}\unit{m}\quad 1\unit{\mu m}=10^{-6}\unit{m}\quad 1\unit{mm}=10^{-3}\unit{m}\]
+\[1\unit{cm}=10^{-2}\unit{m}\quad 1\unit{km}=10^{3}\unit{m}\]
+\end{example}
+\end{frame}
+\begin{frame}
+\frametitle{Unit Conversions}
+\begin{definition}
+Expressing the \emph{same physical quantity} in two \emph{different} units forms a unit \textbf{\alert{conversion factor}}.
+\end{definition}
+\begin{example}
+\[3\unit{min}=(3\unit{min})\left({\alert{\frac{60\unit{s}}{1\unit{min}}}}\right)=180\unit{s}\]
+\end{example}
+\end{frame}
+\subsection{Uncertainty and Significant Figures}
+\begin{frame}
+\frametitle{Uncertainty}
+\begin{definition}
+\textbf{\alert{Uncertainties}} exist in all measurements. They are the maximum possible deviation (to some confidence level) of the \textbf{true value} of the quantity from the \textbf{measured value}. The \alert{\textbf{significant figures}} are composed of \alert{one or two uncertain digit} with all the digits preceding it being \alert{\textbf{certain}}.
+\end{definition}
+\begin{example}
+In my Vp 141 lab report for Exercise 1, I wrote:\\
+The moment of inertia for cylinder B in hole 2 is calculated as
+\begin{align*}I_{\text{B,2,math}}&=I_{\text{B,principal,math}}+m_{B}d_{2}^{2}\\&=1.860\times 10^{-5}+0.1656\times (45.09\times 10^{-3})^{2}\\&=3.5528\times 10^{-4}\mathrm{kg\cdot m^{2}}\pm 0.0025 \times 10^{-4}\mathrm{kg\cdot m^{2}}\end{align*}
+\end{example}
+\end{frame}
+\subsection{Estimates and Orders of Magnitude}
+\begin{frame}
+\frametitle{Back-of-the-Envelope Calculations}
+\begin{definition}
+\textbf{\alert{Order-of-magnitude estimates}} are calculations where we make some \alert{rough approximations} to carry them out quickly. Since they are carried out so quickly that they can be calculated at the back of an envelope, they are also called \alert{back-of-the-envelope calculations}.
+\end{definition}
+\begin{example}
+How many gallons of gasoline are used in the United States in one day? Assume that there are two cars for every three people, that each car is driven an average of $10,000$ mi per year, and that the average car gets $20$ miles per gallon.\\
+The US Population on 05/06/2016 is around $323,496$ thousand, which we \alert{approximate} to $323$ million. \[323\times 10^6\times (2/3)\times 10,000/20\approx 10^{11}\unit{gallons}\]
+\end{example}
+\end{frame}
+\subsection{Vectors and vector operations}
+\begin{frame}
+\frametitle{Vectors}
+\begin{definition}
+\textbf{\alert{Vectors}} are quantities that have both \textbf{magnitude} and \textbf{direction}.
+A vector in an $n$-dimensional real vector space is denoted as
+\[
+X\in\mathbb{R}^{n}:\quad X=\left(\begin{matrix}x_{1}\\x_{2}\\x_{3}\\\vdots\\x_{n}\end{matrix}\right)=(x_{1}\quad x_{2}\quad \cdots\quad x_{n})^{T}=(x_{1},x_{2},\dots,x_{n})
+\]
+\end{definition}
+\begin{example}
+Displacement $\overline{s}$, velocity $\overline{v}$, acceleration $\overline{a}$, force $\overline{v}$, momentum $\overline{P}$, angular velocity $\overline{\omega}$ are vectors in $\mathbb{R}^3$.
+\end{example}
+\end{frame}
+\begin{frame}
+\frametitle{Vector Addition and Scalar Multiplication}
+\begin{definition}
+The \textbf{\alert{addition}} and \textbf{subtraction} of vectors follows the ``parallelogram rule''. The \textbf{\alert{scalar multiplication}} changes the magnitude (perhaps reserve the direction) of the vector.
+\end{definition}
+\begin{figure}
+\centering
+\subfigure{\includegraphics[height=60pt]{VectorAddition.png}}
+\subfigure{\includegraphics[height=60pt]{VectorSubtraction.png}}
+\subfigure{\includegraphics[height=60pt]{VectorScalarMultiplication.png}}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Dot Product in $\mathbb{R}^{n}$ and Cross Product in $\mathbb{R}^{3}$}
+\begin{definition}
+The \textbf{\alert{dot product}} of two vectors $\overline{u}$, $\overline{v}$ in $\mathbb{R}^{n}$ is denoted as $\overline{u}\circ\overline{v}$.
+\[\overline{u}\circ\overline{v}=\sum_{i=1}^{n}u_{i}v_{i}=|\overline{u}||\overline{v}|\alert{\cos\angle (\overline{u},\overline{v})}
+\]
+\end{definition}
+\begin{definition}
+The \textbf{\alert{cross product}} of two vectors $\overline{u}$, $\overline{v}$ in $\mathbb{R}^{3}$ is denoted as $\overline{u}\times \overline{v}$.
+\[
+\overline{u}\times \overline{v}=\left(\left|\begin{matrix}u_{2}&u_{3}\\v_{2}&v_{3}\end{matrix}\right|,\left|\begin{matrix}u_{3}&u_{1}\\v_{3}&v_{1}\end{matrix}\right|,\left|\begin{matrix}u_{1}&u_{2}\\v_{1}&v_{2}\end{matrix}\right|\right)
+\]
+where $\left|\begin{matrix}a&b\\c&d\end{matrix}\right|=ad-bc$
+\end{definition}
+\end{frame}
+\begin{frame}
+\frametitle{Dot Product: Perpendicular (Orthogonal) Projections}
+\begin{block}{Unit Vector}
+The \alert{unit vector} in the direction of $\overline{\omega}$
+ is given by $\frac{\overline{\omega}}{|\overline{\omega}|}$.
+\end{block}
+\begin{block}{Magnitude of Projection}
+The \alert{magnitude} of the projection of vector $\overline{v}$ on vector $\overline{\omega}$ is
+\[|\overline{u}|\cdot\cos\angle (\overline{u},\overline{v})=\frac{\overline{u}\circ\overline{\omega}}{|\overline{\omega}|}\]
+\end{block}
+\begin{block}{Orthogonal Projections}
+The \textbf{\alert{orthogonal projection}} of vector $\overline{v}$ on vector $\overline{\omega}$ is
+\[\frac{\overline{u}\circ\overline{\omega}}{|\overline{\omega}|}\cdot \frac{\overline{\omega}}{|\overline{\omega}|}\]
+\end{block}
+\end{frame}
+\begin{frame}
+The direction of the cross product follows the \alert{right-hand rule}. The length of the cross product $|\overline{b}|=|\overline{u}||\overline{\omega}|\alert{\sin\angle (\overline {u},\overline{v})}$
+\includegraphics[width=100pt]{RightHandRule.png}
+\includegraphics[width=100pt]{VectorProductDirection.png}
+\begin{block}{Properties}
+The Cross Product has the following properties:
+\begin{enumerate}
+\item{$\overline{\omega}\times\overline{u}=-\overline{u}\times\overline{\omega}$}
+\item{$\overline{u}\times \overline{\omega}\perp \overline{u}$; $\overline{u}\times \overline{\omega}\perp \overline{\omega}$}
+\item{$\overline{u}\times \overline{\omega}=0 \Leftrightarrow \overline{u}\parallel \overline{\omega}$}
+\item{$\overline{u}\times\overline{u}=0$}
+\end{enumerate}
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Examples for Dot Product and Cross Product}
+\begin{example}
+The elementary work $\delta w$ is defined as the \textbf{dot} product of force $\overline{F}$ and \alert{infinitesimal displacement} $\derivative\overline{r}$: $\delta w=\overline{F}\circ \derivative \overline{r}$
+\end{example}
+\begin{example}
+Torque $\overline{\tau}$ is defined as the \textbf{cross} product of \alert{position vector} $\overline{r}$ and force $\overline{F}$: $\overline{\tau}=\overline{r}\times\overline{F}$
+\end{example}
+\includegraphics[height=80pt]{ElementaryWork.png}
+\includegraphics[height=80pt]{Torque.png}
+\end{frame}
+\subsection{3D Curvilinear Coordinate Systems}
+\begin{frame}
+\frametitle{Cylindrical Coordinates}
+\begin{picture}(200,200)
+\put(0,50){\includegraphics[width=150pt]{CylindricalCoordinates.png}}
+\put(200,180){Coordinates: $\rho$, $\varphi$, $z$}
+\put(200,160){Unit vectors: $\hat{n}_{\rho}$, $\hat{n}_{\varphi}$, $\hat{n}_{z}$}
+\put(200,140){Versors are \alert{NOT Fixed}: }
+\put(200,120){Careful with \alert{derivatives}}
+\put(200,100){$\rho=\sqrt{x^{2}+y^{2}}$,}
+\put(200,80){$\varphi=\arctan(y/x)$, $z=z$}
+\put(200,60){$x=\rho\cos\varphi$, $y=\rho\sin\varphi$}
+\put(0,30){$\overline{r}=\rho\hat{n}_{\rho}+z\hat{n}_{z}$, where $\hat{n}_{\rho}$ carries information about $\varphi$}
+\put(0,0){Polar coordinates is the special case $z=0$.}
+\end{picture}
+\end{frame}
+\begin{frame}
+\frametitle{Spherical Coordinates}
+\begin{picture}(200,200)
+\put(0,50){\includegraphics[width=150pt]{SphericalCoordinates.png}}
+\put(200,180){Coordinates: $r$, $\theta$, $\varphi$}
+\put(200,160){Unit vectors: $\hat{n}_{r}$, $\hat{n}_{\theta}$, $\hat{n}_{\varphi}$}
+\put(200,140){$r=\sqrt{x^{2}+y^{2}+z^{2}}$,}
+\put(200,120){$\theta=\arctan\frac{\sqrt{x^{2}+y^{2}}}{z}$, }
+\put(200,100){$\varphi=\arctan(y/x)$}
+\put(200,80){$x=r\sin\theta\cos\varphi$, }
+\put(200,60){$y=r\sin\theta\sin\varphi$, $z=r\cos\theta$}
+\put(0,30){$\overline{r}=r\hat{n}_{r}$, where $\hat{n}_{r}$ carries information for $\theta$ and $\varphi$.}
+\put(0,0){Polar coordinates is the special case $\theta=\pi/2$.}
+\end{picture}
+\end{frame}
+\begin{frame}
+\frametitle{Gradient, Divergence, and Curl}
+\includegraphics[width=12cm]{RC1_VectorCalculus.JPG}
+\end{frame}
+\subsection{1D Kinematics}
+\begin{frame}
+\frametitle{Motion Along a Straingt Line}
+Define \alert{positive direction} first. As a convention, the \alert{vectors} $x$, $v$ and $a$ are written as \alert{positive} if they have the \alert{same} direction as the \alert{positive} direction of the axis, and are written as \alert{negative} if their direction is \alert{oppositve} to the positive direction of the axis.
+\includegraphics[width=250pt]{MotionAlongAStraightLine.png}\\
+Here we assume that $x$ is \alert{twice differentiable} if there are no impulses. The reasons will be clear when we study the Newton's laws.
+\end{frame}
+\begin{frame}
+\frametitle{Average and Instantaneous Velocity}
+\alert{\textbf{Average Velocity}} over $(t,t+\Delta t)$: $v_{av,x}=\frac{x(t+\Delta t)-x(t)}{\Delta t}$\\
+\alert{\textbf{Instantaneous Velocity}} at $t$: $v_{x}(t)=\left.\frac{\derivative x(\cdot)}{\derivative t}\right|_{t}$\\
+\includegraphics[width=300pt]{Avg_Inst.png}
+\end{frame}
+\begin{frame}
+\frametitle{Average and Instantaneous Acceleration}
+\alert{\textbf{Average Acceleration}} over $(t,t+\Delta t)$: $a_{av,x}=\frac{v(t+\Delta t)-v(t)}{\Delta t}$\\
+\alert{\textbf{Instantaneous Acceleration}} at $t$: $a_{x}(t)=\left.\frac{\derivative v(\cdot)}{\derivative t}\right|_{t}$\\
+\includegraphics[width=120pt]{Acceleration.png}\\
+Newton's notation for derivatives W.R.T time: $v_{x}=\dot{x}$, $a_{x}=\dot{v_{x}}=\ddot{x}$
+\begin{block}{Average Speed vs. Average Velocity}
+Average speed=(distance traveled)/(time interval)\\
+Average velocity=(displacement)/(time interval)
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Obtain Displacement from Acceleration}
+\begin{block}{Obtain Velocity from Acceleration}
+$v(t)=\alert{v(0)}+\int_{0}^{t}a(\tau)\derivative\tau$ \quad $v(0)$: \alert{Initial (t=0) Condition}
+\end{block}
+\begin{block}{Obtain Displacement from Velocity}
+$x(t)=x(0)+\int_{0}^{t}v(\tau)\derivative\tau$
+\end{block}
+\begin{block}{Special Case: Constant Acceleration $a$}
+$x(t)=x(0)+v(0)t+\frac{1}{2}\alert{a}t^{2}$
+\end{block}
+\begin{block}{General Case: Varying Acceleration $a$}
+\[x(t)=x(0)+\int_{0}^{t}v(\tau)\derivative\tau=x(0)+v(0)t+\int_{0}^{t}\derivative\tau\int_{0}^{\tau}a(s)\derivative s\]
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Relative Motion}
+\begin{block}{Relative Velocity}
+{\color{red}Velocity of Particle in FoR A}\\={\color{purple}Velocity of Origin of FoR A'}+{\color{blue}Velocity of Particle in FoR A'}
+\[{\color{red}v_{x}}={\color{purple}v_{O'x}}+{\color{blue}v_{x}'}\]
+\end{block}
+Analogously, $a_{x}=a_{O'x}+a_{x}'$ for acceleration.
+\begin{block}{Galilean Transformation ($V_{O'x}=const, x_{O'}(0)=0$)}
+\[
+\begin{cases}
+a_{x}&=a_{x}'\\
+v_{x}&=v_{O'x}+v_{x}'\\
+x&=v_{O'x}t+x'
+\end{cases}
+\]
+where $v_{O'x}t=x_{o}'$
+\end{block}
+\end{frame}
+\subsection{Exercises}
+\begin{frame}
+\begin{block}{Planck's Units}
+Given the Dirac's constant $\hbar=h/(2\pi)$, gravitational constant $G$, and the speed of light in vacuum $c$, use dimensional analysis to construct the so called \emph{natural units} of time, length, and mass. These are also called \emph{Planck's units}: Planck's time $t_{p}$, Planck's length $l_{p}$, and Planck's mass $m_{P}$. Find their values in the SI units. How do they compare to the time, distance, and mass that we are able to measure nowadays?
+\end{block}
+\begin{block}{Hints}
+From Chapter 6 in Vc 210, we learnt the uncertainty principle $\Delta x\cdot \Delta (mv)\geq h/(4\pi)$, so $\hbar$ has dimension $\unit{[m]\cdot [kg]\cdot [m/s]}=\unit{[m^{2}\cdot kg\cdot s^{-1}]}$\\$c$ is the speed of light, so it has dimension $[m/s]$\\The gravitational force $F=GMm/r^{2}$, so $G$ has dimension $\unit{[kg\cdot m/s^{2}]\cdot [m^{2}]\cdot [kg^{-2}]}=\unit{[m^{3}\cdot s^{-2}\cdot kg^{-1}]}$
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{Constants}
+$\hbar=1.054\times 10^{-34}\unit{m^{2}\cdot kg\cdot s^{-1}}$\\$G=6.674\times 10^{-11}\unit{m^{3}\cdot kg^{-1}\cdot s^{-2}}$\\$c=2.998\times 10^{8}\unit{m/s}$\\
+\end{block}
+\begin{block}{Solution}
+Express $m_{P}$ as $m_{p}=\hbar^{\alpha}G^{\beta}c^{\gamma}$, so the power for {\color{red}$\unit{m}$}, {\color{blue}$\unit{kg}$}, and {\color{purple}$\unit{s}$} shall match.
+\[
+\begin{cases}
+{\color{red}2\alpha+3\beta+1\gamma}&=0\\
+{\color{blue}\alpha-\beta}&=1\\
+{\color{purple}-\alpha-2\beta-\gamma}&=0
+\end{cases}\implies
+\begin{cases}
+a&=\frac{1}{2}\\
+b&=-\frac{1}{2}\\
+c&=\frac{1}{2}
+\end{cases}\implies\]
+$\implies m_{P}=\sqrt{\frac{c\cdot \hbar}{G}}=2.176\times 10^{-8}\unit{kg}$\\
+Similarly, $t_{P}=c^{-5/2}G^{1/2}\hbar^{1/2}=5.391\times 10^{-44}\unit{s}$, and $l_{P}=c^{3/2}G^{1/2}\hbar^{1/2}=1.616\times 10^{-35}\unit{m}$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Dimension Analysis on a Simple Pendulum}
+\begin{block}{Question}
+A \alert{simple} pendulum consists of a \alert{light inextensible} string AB with length $L$, with the end A fixed, and a point mass $M$ attached to B. The pendulum oscillates with a \alert{small} amplitude, and the \alert{period} of oscillation is $T$. It is suggested that $T$ is proportional to the product of powers of $M$, $L$, and $g$, where $g$ is the \alert{acceleration} due to \alert{gravity}. Use \alert{dimensional analysis} to find this relationship.
+\end{block}
+\begin{block}{Solution}
+\[T={\color{red}M^\alpha}{\color{purple} L^\beta}{\color{blue} g^\gamma}\implies{[s]=\color{red}[kg]^\alpha}{\color{purple} [m]^\beta}{\color{blue} [m/s^2]^\gamma}\]\[\implies \alpha=0,\beta=1/2,\gamma=-1/2\quad T=k\sqrt{L/g}\]
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{Chain Rules in $v$-$x$ Relations}
+Suppose a particle in 1 dimensional motion has the following $v$-$x$ (SI) relation:
+\[
+v=\sqrt{x+1}
+\]
+Determine $v(t)$.
+\end{block}
+\begin{block}{Solution}
+By the \alert{chain rule} of differentiation,
+\[
+a(t)=\frac{\derivative v}{\derivative t}=\frac{\derivative v}{\derivative x}\alert{\frac{\derivative x}{\derivative t}}=\frac{1}{2\sqrt{x+1}}\sqrt{x+1}=\frac{1}{2}\unit{m/s^{2}}
+\]
+\[
+v(t)=\frac{1}{2}t+v(0)
+\]
+Now \alert{$v(t)^{2}-v(0)^{2}=2a(t)x(t)$}, we obtain $v(0)=1\unit{m/s}$
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{Dot Product in Cartesian Coordinates}
+Check that in the \alert{Cartesian coordinates}, the \alert{dot product} of two vectors $\mathbf{u}=(u_{x},u_{y},u_{z})$ and $\mathbf{w}=(w_{x},w_{y},w_{z})$ can be \alert{equivalently} found either as $\mathbf{u}\circ\mathbf{w}=u_{x}w_{x}+u_{y}w_{y}+u_{z}w_{z}$, or as $\mathbf{u}\cdot \mathbf{w}=uw\alert{\cos\alpha}$, where $\alpha$ is the smaller angle between $\mathbf{u}$ and $\mathbf{w}$.
+\end{block}
+\begin{block}{Solution}
+\begin{align*}|\mathbf{u}-\mathbf{w}|^{2}&=u^{2}+w^{2}-2uw\alert{\cos\alpha}\\
+uw\alert{\cos\alpha}&=\frac{u^{2}+w^{2}-|\mathbf{u}-\mathbf{w}|^{2}}{2}\\&=\frac{2(u_{x}w_{x}+u_{y}w_{y}+u_{z}w_{z})}{2}\end{align*}
+where $\mathbf{u}-\mathbf{w}=(u_{x}-w_{x})\hat{n}_x+(u_{y}-w_{y})\hat{n}_y+(u_z-w_z)\hat{n}_z$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Inverse Cross Product}
+\begin{block}{Question}
+Is it \alert{possible} to find a vector $\mathbf{u}$, such that $(2,-3,4)\times\mathbf{u}=(4,3,-1)$? What is a quick way to check it?
+\end{block}
+\begin{block}{Solution}
+Suppose $\mathbf{u}=(u_x,u_y,u_z)$ satisfies this relation.
+\[\begin{cases}-1&=2u_y+3u_x\\4&=-3u_z-4u_y\\3&=4u_x-2u_z\end{cases}\implies\begin{cases}-\frac{1}{3}&=\frac{2}{3}u_y+u_x\\1&=-\frac{3}{4}u_z-u_y\\\frac{3}{4}&=u_x-\frac{1}{2}u_z\end{cases}\implies\]$\frac{13}{8}=-u_y-\frac{3}{4}u_z$ and $1=-\frac{3}{4}u_z-u_y\implies \frac{5}{8}=0$, i.e., not possible. \alert{Quick way:} $(2,-3,4)\circ (4,3,-1)=-5\neq 0$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Pulling a Boat at Constant Speed}
+\begin{block}{Question}
+Suppose a person convolves a rope at \alert{constant speed $v_0$} on the left riverbank that is \alert{$h$} above the water. The other end of the rope is \alert{fixed} on a small boat floating on the surface of the water. Find the speed and the acceleration of the boat when it is \alert{$x$ from the person} (assuming the rope is weightless).
+\end{block}
+\begin{block}{Solution}
+The fact that the motion of the boat is constrained on a straight line allows us to use the \alert{magnitude} of \alert{position vector}, \alert{velocity}, and \alert{acceleration} directly.
+Let $r$ denote the \alert{length} of the rope, then:
+\[
+\begin{cases}
+\frac{\derivative r}{\derivative t}&=\alert{-}v_0\\
+r&=\sqrt{x^{2}+h^{2}}
+\end{cases}
+\]
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Pulling a Boat at Constant Speed}
+\begin{block}{Solution (continued)}
+Our goal is to express $\dot{x}$ and $\ddot{x}$ using $x$, $v_0$ and $h$.\\
+Taking the derivative w.r.t \alert{$t$} on both sides of $r=\sqrt{x^2+h^2}$ using \alert{the chain rule},
+\[
+\frac{\derivative r}{\derivative t}=\frac{2x}{2\sqrt{x^{2}+h^{2}}}\alert{\frac{\derivative x}{\derivative t}}
+\]
+so $v=\alert{\dot{x}}=-\sqrt{x^{2}+h^{2}}v_{0}/x$, where the $-$ sign indicates that the boat is moving toward the left.
+\begin{align*}
+\dot{v}&=-v_{0}\left[\frac{\frac{2x}{2\sqrt{x^{2}+h^{2}}}x-\sqrt{x^{2}+h^{2}}}{x^{2}}\right]\alert{\dot{x}}=-v_{0}\left[\frac{\frac{x^{2}-x^2-h^2}{\sqrt{x^{2}+h^{2}}}}{x^{2}}\right]\alert{\dot{x}}\\
+&=[v_{0}^{2}\sqrt{x^{2}+h^{2}}/x][-h^{2}/(x^{2}\sqrt{x^{2}+h^{2}})]=-\frac{v_{0}^{2}h^{2}}{x^{3}}
+\end{align*}
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Parallel and Perpendicular Components of Vectors}
+\begin{block}{Question}
+Consider two vectors $\mathbf{u}=3\hat{n}_x+4\hat{n}_y$ and $\mathbf{w}=6\hat{n}_x+16\hat{n}_y$. Find (a) the components of the vector $\mathbf{w}$ that are \alert{parallel} and \alert{perpendicular} to the vector $\mathbf{u}$, (b) the \alert{angle} between $\mathbf{w}$ and $\mathbf{u}$.
+\end{block}
+\begin{block}{Solution}
+(a) The parallel component of $\mathbf{w}$ to $\mathbf{u}$ is given by the \alert{orthogonal projection} $w_{\parallel}=\frac{\mathbf{u}\circ\mathbf{w}}{|w|}\cdot \frac{\mathbf{u}}{|u|}=\frac{3\times 6+4\times 16}{\sqrt{3^{2}+4^{2}}}\frac{(3,4)}{\sqrt{3^{2}+4^{2}}}=(9.84,13.12)$.
+The orthogonal component is given by $\mathbf{w}_{\perp}=\mathbf{w}-\mathbf{w}_{\parallel}=(-3.84,2.88)$\\
+(b)\[\angle(\mathbf{w},\mathbf{u})=\arccos\frac{\mathbf{u}\circ\mathbf{w}}{uw}=\arccos[\frac{3\times 6+4\times 16}{5\times 17.088}]=0.285\unit{rad}\]
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Harmonic Oscillation Drifting in One Direction}
+\begin{block}{Question}
+A particle moves along a straight line with non-constant acceleration $a_x(t)=-A\omega^{2}\cos\omega t$, where $A$ and $\omega$ are positive constants with \alert{proper units}. At the instant of time $t=0$ its \alert{velocity} $v_x(0)=3\unit{[m/s]}$ and \alert{position} $x(0)=4\unit{[m]}$. Find $v_{x}(t)$ and $x(t)$ at any instant of time. Sketch the graphs of $x(t)$, $v_{x}(t)$, and $a_{x}(t)$. What kind of motion may these results describe?
+\end{block}
+\begin{block}{Solution}
+\[
+v_x(t)=v_x(0)+\int_{0}^{t}a(\tau)\derivative\tau=3-A\omega\sin\omega t
+\]
+\[
+x(t)=x(0)+\int_{0}^{t}v_{x}(\tau)\derivative\tau=4+3t+A(\cos\omega t-1)
+\]
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{figure}[H]
+\centering
+\includegraphics[width=300pt]{RC1O5A2.eps}
+\caption{Plot for $x$, $v$, and $a$ given $\omega=5\unit{[rad/s]}$, $A=2\unit{[m]}$}
+\end{figure}
+\end{frame}
+\begin{frame}
+\begin{figure}[H]
+\centering
+\includegraphics[width=300pt]{RC1O5A5.eps}
+\caption{Plot for $x$, $v$, and $a$ given $\omega=5\unit{[rad/s]}$, $A=5\unit{[m]}$}
+\end{figure}
+\end{frame}
+\begin{frame}
+\begin{figure}[H]
+\centering
+\includegraphics[width=300pt]{RC1O10A2.eps}
+\caption{Plot for $x$, $v$, and $a$ given $\omega=10\unit{[rad/s]}$, $A=2\unit{[m]}$}
+\end{figure}
+\end{frame}
+\begin{frame}
+\begin{figure}[H]
+\centering
+\includegraphics[width=300pt]{RC1O10A5.eps}
+\caption{Plot for $x$, $v$, and $a$ given $\omega=10\unit{[rad/s]}$, $A=5\unit{[m]}$}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{\texttt{MATLAB} Scripts}
+\lstinputlisting[breaklines=TRUE,basicstyle=\footnotesize\ttfamily,language=MATLAB,numbers=left, numberstyle=\tiny,keywordstyle=\color{blue!40!black},commentstyle=\color{red!50!green!50!blue!50},frame=shadowbox, rulesepcolor=\color{red!20!green!20!blue!20},stringstyle=\color{orange}]{RC1OscillationPlotting.m}
+\end{frame}
+\begin{frame}
+\frametitle{An Under-Damped Oscillation}
+A particle is moving along a \alert{straight} line with velocity $v_x(t)=-\beta A\omega e^{-\beta t}\cos\omega t$, where $A,\omega,\beta$ are \alert{positive} constants.
+\begin{enumerate}
+\item{What are the \alert{units} of these constants?}
+\item{Find \alert{acceleration} $a_x(t)$ and \alert{position} $x(t)$ of the particle, assuming that $x(0)=5\unit{[m]}$.}
+\item{Sketch $x(t)$, $v_x(t)$, and $a_x(t)$}
+\item{What kind of motion could these results refer to (qualitatively)?}
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{An Under-Damped Oscillation (Solution)}
+$\beta t$ is \alert{dimensionless}, so $\beta$ has unit $[s^{-1}]$. The same holds for $\omega$. $\beta A\omega$ has unit $[m/s]$, so $A$ has unit $[m\cdot s]$\\$a_x(t)=\dot v_x(t)=\beta^2 A\omega e^{-\beta t}\cos\omega t+\beta A\omega^2 e^{-\beta t}\sin\omega t$\\$x(t)=x(0)+\int_0^t v_x(\tau)\derivative\tau$, where we need to \alert{integrate by part}.
+\[
+\int_0^t e^{-\beta \tau}\cos\omega \tau\derivative\tau=\left.-\frac{1}{\beta}e^{-\beta\tau}\cos\omega\tau\right|_0^t-\int_0^t\frac{\omega}{\beta}e^{-\beta\tau}\sin\omega\tau\derivative\tau
+\]
+\[
+\int_0^t e^{-\beta \tau}\sin\omega \tau\derivative\tau=\left.-\frac{1}{\beta}e^{-\beta\tau}\sin\omega\tau\right|_0^t+\int_0^t\frac{\omega}{\beta}e^{-\beta\tau}\cos\omega\tau\derivative\tau
+\]
+so denoting $C=\int_0^t e^{-\beta \tau}\cos\omega \tau\derivative\tau$, we have $C=\left.-\frac{1}{\beta}e^{-\beta\tau}\cos\omega\tau\right|_0^t-\frac{\omega}{\beta}[\left.-\frac{1}{\beta}e^{-\beta\tau}\sin\omega\tau\right|_0^t+\frac{\omega}{\beta}C]$, i.e., \\$(1+\frac{\omega^2}{\beta^2})C=-\frac{1}{\beta}e^{-\beta t}\cos\omega t+\frac{1}{\beta}+\frac{\omega}{\beta^2}[e^{-\beta t}\sin\omega t]$
+\end{frame}
+\begin{frame}
+\[C=\frac{\beta^2}{\beta^2+\omega^2}\left[\frac{1}{\beta}(1-e^{-\beta t}\cos\omega t)+\frac{\omega}{\beta^2}e^{-\beta t}\sin\omega t\right]\]
+$x(t)=x(0)-\beta A\omega C=5-\frac{\beta A\omega}{\beta^2+\omega^2}\left[\beta((1-e^{-\beta t}\cos\omega t))+\omega e^{-\beta t}\sin\omega t\right]$
+\begin{figure}[H]
+\centering
+\includegraphics[height=2in]{RC1DOx.eps}
+\caption{$x(t)$ given $A=3\unit{m\cdot s}$, $\beta=1\unit{s^{-1}}$, $\omega=10\unit{rad/s}$}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Sketch of $v_x(t)$ and $a_x(t)$}
+\begin{figure}[H]
+\centering
+\subfigure{\includegraphics[height=1.7in]{RC1DOv.eps}}
+\subfigure{\includegraphics[height=1.7in]{RC1DOa.eps}}
+\caption{$v(t)$ and $a(t)$ given $A=3\unit{m\cdot s}$, $\beta=1\unit{s^{-1}}$, $\omega=10\unit{rad/s}$}
+\end{figure}
+This represents an \alert{underdamped oscillation}.
+\end{frame}
+\begin{frame}
+\frametitle{A Moving Car}
+\begin{block}{Question}
+A car is moving in one direction along a \alert{straight line}. Find the \alert{average velocity} of the car if: (a) it travels \emph{half of the journey} with velocity $v_{1}$ and the other half with velocity $v_{2}$, (b) it covers \emph{half the distance} with velocity $v_{1}$ and the other with velocity $v_2$. Both $v_1$ and $v_2$ are constants.
+\end{block}
+\begin{block}{Solution}
+The formula we use is the \alert{definition}: $v_{avg,x}=\frac{x}{t}$.\\
+(a) $x=v_{1}t/2+v_{2}t/2$, so $v_{avg,x}=\frac{v_{1}+v_{2}}{2}$\\
+(b) $t=x/(2v_1)+x/(2v_2)$, so $v_{avg,x}=\frac{1}{1/(2v_1)+1/(2v_2)}$
+\end{block}
+\end{frame}

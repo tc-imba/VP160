@@ -1,0 +1,44 @@
+\documentclass{beamer}
+\usepackage{bbm,color,xcolor,times,graphicx,graphics,fancyhdr,listings,subfigure,lastpage,setspace,algorithm2e,mathtools,amsmath,amsfonts,float,animate,multicol,wrapfig}
+\title{VP160 Honors Physics I Recitation Class}
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+\author{W.Peng}
+\institute{UM-SJTU JI}
+\date{Summer 2016}
+\subject{Physics}
+\usetheme{AnnArbor}
+\begin{document}
+\AtBeginSection[]
+{
+   \begin{frame}
+        \tableofcontents[currentsection,hideallsubsections]
+   \end{frame}
+}
+\AtBeginSubsection[]
+{
+   \begin{frame}
+        \tableofcontents[sectionstyle=hide/hide,subsectionstyle=show/shaded/hide]
+   \end{frame}
+}
+\newcommand{\unit}[1]{\text{ }\mathrm{#1}}
+\newcommand{\derivative}{\mathrm{d}}
+\begin{frame}
+\titlepage
+\end{frame}
+\section{Vectors, Coordinate Systems, and 1D Kinematics}
+%\include{RC_1withpause}
+\section{3D Kinematics}
+%\include{RC_2withpause}
+\section{Force, Newton's Laws, Linear Drag and Oscillators}
+%\include{RC_3withpause}
+\section{Driven Oscillations, Non-inertial FoRs, Work and Energy}
+%\include{RC_4withpause}
+\section{Potential Fields, Potential Energy, Non Conservative Forces}
+%\include{RC_5withpause}
+\section{Lagrangian Mechanics, Momentum, Center-of-Mass FoR}
+%\include{RC_6withpause}
+\section{Angular Momentum, Rigid Body Dynamics}
+%\include{RC_7withpause}
+\section{Equilibrium and Elasticity, Fluid Mechanics, Gravitation}
+\include{RC_8withpause}
+\end{document}

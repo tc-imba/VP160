@@ -1,0 +1,329 @@
+\subsection{Particle: Angular Momentum, Torque, and Moment of Inertia}
+\begin{frame}
+\frametitle{Angular Momentum}
+For a single particle, the \alert{angular momentum} is defined as $\overline{L}=\overline{r}\times\overline{P}$. \alert{Torque} is defined as $\overline\tau=\overline r\times\overline F$. Now $\dot{\overline r}=\overline v$, $\overline P=m\overline v$, $\derivative \overline r\times\overline P=0$, so \begin{equation}\label{eq:angularmomentumandtorque}\overline\tau=\frac{\derivative\overline L}{\derivative t}\end{equation}
+Now consider central force $\overline F (\overline r)=f(r)\overline r$. They are \alert{conservative}, as is proved on Slide~\ref{centralforcesareconservative}. They also produce \alert{zero torque}, because $\tau=\overline r\times\overline F=0$. These two characteristics give rise to the two conservation \alert{properties} of central force
+\begin{itemize}
+\item \alert{Mechanical Energy} is preserved
+\item \alert{Angular Momentum} is preserved
+\end{itemize}
+\alert{Aerial Velocity} $\overline\sigma=\frac{1}{2}(\overline r\times\overline v)$ is equivalent to angular momentum for constant-mass heavenly bodies.
+\end{frame}
+\begin{frame}
+\frametitle{Momentum of Inertia for a Particle About a Point}
+The angular momentum and angular velocity has the following relation:
+\[\overline L=I\overline\omega\]
+Here $I$, \alert{moment of inertia}, is a one-by-one tensor quantity (a scalar). $I=mr^2$. If $I=const$ (particle in circular motion), then 
+$\overline\tau=I\overline\varepsilon$\\
+For a \alert{system} of particles, the \alert{total} angular momentum can only be changed by a non-zero \alert{external} torque.
+\end{frame}
+\subsection{Angular Momentum of a Rigid Body}
+\begin{frame}
+\frametitle{Rigid Body}
+\begin{definition}
+A body is called \alert{rigid} if $|\overline r-\overline {r'}|=const$ for any two points on the body.
+\end{definition}
+Momentum in Lab FoR
+\[\overline{P}=\underbrace{M\overline{v_{O'}}}_{\text{translational motion}}+\underbrace{M\overline\omega\times\overline{r_{cm'}}}_{\text{rotational motion}}\]\pause
+Angular momentum about the origin of Lab FoR \(\overline L=\sum _{i=1}^ N m_i \overline{ r_i}\times\overline{ v_i}\)
+\[\overline L=M\overline{r_{O'}}\times\overline{v_{O'}}+M\overline{r_{O'}}\times(\overline{\omega}\times\overline{r_{cm'}})+M\overline{r_{cm'}}\times\overline{v_{O'}}+\sum_{i=1}^{N}m_i\overline{r_{i}'}\times(\overline\omega\times\overline{r_{i}'})\]
+where in the \alert{FoR associated with the rigid body}, $\overline {r_i '}$ is the \alert{position vector} of point mass $\overline {r_{cm'}}$ is the \alert{position vector} of the center of mass.
+\end{frame}
+\begin{frame}
+\frametitle{Rigid Body with Pure Rotation}
+If we choose $\overline{v_{O'}}=0$, $O'$ at the center of mass of the body, and $O=O'$, then using the \alert{back-cab} identity of vectors (i.e., \(\overline{a}\times(\overline{b}\times\overline{c})=\overline{b} (\overline{a}\circ\overline{c})-\overline{c}(\overline{a}\circ\overline{b})\)), 
+The angular momentum with \alert{pure rotation} $\overline L=\sum_{i=1}^{N}m_i\overline{r_{i}'}\times(\overline\omega\times\overline{r_{i}'})$ in the \alert{CoM FoR} is rewritten as
+\[{\color{olive}\overline L}=\sum_{i=1}^{N}m_i[{\color{purple}\overline{\omega}}r_{i}'^{2}-{\color{red}\overline{r_{i}'}}{\color{magenta}(\overline\omega\circ\overline{r_{i}'})}]\]\pause
+Decomposing the \alert{linear terms} in the \alert{CoM FoR} of the rigid body (i.e, $\overline\omega=\overline{\omega_{x'}}+\overline{\omega_{y'}}+\overline{\omega_{z'}}$, $\overline {r_{i}'}=\overline{r_{ix'}}+\overline{r_{iy'}}+\overline{r_{iz'}}$), for $\alpha'=x', y', z'$
+\[{\color{olive}L_{\alpha'}}=\alert{\left<\overline L,\hat n_{\alpha'}\right>}=\sum_{i=1}^{N}m_{i}\left({\color{purple}\omega_{\alpha'}}r_{i}'^{2}-{\color{red}r_{i\alpha'}}{\color{magenta}\left(\sum_{\beta'}\omega_{\beta'}r_{i\beta'}\right)}\right)\]
+Next: Try to find $I$ that $\overline{L}=I\overline{\omega}$, where $I$ is a tensor quantity.
+\end{frame}
+\begin{frame}
+\(L_{\alpha'}=\sum_{i=1}^{N}m_{i}\left(\omega_{\alpha'}r_{i}'^{2}-r_{i\alpha'}\left(\sum_{\beta'}\omega_{\beta'}r_{i\beta'}\right)\right)\)
+To sum over $\beta'$, rewrite \[\omega_{\alert{\alpha'}}r_i'^2=\sum_{\beta'}\omega_{\alert{\beta'}}r_{i}'^2\alert{\delta_{\alpha'\beta'}} (\delta_{\alpha'\beta'}=\begin{cases}1\quad\alpha'=\beta'\\0\quad\alpha'\neq\beta'\end{cases})\] so that
+\(L_{\alpha'}=\sum_{i=1}^{N}m_{i}\left(\alert{\sum_{\beta'}}\omega_{\beta'}r_{i}'^2\delta_{\alpha'\beta'}-r_{i\alpha'}\left(\alert{\sum_{\beta'}}\omega_{\beta'}r_{i\beta'}\right)\right)\) \pause Taking out the sum iterator \alert{$\beta'$} (both $\sum$ and $\omega_{\beta'}$),
+\[L_{\alpha'}=\sum_{\beta'}\left[\sum_{i=1}^{N}m_{i}(r_i'^2\delta_{\alpha'\beta'}-r_{i\alpha'}r_{i\beta'})\right]\omega_{\beta'}\]
+\[L_{\alpha'}=\sum_{\beta'=x',y',z'}I_{\alpha'\beta'}\omega_{\beta'}\]
+The $3\times 3$ matrix $I_{\alpha'\beta'}$ is called \alert{the tensor of the moment of inertia}\[I_{\alpha'\beta'}=\sum_{i=1}^{N}m_i(\underbrace{{r_{i}'}^{2}\delta_{\alpha'\beta'}}_{\text{Diagonal Terms}}\alert{-}\underbrace{r_{i\alpha'}r_{i\beta'}}_{\text{Off-Diagonal Terms}})\]
+\end{frame}
+\subsection{Tensor of Inertia}
+\begin{frame}
+\frametitle{Tensor of Inertia $\left[I_{\alpha'\beta'}\right]_{\alpha',\beta'=x',y',z'}$}
+Note that $I_{\alpha'\beta'}=I_{\beta'\alpha'}$, so this tensor quantity is symmetric.
+In the \textbf{Center-of-Mass} Frame of Reference,
+\[\left[\begin{matrix}L_{x'}\\L_{y'}\\L_{z'}\end{matrix}\right]=\left[\begin{matrix}I_{x'x'}&I_{x'y'}&I_{x'z'}\\I_{y'x'}&I_{y'y'}&I_{y'z'}\\I_{z'x'}&I_{z'y'}&I_{z'z'}\end{matrix}\right]\left[\begin{matrix}\omega_{x'}\\\omega_{y'}\\\omega_{z'}\end{matrix}\right]\]
+where $\left[I_{\alpha'\beta'}\right]_{\alpha',\beta'=x',y',z'}$ is explicitly given as
+\[\left[\begin{matrix}\sum_{i=1}^{N}m_i({y_{i}'}^2+{z_{i}'}^2)&\alert{-}\sum_{i=1}^{N}m_{i}x'y'&\alert{-}\sum_{i=1}^{N}m_{i}x'z'\\\alert{-}\sum_{i=1}^{N}m_{i}y'x'&\sum_{i=1}^{N}m_i({x_{i}'}^2+{z_{i}'}^2)&\alert{-}\sum_{i=1}^{N}m_{i}y'z'\\\alert{-}\sum_{i=1}^{N}m_{i}z'x'&\alert{-}\sum_{i=1}^{N}m_{i}z'y'&\sum_{i=1}^{N}m_i({x_{i}'}^2+{y_{i}'}^2)\end{matrix}\right]\]
+In case of a continuous mass distribution, the summations are replaced by integrations.
+\end{frame}
+\begin{frame}
+\frametitle{Physical Significance of Diagonal Terms and Off Diagonal Terms}
+It is instructive to assume you have an axis along $O'X'$ so that the rigid body is rotating along it at $\overline\omega=\left(\begin{matrix}\omega_{x'}\\0\\0\end{matrix}\right)$.\pause
+The angular momentum is
+\[\overline L=\left(\begin{matrix}I_{x'x'}\omega_{x'}\\I_{y'x'}\omega_{x'}\\I_{z'x'}\omega_{x'}\end{matrix}\right)\] 
+Notice that the $y'$ component and the $z'$ component are rotating with the rigid body, whereas $x'$ is in a fixed direction. The axis is providing torque to change the direction of the angular momentum, causing the axis to wear out.
+\end{frame}
+\subsection{Principal Axes Transformation}
+\begin{frame}
+\frametitle{The Spectral Theorem}
+Reference: Page 222 Vv286 FA2015. Eigenvalue $\lambda$ and eigenvector $u$ satisfies: $Au=\lambda u$.
+\begin{block}{Spectral Theorem}
+Let $A=A^{*}\in\mathrm{Mat}(n\times n;\mathbb{R})$ be a self-adjoint matrix. Then there exists an \alert{orthonormal basis} of $\mathbb{R}^n$ consisting of \emph{eigenvectors} of $A$.
+\end{block}
+\begin{block}{Corollary}
+Every self-adjoint matrix $A$ is diagonalizable. Furthermore, if $(v_1,\dots,v_n)$ is an \alert{orthonormal basis of eigenvectors} and $U=(v_1,\dots,v_n)$, then $U^{-1}=U^{*}$. Hence, if $A$ is self-adjoint, there exists an \alert{orthogonal matrix} $U$ such that $D=U^* AU$ is the diagonalization of $A$.
+\end{block}
+Notice that our tensor of inertia $I$ is \alert{real and symmetric}, so it is self-adjoint. We can \emph{always} diagonalize it.
+\end{frame}
+\begin{frame}
+\frametitle{Principal Axes}
+\begin{definition}
+For any tensor of inertia we can find three axes $\tilde{x'}$, $\tilde{y'}$, and $\tilde{z'}$ such that $[I_{\tilde{\alpha'}\tilde{\beta'}}]$ only has diagonal terms. Then we have $L_{\tilde{\alpha'}}=I_{\tilde{\alpha'}\tilde{\alpha'}}\omega_{\tilde{\alpha'}}$, where $\overline L\parallel \overline\omega$. Such axes are called \textbf{\alert{principal axes}} of the tensor of inertia. The corresponding values of $I_{\tilde{\alpha'}\tilde{\alpha'}}$ are called \emph{principal moments of inertia}.
+\end{definition}
+\begin{block}{General Steps}
+\begin{enumerate}
+\item{Find the Center of Mass of the rigid body}
+\item{Set up a Cartesian Coordinate whose origin is at the CoM}
+\item{Find the tensor of inertia}
+\item{Diagonalize the tensor of inertia (find the eigenvalues and eigenvectors)}
+\end{enumerate}
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Eigenvalues and Eigenvectors}
+Eigenvalues $\lambda_i$ and eigenvalues $u_i$ for matrix $\mathrm{I}$ come in pairs: $\mathrm{I} u_i=\lambda_i u_i$.
+\begin{theorem}
+Eigenvectors $u_i$ define \alert{directions} of \emph{principal axes}, and in the new \alert{coordinate system of principal axes} (unit vectors are $\hat{u}_1$, $\hat{u}_2$, and $\hat{u}_3$), tensor of inertia is diagonal, and the \alert{eigenvalues line up on the main diagonal} (i.e., $D=\left[\begin{matrix}\lambda_1&0&0\\0&\lambda_2&0\\0&0&\lambda_3\end{matrix}\right]$).
+\end{theorem}
+To find these eigenvalues, we need to solve 
+\begin{equation}\label{eq:characteristicequationforeigenproblem}
+(\mathrm{I}-\lambda\mathbbm{1})u_i=0
+\end{equation}
+i.e., $u_i\in\mathrm{ker (I-\lambda\mathbbm{1})}$
+\end{frame}
+\begin{frame}
+\frametitle{Finding Eigenvalues}
+By \emph{Fredhom Alternative} 1.7.21 on Slide 233 of Vv 285 SU 2016, for our matrix $A=\mathrm{I}-\lambda\mathbbm{1}$, either 
+\begin{itemize}
+\item$\alert{\mathrm{det} A=0}$, in which case $Ax=0$ has a non-zero solution \alert{$x\in\mathrm{ker}A$}, or
+\item $\mathrm{det}A\neq 0$, then $Ax=b$ has a unique solution $x=A^{-1}b$ for any $b\in\mathbb{R}^n$.
+\end{itemize}
+Since we need to find eigenvalues, we need the first case, i.e., we need to find such $\lambda$ that \alert{$\mathrm{det}(\mathrm{I}-\lambda\mathbbm{1})=0$}\\
+Then we plug back each $\lambda_i$ into Eqn.~\ref{eq:characteristicequationforeigenproblem} to find its corresponding eigenvector.\pause If at least two principal moments are equal, the rigid body is called a symmetrical top; If all three principal moments are equal, it is called a spherical top.
+\begin{theorem}
+\alert{Kinetic Energy of a Rigid Body} is given by $K=\frac{1}{2}\sum_{\alpha',\beta'}I_{\alpha',\beta'}\omega_{\alpha'}\omega_{\beta'}=\frac{1}{2}\left<\overline\omega,I\overline{\omega}\right>$
+\end{theorem}
+\end{frame}
+\subsection{Rigid Body: Rotation Around Principal Axes}
+\begin{frame}
+\frametitle{Moment of Inertia and Angular Momentum}
+After choosing the \alert{principal axes} $x$, $y$, $z$, we omit the $'$.
+\[I_{xx}=\sum_{i=1}^{N}m_i(y_i^2+z_i^2),I_{yy}=\sum_{i=1}^{N}m_i(x_i^2+z_i^2),I_{zz}=\sum_{i=1}^{N}m_i(x_i^2+y_i^2)\]
+Given $\omega=(0,0,\omega_z)$ (no translational motion), \[\overline{L}=I_{zz}\overline{\omega}\text{, and }K=\frac{1}{2}I_{zz}\omega_{z}^2\]
+\end{frame}
+\subsection{Rotation of the Rigid Body Around a Fixed Axis}
+\begin{frame}
+\frametitle{Easier Configuration: Fixed Axis}
+For rotation of the rigid body around a \alert{fixed axis}, we are only interested in the torque and angular momentum \alert{along the axis}. The moment of inertia is a scalar defined by $I=\int_\Omega r^2 \derivative m$ because now the \alert{angular momentum} has a fixed direction, all elementary mass are in planar motion, the speed given by $\omega r_\perp$, and angular momentum $L=\int_\Omega \omega r_\perp^2 \derivative m=\omega\int_\Omega r_\perp^2\derivative m$, where $r_\perp$ is the distance from the elementary mass to the axis.
+\begin{block}{Steiner's Theorem (Parallel Axis Theorem)}
+Suppose $A$ is an axis \alert{through the center of mass}, and $A'$ is an axis \alert{parallel} to $A$ and $b$ from $A$.
+\[I_{A'}=I_{A}+mb^2\]
+Useful because we can \alert{traverse} the rigid body more easily in a \alert{symmetric} coordinate system (e.g., a torus).
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{2nd Law of Dynamics, Kinetic Energy}
+For rotation $\overline\omega=(0,0,\omega)$, $\overline{L}=I_{zz}\overline{\omega}$. But $\frac{\derivative\overline L}{\derivative t}=\overline\tau^{ext}$, so
+\[I_{zz}\frac{\derivative\omega}{\derivative t}=\tau^{ext}\]
+\textbf{CAUTION:} $\frac{\derivative \overline L}{\derivative t}=\overline\tau^{ext}$ is \alert{generally valid}, but $I_{zz}\frac{\derivative\omega}{\derivative t}=\tau^{ext}$ is valid only when the rigid body is given a \alert{fixed axis} $z$, so that $\overline\omega$ does not change its \alert{orientation}.
+\end{frame}
+\begin{frame}
+\frametitle{Work and Power in Rotational Motion (Fixed Axis)}
+In a rotational motion, $\overline F_{tan}\parallel\derivative\overline r$, so
+\[\delta w=\tau_z\derivative\theta\quad w=\int_{\theta_1}^{\theta_2}\tau_z\derivative\theta\]
+Note: Axis and radial components do no work. Nor do they contribute to torque.\\
+\textbf{Rotational Analogue of work-kinetic energy theorem}
+\[\delta w=\derivative\left(\frac{1}{2}I\omega_z^2\right)=\derivative K_{rot}\quad w=K_2-K_1\]
+\textbf{Power}
+\[P=\tau_z\omega_z\]
+\end{frame}
+\subsection{Combined Translational and Rotational Motion}
+\begin{frame}
+\frametitle{Combined Translational and Rotational Motion}
+\begin{block}{Kinetic Energy}
+For a rigid body in combined translational and rotational motion at angular velocity $\omega$ whose \alert{center of mass} is in a  translational motion $\overline v_{cm}$
+\[K=\frac{1}{2}Mv_{cm}^2+\frac{1}{2}I_{cm}\omega^2\]
+Compare with the kinetic energy in Center-of-Mass FoR given on Slide~\ref{CoMFoRKineticEnergy}.
+\end{block}
+\begin{block}{Angular Momentum Theorem}
+\[\tau_z=I\varepsilon_z\]
+still holds true if axis 
+\begin{enumerate}
+\item passes \alert{through} center of mass
+\item axis does not change \alert{orientation}
+\end{enumerate}
+\end{block}
+\end{frame}
+\subsection{Gyroscopes and Precession}
+\begin{frame}
+\frametitle{Gyroscopes and Precession}
+\begin{definition}
+\textbf{Precession} is a change in the orientation of the axis of rotation of a rotating body.
+\end{definition}
+\begin{example}
+\begin{multicols}{2}
+\includegraphics[width=4cm]{RC7Precession.png}\\
+A uniform right cone with \alert{mass} m, bottom surface \alert{radius} $a$, and \alert{height} h, is in \alert{precession} around its tip. The axis of symmetry is $\theta_0$ from the vertical axis, and the \alert{angular velocity} of rotation around the axis of symmetry is $\Omega$. Assume $\Omega$ is \alert{large}. Find the angular velocity $\omega_p$ of precession.
+\end{multicols}
+\end{example}
+\end{frame}
+\begin{frame}
+The distance between the \alert{center of mass} and the \alert{tip} is $\frac{3}{4}h$ (Slide~\ref{RC6slide:excenterofomass}).\\
+The moment of inertia w.r.t. the axis of symmetry is
+\[I=\int_0^a r^2 \rho (2\pi r\derivative r)\frac{a-r}{a}h=\frac{3}{10}ma^2\]
+where $\rho=\frac{m}{\frac{1}{3}\pi a^2 h}$ is the mass density of the cone.
+The angular momentum is $L=\Omega I=\frac{3}{10}ma^2\Omega$, pointing along the axis of symmetry. The horizontal component is $\overline{L_{r}}=\frac{3}{10}ma^2\sin\theta_0\Omega\hat n_r$, whose direction will be modified by the \alert{torque} $\overline\tau$ of gravity.
+\[\overline\tau=\overline r\times\overline F=mg\frac{3}{4}h\sin\theta_0\hat n_\varphi\]
+so assuming $\Omega$ is \alert{large} enough, i.e., $\overline L$ has almost \alert{constant magnitude}, and the angular momentum due to precession is negligible. \[\frac{\derivative L}{\derivative t}=\tau\quad\frac{\derivative \overline L}{\derivative t}=\overline \omega_p\times \overline L\quad\frac{\derivative L}{\derivative t}=\omega_p L\implies \omega_p=\frac{\tau}{L}\]
+so $\omega_p=\frac{5gh}{2a^2\Omega}$
+\end{frame}
+\subsection{Discussion}
+\subsection{Exercises}
+\begin{frame}
+\frametitle{Rigid Body Hitting a Wall, Inducing a Rotation}
+\begin{multicols}{2}
+Two light rigid rods $AB$ and $BC$ are glued together at $B$. $\overline{AB}$ and $\overline{BC}$ form angle $\alpha\in(0,\pi/2)$, $|\overline{BC}|=l$, and $|\overline{AB}|=l\cos\alpha$. One small ball with mass $m$ is fixed at each of $A$, $B$, and $C$. The balls and the rods form a rigid body. The entire system is placed on a smooth horizontal desk, and there is a fixed smooth vertical wall on the desk. Initially, $AB$ is perpendicular to the wall, and the system is in a translational motion at $v_0$ along $\overline{AB}$ toward the wall. At one instant, ball $C$ hit the wall, and right after impact, ball $C$ has a zero velocity component perpendicular to the wall. Ball $C$ does not stick to the wall. If after ball $C$ hitting the wall, ball $B$ hits the wall before ball $A$ does, what condition does $\alpha$ satisfy?
+\includegraphics[width=3cm]{RC7PhysicsCompetition29_3.png}
+\end{multicols}
+\end{frame}
+\begin{frame}
+\frametitle{Rigid Body Hitting a Wall, Inducing a Rotation (Sol.)}
+Suppose upon impact, the wall provides impulse $J$ to the system at C. The effect of this impulse is to reduce the \alert{velocity} of the Center of Mass of the system and to provide an \alert{angular momentum} around the center of mass.
+\begin{equation}\label{eq:rc7exphysicscompetitionimpulse}
+3mv_0-J=3mv_c\quad J\cdot(\frac{2}{3}l\sin\alpha)=\mathbf{I}\omega
+\end{equation}
+In order that $B$ hits the wall before $A$ does, consider the situation where they hit the wall at the same time, i.e., the system has rotated $\pi/2$, and the center of mass has traveled $l\cos\alpha-\frac{1}{3}l\sin\alpha$. $B$ hitting earlier means the time it would take the system to rotate $\pi/2$ is longer than the time it would take the center of mass to travel $l\cos\alpha-\frac{1}{3}l\sin\alpha$, should there be no secondary impact (which is possible if $J$ is large).
+\begin{equation}\label{equation:rc7physicscomptitionconstraint}
+\frac{l\cos\alpha-\frac{1}{3}l\sin\alpha}{v_c}<\frac{\frac{\pi}{2}}{\omega}
+\end{equation}
+\end{frame}
+\begin{frame}
+\frametitle{Rigid Body Hitting a Wall, Inducing a Rotation (Sol.)}
+Now we do not know $J$, but there is a constraint on it: the velocity of $C$ after impact, which is the sum of the velocity of the center of mass and the velocity of C in the center of mass FoR.
+\[v_C-\omega(\frac{2}{3}l\sin\alpha)=0\]
+The moment of inertia is contributed by the three balls. Ball $A$ contributes $m\left[\left(\frac{1}{3}l\sin\alpha\right)^2+\left(l\cos\alpha\right)^2\right]$, Ball $C$ contributes $m\left[\left(\frac{2}{3}l\sin\alpha\right)^2+\left(l\cos\alpha\right)^2\right]$, and Ball $B$ contributes $m\left(\frac{1}{3}l\sin\alpha\right)^2$
+\[\mathbf{I}=ml^2(\frac{2}{3}+\frac{4}{3}\cos^2\alpha)\]
+
+\end{frame}
+\begin{frame}
+\frametitle{Rigid Body Hitting a Wall, Inducing a Rotation (Sol.)}
+it then follows that (plugging $\mathbf I$ into Equation~\ref{eq:rc7exphysicscompetitionimpulse}) \[3\sin\alpha (v_0-v_c)=\omega l(1+3\cos^2\alpha)\]
+so $v_c=\frac{2v_0\sin^2\alpha}{4-\sin^2\alpha}$, and $\omega=\frac{3v_0\sin\alpha}{(4-\sin^2\alpha)l}$. Plugging these into Equation~\ref{equation:rc7physicscomptitionconstraint},
+\[(\pi+1)\sin\alpha>3\cos\alpha\]
+\[\tan\alpha>\frac{3}{\pi+1}\]
+\[\alpha>36^\circ\]
+\end{frame}
+\begin{frame}
+\frametitle{Principal Axes Transformation}
+\begin{block}{Question}
+\begin{multicols}{2}
+A square with side length $a$ lies in plane $z=0$ and has masses $m_1$ and $m_2$ in its vertices.\begin{itemize}
+\item Find the components of the tensor of inertia with respect to axes $x$, $y$, $z$.
+\item Diagonalize this tensor, giving directions of the principal axes.
+\end{itemize}
+\includegraphics[width=4cm]{RC7Ex2.png}
+\end{multicols}
+\end{block}
+\begin{block}{Tensor of Inertia}
+\[I=\left[\begin{matrix}
+2(m_2+m_1)(\frac{a}{2})^2&2(m_1-m_2)(\frac{a}{2})^2&0\\
+2(m_1-m_2)(\frac{a}{2})^2&2(m_2+m_1)(\frac{a}{2})^2&0\\
+0&0&2(m_1+m_2)\frac{a^2}{2}
+\end{matrix}\right]\]
+\end{block}
+\end{frame}
+\begin{frame}
+The characteristic equation is
+\[\mathrm{det}\left[\begin{matrix}
+2(m_2+m_1)(\frac{a}{2})^2-\lambda&2(m_1-m_2)(\frac{a}{2})^2&0\\
+2(m_1-m_2)(\frac{a}{2})^2&2(m_2+m_1)(\frac{a}{2})^2-\lambda&0\\
+0&0&2(m_1+m_2)\frac{a^2}{2}-\lambda
+\end{matrix}\right]=0\]
+The eigenvalues are
+\[\lambda_1=2(m_1+m_2)\frac{a^2}{2}\quad\lambda_2=m_2a^2\quad\lambda_3=m_1 a^2\]
+and their corresponding unit eigenvectors are
+\[u_1=\left(\begin{matrix}0\\0\\1\end{matrix}\right)\quad u_2=\left(\begin{matrix}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\\0\end{matrix}\right)\quad u_3=\left(\begin{matrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\\0\end{matrix}\right)\]
+The tensor of inertia in the \alert{principal axes FoR} is given by the \alert{eigenvalues} on the diagonal:
+\[D=diag(\lambda_1,\lambda_2,\lambda_3)\]
+\end{frame}
+\begin{frame}
+\frametitle{Degenerate Eigenvalues}
+\begin{block}{Albegraic Multiplicity}
+Then the multiplicity of the zero in $p(\lambda)=0$ is called the \alert{algebraic multiplicity} of $\lambda$.
+\end{block}
+\begin{multicols}{2}
+\includegraphics[width=5cm]{RC7Ex3.png}\\
+Using symmetry, the three unit eigenvectors are \\$\left(\begin{matrix}0\\0\\1\end{matrix}\right)$, $\left(\begin{matrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\\0\end{matrix}\right)$, and $\left(\begin{matrix}-\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\\0\end{matrix}\right)$\\
+The tensor of inertia is
+$I=\left[\begin{matrix}6ma^2&6ma^2&0\\6ma^2&6ma^2&0\\0&0&12ma^2\end{matrix}\right]$
+Characteristic Equation $p(\lambda)=(6ma^2-\lambda)^2(12ma^2-\lambda)-(12ma^2-\lambda)(6ma^2)^2=0$
+$\lambda_1=12ma^2$, $\lambda_2=12ma^2$, $\lambda_3=0$
+\end{multicols}
+\end{frame}
+\begin{frame}
+\frametitle{Eigenspace and Geometric Multiplicity}
+\begin{block}{Geometric Multiplicity}
+The subspace $V_{\lambda}=\{x\in V: Ax=\lambda x\}$ is called the \alert{eigenspace} for eigenvalue $\lambda$. The dimension $\mathrm{dim}V_{\lambda}$ is called the \alert{geometric multiplicity} of $\lambda$.
+\end{block}
+Notice that with $\lambda=12ma^2$ we get $u_x-u_y=0$ and no control over $u_z$.
+\begin{block}{Remarks}
+Since we can always diagonalize the tensor of inertia, we anticipate the \alert{algebraic multiplicity} of each eigenvalue to be equal to its \alert{geometric multiplicity}, in which case we choose \alert{orthonormal vectors} that span the eigenspace as the \alert{direction} of our \alert{principal axes}.
+\end{block}
+With $\lambda=12ma^2$ you can get two eigenvectors: $\left(\begin{matrix}0\\0\\1\end{matrix}\right)$,$\left(\begin{matrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\\0\end{matrix}\right)$
+\end{frame}
+\begin{frame}
+\frametitle{Cylinder down a Movable Wedge}
+\begin{block}{Question}
+A wedge with mass $M$ and angle $\alpha$ rests on a \alert{frictionless} horizontal surface. A cylinder with mass $m$ rolls down the wedge \alert{without slipping}. Find the \alert{acceleration} of the wedge.
+\end{block}
+\begin{block}{Solution}
+The cylinder:
+No slipping \alert{constraint}: $\varepsilon=\frac{a_m}{R}$\\
+\alert{Rotation} around the center of mass: $f_{M}R=\varepsilon(\frac{1}{2}mR^2)$\\
+Translational force \alert{along} the surface: $ma_M\cos\alpha+mg\sin\alpha-f_M=ma_m$\\
+Translational force \alert{perpendicular} to the surface: $N_M+ma_M\sin\alpha=mg\cos\alpha$\\
+The wedge: \alert{horizontal} forces: $Ma_M=N_M\sin\alpha-f_M\cos\alpha$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Ball hitting a Fixed-Axis Box}
+\begin{block}{Question}
+\begin{wrapfigure}{l}{0.22\framewidth}
+\includegraphics[width=0.2\framewidth]{rc8_ex8_q.png}
+\end{wrapfigure}
+A ball with mass $m$, moving within the horizontal direction with speed $v$, hits the upper edge of a rectangular box with dimensions $l\times l\times 2l$. Assuming that the box can rotate about a \alert{fixed axis} containing the edge $AA'$, and the collision of the ball with the box is \alert{elastic} (and the ball moves back in the horizontal direction), find
+\begin{enumerate}
+\item \alert{angular velocity} of the box starts moving at the moment of collision
+\item \alert{equation of motion} of the box after the collision
+\item the \alert{minimum speed} of the ball needed to put the box in the upright position
+\end{enumerate}
+The angular momentum of the box around axis $AA'$ is $I_{AA'}$, and the mass of the box is $M$ (uniform distribution).
+\end{block}
+\end{frame}
+\begin{frame}
+Conservation of angular momentum \alert{around $AA'$}
+\[I_{AA'}\omega-mv_1l=mv_0l\]
+Conservation of mechanical energy
+\[\frac{1}{2}I_{AA'}\omega^2+\frac{1}{2}mv_1^2=\frac{1}{2}mv_0^2\]
+Get a quadratic equation about $\omega$:
+\[(I_{AA'}+\frac{I_{AA'}^2}{ml^2})\omega^2-\frac{2I_{AA'}mv_0 l}{ml^2}\omega+C=0\]
+Mathematically, sum of the two roots of $\omega$ for $a\omega^2+b\omega+c=0$ is equal to $-\frac{b}{a}$. Since the two solutions of $\omega$ corresponds to the angular velocity of the box \alert{before} and \alert{after} the collision, and we already know that before the collision, $\omega=0$, it follows that after the collisiion,
+\[\omega=\frac{2v_0}{l+\frac{I_{AA'}}{ml}}\]
+\end{frame}
+\begin{frame}
+After the collision, the box is under the torque of gravity. \alert{Torque} changes the \alert{angular momentum} following Eqn.~\ref{eq:angularmomentumandtorque}, so \[I_{AA'}\ddot\alpha+Mgl\frac{\sqrt 5}{2}\cos\alpha=0\]
+After the collision, the mechanical energy of the box is \alert{conserved}.
+Initial: $K_1=\frac{1}{2}I_{AA'}\left(\frac{2v_0}{l+\frac{I_{AA'}}{ml}}\right)^2$, Maximum height: $K_2=0$ (when the center of mass is above $AA'$). Increased potential energy: $\Delta U=-Mg\frac{l}{2}+Mg\frac{\sqrt{5}}{2}l$. Therefore, using $\Delta K+\Delta U=0$,
+\[-\frac{1}{2}I_{AA'}\left(\frac{2v_0}{l+\frac{I_{AA'}}{ml}}\right)^2+Mg\frac{\sqrt{5}-1}{2}l=0\]
+The minimal required speed $v_0=\frac{l+\frac{I_{AA'}}{ml}}{2}\sqrt{\frac{(\sqrt 5-1)Mgl}{I_{AA'}}}$
+\end{frame}
